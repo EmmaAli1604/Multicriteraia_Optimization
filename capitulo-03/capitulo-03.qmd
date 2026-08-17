@@ -1,0 +1,19 @@
+---
+title: "Chapter 3"
+subtitle: "The Weighted Sum Method and Related Topics"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+format: revealjs
+---
+
+## 3.1 Weighted  Sum Scalarization and (Weak) Efficency
+
+## 3.2 Weighted Sum Scalarization and Proper Efficency
+
+## 3.3 Optimality Conditions
+
+## 3.4 Connectedness of Efficent and Nondominated Set
+
+## 3.5 Notes
+
+## Exercises

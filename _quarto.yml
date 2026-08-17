@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "Multicriteria Optimization"
+  description: "Presentaciones por capítulo"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - index.qmd
+      - section: "Capítulos"
+        contents:
+          - capitulo-01/capitulo-01.qmd
+          - capitulo-02/capitulo-02.qmd
+          - capitulo-03/capitulo-03.qmd
+          - capitulo-04/capitulo-04.qmd
+          - capitulo-05/capitulo-05.qmd
+          - capitulo-06/capitulo-06.qmd
+          - capitulo-07/capitulo-07.qmd
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

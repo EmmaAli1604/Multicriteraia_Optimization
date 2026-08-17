@@ -1,0 +1,12 @@
+---
+title: "Capítulo 1"
+subtitle: "Título del capítulo"
+author: "Tu nombre"
+date: today
+format: revealjs
+---
+
+## Introducción
+
+Resumen breve de qué trata este capítulo del libro.
+

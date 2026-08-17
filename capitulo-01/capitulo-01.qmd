@@ -1,0 +1,24 @@
+---
+title: "Chapter 1"
+subtitle: "Introduction"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+format: revealjs
+---
+
+## Introducción
+
+## 1.1 Optimization with Multiple Criteria
+
+## 1.2 Decision Space and Objective (Criterion) Space
+
+## 1.3 Notions of Optimatlity
+
+## 1.4 Orders and Cones
+
+## 1.5 Classification of Multicritreio Optimization Problems
+
+## 1.6 Notes
+
+## Exercises
+

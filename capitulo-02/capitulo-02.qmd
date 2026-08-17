@@ -1,0 +1,15 @@
+---
+title: "Chapter 2"
+subtitle: "Efficency and Nondominance"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+format: revealjs
+---
+
+## 2.1 Efficent Solutions and Nondominated Points
+
+## 2.2 Bounds on the Nondominated Set
+
+## 2.3 Weakly and Strictly Efficent Solutions
+
+## 2.4 Proper Efficency and Proper Nondominance
