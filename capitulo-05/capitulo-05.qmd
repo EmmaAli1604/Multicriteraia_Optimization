@@ -1,0 +1,17 @@
+---
+title: "Chapter 5"
+subtitle: "The Other Definitions of Optimatlity - Nonscalarizing Methos"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+format: revealjs
+---
+
+## 5.1 Lexicographic and Pareto Orderings
+
+## 5.2 Nonscalarizing Methods for Vector Optimization
+
+## 5.3 Relations Between Scalarizing and Nonscalarizing Concepts
+
+## 5.4 Notes
+
+## Exercises
