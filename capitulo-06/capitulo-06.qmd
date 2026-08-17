@@ -1,0 +1,17 @@
+---
+title: "Chapter 6"
+subtitle: "The Weighted Sum Method and Related Topics"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+format: revealjs
+---
+
+## 6.1 Reference Point and Achievement Scalarizing Methods
+
+## 6.2 Interactive and Adaptive Weighted Sum Variants
+
+## 6.3 Numerical Considerations
+
+## 6.4 Notes
+
+## Exercises

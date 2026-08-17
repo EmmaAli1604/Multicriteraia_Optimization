@@ -1,0 +1,15 @@
+---
+title: "Chapter 4"
+subtitle: "Scalarization Techniques"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+format: revealjs
+---
+
+## 4.1 Scalarization Functionals
+
+## 4.2 Geometrical Properties of Scalarization Functionals
+
+## 4.3 Gerstewitz Functional in Multicriteria Optimization
+
+## 4.4 Scalarization in Terms of Set-Valued Objectives
