@@ -3,7 +3,6 @@ title: "Chapter 1"
 subtitle: "Introduction"
 author: "Emma Alicia Jimenez Sanchez"
 date: today
-format: html
 ---
 
 ## Introduction
@@ -42,11 +41,15 @@ The aspect of decision making concerned with supporting decision makers in selec
 
 ### Definitions
 
+::: {.def-card}
+#### Definition (Decision Space, Criterion Space, Objective Functions, Nondominated Points, MCDA)
+
 *   **Decision space:** the space that contains the feasible set $X$ of alternatives; also called the variable space.
 *   **Criterion space:** the space that contains the image $Y = f(X)$ of the feasible set under the objective functions; also called the objective space.
 *   **Objective functions:** the functions $f_1, \dots, f_p$ that map each alternative $x \in X$ to a vector of criterion values $f(x) \in \mathbb{R}^p$.
 *   **Nondominated points:** points $y \in Y$ for which no other $y' \in Y$ exists that is at least as good as $y$ in every component and strictly better in at least one.
 *   **Multicriteria decision aid (MCDA):** the discipline concerned with supporting decision makers in choosing a final, most preferred solution among a set of mathematically equally optimal (efficient) alternatives.
+:::
 
 ## 1.3 Notions of Optimality
 
@@ -66,20 +69,30 @@ In order to define the meaning of "min", we must specify how objective function 
 
 Let $S$ be any set. A **binary relation** on $S$ is a subset $R$ of $S \times S$. We introduce some properties of binary relations below.
 
-**Definition.** A binary relation $R$ on $S$ is called:
-*   **reflexive** if $(s,s) \in R$ for all $s \in S$
-*   **irreflexive** if $(s,s) \notin R$ for all $s \in S$
-*   **symmetric** if $(s^1,s^2) \in R \implies (s^2,s^1) \in R$ for all $s^1, s^2 \in S$
-*   **asymmetric** if $(s^1,s^2) \in R \implies (s^2,s^1) \notin R$ for all $s^1, s^2 \in S$
-*   **antisymmetric** if $(s^1,s^2) \in R$ and $(s^2,s^1) \in R \implies s^1 = s^2$, for all $s^1, s^2 \in S$
-*   **transitive** if $(s^1,s^2) \in R$ and $(s^2,s^3) \in R \implies (s^1,s^3) \in R$ for all $s^1, s^2, s^3 \in S$
-*   **negatively transitive** if $(s^1,s^2) \notin R$ and $(s^2,s^3) \notin R \implies (s^1,s^3) \notin R$ for all $s^1, s^2, s^3 \in S$
-*   **connected** if $(s^1,s^2) \in R$ or $(s^2,s^1) \in R$ for all $s^1 \neq s^2$ in $S$
-*   **strongly connected (or total)** if $(s^1,s^2) \in R$ or $(s^2,s^1) \in R$ for all $s^1, s^2 \in S$
+::: {.def-card}
+#### Definition (Properties of a Binary Relation)
 
-**Definition.** A binary relation $R$ on a set $S$ is:
-*   an **equivalence relation** if it is reflexive, symmetric, and transitive
-*   a **preorder (quasi-order)** if it is reflexive and transitive
+A binary relation $R$ on $S$ is called:
+
+* **reflexive** if $(s,s) \in R$ for all $s \in S$
+* **irreflexive** if $(s,s) \notin R$ for all $s \in S$
+* **symmetric** if $(s^1,s^2) \in R \implies (s^2,s^1) \in R$ for all $s^1, s^2 \in S$
+* **asymmetric** if $(s^1,s^2) \in R \implies (s^2,s^1) \notin R$ for all $s^1, s^2 \in S$
+* **antisymmetric** if $(s^1,s^2) \in R$ and $(s^2,s^1) \in R \implies s^1 = s^2$, for all $s^1, s^2 \in S$
+* **transitive** if $(s^1,s^2) \in R$ and $(s^2,s^3) \in R \implies (s^1,s^3) \in R$ for all $s^1, s^2, s^3 \in S$
+* **negatively transitive** if $(s^1,s^2) \notin R$ and $(s^2,s^3) \notin R \implies (s^1,s^3) \notin R$ for all $s^1, s^2, s^3 \in S$
+* **connected** if $(s^1,s^2) \in R$ or $(s^2,s^1) \in R$ for all $s^1 \neq s^2$ in $S$
+* **strongly connected (or total)** if $(s^1,s^2) \in R$ or $(s^2,s^1) \in R$ for all $s^1, s^2 \in S$
+:::
+
+::: {.def-card}
+#### Definition (Equivalence Relation and Preorder)
+
+A binary relation $R$ on a set $S$ is:
+
+* an **equivalence relation** if it is reflexive, symmetric, and transitive
+* a **preorder (quasi-order)** if it is reflexive and transitive
+:::
 
 If $R$ is a preorder, the pair $(S,R)$ is called a **preordered set**. In the context of (pre)orders, a more convenient notation for the relation is often used: $s^1 \preceq s^2$ as shorthand for $(s^1,s^2) \in R$, and $s^2 \not\preceq s^1$ for $(s^2,s^1) \notin R$, referring indiscriminately to the relation $R$ or the relation $\preceq$. This notation can be read as "preferred to."
 
@@ -89,41 +102,92 @@ Given any preorder $\preceq$, two other relations are closely associated with $\
 
 Actually, $\prec$ and $\sim$ can be seen as the strict preference and equivalence (or indifference) relation, respectively, associated with the preference defining preorder $\preceq$.
 
-**Proposition 1.6:** Let $\preceq$ be a preorder on $S$. Then relation $\prec$ defined above is irreflexive and transitive and relation $\sim$ defined above is an equivalence relation.
+::: {.lemma-card}
+#### Proposition 1.6
 
-**Proposition 1.7:** An asymmetric binary relation is irreflexive. A transitive, irreflexive binary relation is asymmetric.
+Let $\preceq$ be a preorder on $S$. Then relation $\prec$ defined above is irreflexive and transitive and relation $\sim$ defined above is an equivalence relation.
 
-**Proposition 1.8:** A binary relation $\preceq$ on $S$ is:
-*   a **total preorder** if it is reflexive, transitive and connected,
-*   a **total order** if it is an antisymmetric total preorder, (so this means that it has to be antisymmetric and a total preorder)
-*   a **strict weak order** if it is asymmetric and negatively transitive. 
+::: {.proof-space}
+**Proof.**
 
-**Proposition 1.9:** If $\preceq$ is a total preorder on $S$, then the associated relation $\prec$ is a strict weak order. If $\prec$ is a strict weak order on $S$, then $\preceq$ defined by:
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 1.7
+
+An asymmetric binary relation is irreflexive. A transitive, irreflexive binary relation is asymmetric.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 1.8
+
+A binary relation $\preceq$ on $S$ is:
+
+* a **total preorder** if it is reflexive, transitive and connected,
+* a **total order** if it is an antisymmetric total preorder, (so this means that it has to be antisymmetric and a total preorder)
+* a **strict weak order** if it is asymmetric and negatively transitive.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 1.9
+
+If $\preceq$ is a total preorder on $S$, then the associated relation $\prec$ is a strict weak order. If $\prec$ is a strict weak order on $S$, then $\preceq$ defined by:
 
 $$s^1 \preceq s^2 \iff \text{either } s^1 \prec s^2 \text{ or } (s^1 \not\prec s^2 \text{ and } s^2 \not\prec s^1)$$
 
 is a total preorder.
 
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
 **Most important classes of relations in multicriteria optimization - partial orders and strict partial orders are introduced now.**
 
-**Definition 1.10:** A binary relation $\preceq$ is called:
-*   **partial order** if it is reflexive, transitive and antisymmetric,
-*   **strict partial order** if it is asymmetric and transitive (or, equivalently if it is irreflexive and transitive)
+::: {.def-card}
+#### Definition 1.10
+
+A binary relation $\preceq$ is called:
+
+* **partial order** if it is reflexive, transitive and antisymmetric,
+* **strict partial order** if it is asymmetric and transitive (or, equivalently if it is irreflexive and transitive)
+:::
 
 Let $y^1, y^2 \in \mathbb{R}^p$ and if $y^1 \neq y^2$ let $k^* := \min\{k: y^1_k \neq y^2_k\}$.
 
 With the (weak, strict) componentwise orders, we define subsets of $\mathbb{R}^p$ as follows:
-*   $\mathbb{R}_{\geqq}^p := \{y \in \mathbb{R}^p: y \geqq 0\}$, the nonnegative orthant of $\mathbb{R}^p$.
-*   $\mathbb{R}_{\geq}^p := \{y \in \mathbb{R}^p : y \geq 0\} = \mathbb{R}_{\geqq}^p \setminus \{0\}$.
-*   $\mathbb{R}_{>}^p := \{y \in \mathbb{R}^p: y > 0\} = \text{int } \mathbb{R}_{\geqq}^p$, the positive orthant of $\mathbb{R}^p$.
+* $\mathbb{R}_{\geqq}^p := \{y \in \mathbb{R}^p: y \geqq 0\}$, the nonnegative orthant of $\mathbb{R}^p$.
+* $\mathbb{R}_{\geq}^p := \{y \in \mathbb{R}^p : y \geq 0\} = \mathbb{R}_{\geqq}^p \setminus \{0\}$.
+* $\mathbb{R}_{>}^p := \{y \in \mathbb{R}^p: y > 0\} = \text{int } \mathbb{R}_{\geqq}^p$, the positive orthant of $\mathbb{R}^p$.
 
 **Note that for $p=1$ we have $\mathbb{R}_{\geq} = \mathbb{R}_{>}$**
 
-> 📝 **Punto por atender (Duda):** Why is important the notion of orders and preorders in the search of an efficent solution?
+::: {.qa-card}
+#### ❓ Why is important the notion of orders and preorders in the search of an efficient solution?
+
+**Answer:**
+
+:::
 
 ### Cones
 
-**Definition 1.11:** A subset $C \subseteq \mathbb{R}^p$ is called a cone if $\alpha d \in C$ for all $d \in C$ and for all $\alpha \in \mathbb{R}$ where $\alpha > 0$.
+::: {.def-card}
+#### Definition 1.11
+
+A subset $C \subseteq \mathbb{R}^p$ is called a cone if $\alpha d \in C$ for all $d \in C$ and for all $\alpha \in \mathbb{R}$ where $\alpha > 0$.
+:::
 
 In other words the cone represent a formula where the vector is multiplied by a constant which has to be greater than 0.
 
@@ -139,19 +203,32 @@ If $S_1 = \{s\}$ is a singleton, we also write $s + S_2$ instead of $\{s\} + S_2
 
 More notation, for $S \subseteq \mathbb{R}^n$ or $S \subseteq \mathbb{R}^p$:
 
-**Definition 1.12:**
-*   $\text{int}(S)$ is the interior of $S$,
-*   $\text{ri}(S)$ is the relative interior of $S$,
-*   $\text{bd}(S)$ is the boundary of $S$,
-*   $\text{cl}(S) = \text{int}(S) \cup \text{bd}(S)$ is the closure of $S$
-*   $\text{conv}(S)$ is the convex hull of $S$
+::: {.def-card}
+#### Definition 1.12
 
-> 📝 **Punto por atender (Duda):** I didn't understand the following definitions.
+* $\text{int}(S)$ is the interior of $S$,
+* $\text{ri}(S)$ is the relative interior of $S$,
+* $\text{bd}(S)$ is the boundary of $S$,
+* $\text{cl}(S) = \text{int}(S) \cup \text{bd}(S)$ is the closure of $S$
+* $\text{conv}(S)$ is the convex hull of $S$
+:::
 
-**Definition 1.13:** A cone $C$ in $\mathbb{R}^p$ is called:
-*   **nontrivial or proper** if $C \neq \emptyset$ and $C \neq \mathbb{R}^n$,
-*   **convex** if $\alpha d^1 + (1-\alpha)d^2 \in C$ for all $d^1, d^2 \in C$ and for all $0 < \alpha < 1$,
-*   **pointed** if for $d \in C$ and $-d \in C \implies d=0$, i.e., $C \cap (-C) \subseteq \{0\}$.
+::: {.qa-card}
+#### ❓ I didn't understand the following definitions.
+
+**Answer:**
+
+:::
+
+::: {.def-card}
+#### Definition 1.13
+
+A cone $C$ in $\mathbb{R}^p$ is called:
+
+* **nontrivial or proper** if $C \neq \emptyset$ and $C \neq \mathbb{R}^n$,
+* **convex** if $\alpha d^1 + (1-\alpha)d^2 \in C$ for all $d^1, d^2 \in C$ and for all $0 < \alpha < 1$,
+* **pointed** if for $d \in C$ and $-d \in C \implies d=0$, i.e., $C \cap (-C) \subseteq \{0\}$.
+:::
 
 Due to the definition of a cone, $C$ is convex if for all $d^1, d^2 \in C$ we have $d^1 + d^2 \in C$, too: $\alpha d^1$ and $(1-\alpha)d^2 \in C$ because $C$ is a cone. Therefore closedness of a $C$ under addition is sufficient for convexity. 
 Then, using the algebraic sum, we can say that $C \subseteq \mathbb{R}^p$ is a convex cone if $\alpha C \subseteq C$ for all $\alpha > 0$ and $C + C \subseteq C$. 
@@ -160,40 +237,131 @@ Given an order relation $R$ on $\mathbb{R}^p$, we can define a set:
 
 $$C_R := \{y^2 - y^1 : y^1 \mathrel{R} y^2\}$$
 
-**Proposition 1.14:** Let $R$ be compatible with scalar multiplication, i.e., for all $(y^1, y^2) \in R$ and all $\alpha \in \mathbb{R}_{>}$ it holds that $(\alpha y^1, \alpha y^2) \in R$. The $C_R$ defined is a cone.
+::: {.lemma-card}
+#### Proposition 1.14
 
-> 📝 **Punto por atender (Duda):** I didn't understand this lemma and its relation.
+Let $R$ be compatible with scalar multiplication, i.e., for all $(y^1, y^2) \in R$ and all $\alpha \in \mathbb{R}_{>}$ it holds that $(\alpha y^1, \alpha y^2) \in R$. The $C_R$ defined is a cone.
 
-**Lemma 1.16:** If $R$ is compatible with addition and $d \in C_R$ then $0 \mathrel{R} d$.
+::: {.proof-space}
+**Proof.**
 
-**Theorem 1.17:** Let $R$ be a binary relation on $\mathbb{R}^p$ which is compatible with scalar multiplication and addition. Then the following statements hold:
+:::
+:::
 
-1.  $0 \in C_R \iff R \text{ is reflexive}$ 
-2.  $C_R \text{ is pointed} \iff R \text{ is antisymmetric}$
-3.  $C_R \text{ is convex} \iff R \text{ is transitive}$
+::: {.qa-card}
+#### ❓ I didn't understand this lemma and its relation.
+
+**Answer:**
+
+:::
+
+::: {.lemma-card}
+#### Lemma 1.16
+
+If $R$ is compatible with addition and $d \in C_R$ then $0 \mathrel{R} d$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.theorem-card}
+#### Theorem 1.17
+
+Let $R$ be a binary relation on $\mathbb{R}^p$ which is compatible with scalar multiplication and addition. Then the following statements hold:
+
+1. $0 \in C_R \iff R \text{ is reflexive}$ 
+2. $C_R \text{ is pointed} \iff R \text{ is antisymmetric}$
+3. $C_R \text{ is convex} \iff R \text{ is transitive}$
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
 
 We defined cone $C_R$ given relation $R$. We can also use a cone to define an order relation. Let $C$ be a cone. Define $R_C$ by:
 
 $$y^1 \mathrel{R}_C y^2 \iff y^2 - y^1 \in C$$
 
-> 📝 **Punto por atender (Duda):** What is the difference between $C_R$ and $R_C$?
+::: {.qa-card}
+#### ❓ What is the difference between $C_R$ and $R_C$?
 
-**Proposition 1.19:** Let $C$ be a cone. Then $R_C$ defined above is compatible with scalar multiplication and addition in $\mathbb{R}^p$.
+**Answer:**
 
-**Theorem 1.20:** Let $C$ be a cone and let $R_C$ be as defined above. Then the following statements hold:
+:::
 
-1.  $R_C$ is reflexive $\iff 0 \in C$.
-2.  $R_C$ is antisymmetric $\iff C$ is pointed. 
-3.  $R_C$ is transitive $\iff C$ is convex.
+::: {.lemma-card}
+#### Proposition 1.19
 
-> 📝 **Punto por atender (Dudas de demostración y conceptos):**
-> *   What is pointed? How can we prove point 2?
-> *   What is compared lexicographically? (page 19)
-> *   How can we prove that is a cone?
-> *   What is convexity? And how do we prove a cone is convex?
-> *   What is a canonical order?
-> *   What is a nonnegative orthant?
-> *   What is a positive orthant?
+Let $C$ be a cone. Then $R_C$ defined above is compatible with scalar multiplication and addition in $\mathbb{R}^p$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.theorem-card}
+#### Theorem 1.20
+
+Let $C$ be a cone and let $R_C$ be as defined above. Then the following statements hold:
+
+1. $R_C$ is reflexive $\iff 0 \in C$.
+2. $R_C$ is antisymmetric $\iff C$ is pointed. 
+3. $R_C$ is transitive $\iff C$ is convex.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.qa-card}
+#### ❓ Questions on proofs and concepts
+
+**What is "pointed"? How can we prove point 2?**
+
+**Answer:**
+
+---
+
+**What does "compared lexicographically" mean? (page 19)**
+
+**Answer:**
+
+---
+
+**How can we prove that something is a cone?**
+
+**Answer:**
+
+---
+
+**What is convexity? And how do we prove a cone is convex?**
+
+**Answer:**
+
+---
+
+**What is a canonical order?**
+
+**Answer:**
+
+---
+
+**What is a nonnegative orthant?**
+
+**Answer:**
+
+---
+
+**What is a positive orthant?**
+
+**Answer:**
+
+:::
 
 ## 1.5 Classification of Multicriteria Optimization Problems
 
