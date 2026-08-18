@@ -6,12 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="Tu nombre">
-  <meta name="dcterms.date" content="2026-08-16">
-  <title>Multicriteria Optimization – Capítulo 1</title>
+  <meta name="author" content="Emma Alicia Jimenez Sanchez">
+  <meta name="dcterms.date" content="2026-08-17">
+  <title>Multicriteria Optimization – Chapter 3</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -36,7 +36,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="../styles.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -134,22 +135,36 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Capítulo 1</h1>
-  <p class="subtitle">Título del capítulo</p>
+  <h1 class="title">Chapter 3</h1>
+  <p class="subtitle">The Weighted Sum Method and Related Topics</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Tu nombre
+Emma Alicia Jimenez Sanchez
 </div>
 </div>
 </div>
 
-  <p class="date">2026-08-16</p>
+  <p class="date">2026-08-17</p>
 </section>
-<section id="introducción" class="slide level2">
-<h2>Introducción</h2>
-<p>Resumen breve de qué trata este capítulo del libro.</p>
+<section id="weighted-sum-scalarization-and-weak-efficency" class="slide level2">
+<h2>3.1 Weighted Sum Scalarization and (Weak) Efficency</h2>
+</section>
+<section id="weighted-sum-scalarization-and-proper-efficency" class="slide level2">
+<h2>3.2 Weighted Sum Scalarization and Proper Efficency</h2>
+</section>
+<section id="optimality-conditions" class="slide level2">
+<h2>3.3 Optimality Conditions</h2>
+</section>
+<section id="connectedness-of-efficent-and-nondominated-set" class="slide level2">
+<h2>3.4 Connectedness of Efficent and Nondominated Set</h2>
+</section>
+<section id="notes" class="slide level2">
+<h2>3.5 Notes</h2>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
 
 
 </section>
@@ -181,8 +196,8 @@ Tu nombre
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
+'controlsAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -192,7 +207,7 @@ Tu nombre
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -209,7 +224,7 @@ Tu nombre
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -314,14 +329,14 @@ Tu nombre
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -342,7 +357,7 @@ Tu nombre
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

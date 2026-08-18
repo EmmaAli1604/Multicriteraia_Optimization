@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Emma Alicia Jimenez Sanchez">
-  <meta name="dcterms.date" content="2026-08-16">
+  <meta name="dcterms.date" content="2026-08-17">
   <title>Multicriteria Optimization – Chapter 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -36,7 +52,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="../styles.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -129,11 +146,11 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-light nav-sidebar">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" class="quarto-title-block center"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulo-01/capitulo-01.html">Capítulos</a></li><li class="breadcrumb-item"><a href="../capitulo-01/capitulo-01.html">Chapter 1</a></li></ol></nav>
   <h1 class="title">Chapter 1</h1>
   <p class="subtitle">Introduction</p>
 
@@ -145,25 +162,117 @@ Emma Alicia Jimenez Sanchez
 </div>
 </div>
 
-  <p class="date">2026-08-16</p>
+  <p class="date">2026-08-17</p>
 </section>
-<section id="introducción" class="slide level2">
-<h2>Introducción</h2>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<p>The solution of a decision problem consists in choosing a “good” or “best” alternative from a set of alternatives, assuming the existence of certain criteria according to which the quality of the alternatives is measured.</p>
+<p>Decision problems with a countable number of alternatives are called <strong>discrete</strong>; others are called <strong>continuous</strong>.</p>
+<p>Discrete problems have finitely many alternatives that are explicitly known, and the goal is to select the most preferred one. <strong>Multicriteria decision aid</strong> deals with such problems.</p>
+<h3 id="discrete-vs.-continuous">Discrete vs.&nbsp;Continuous</h3>
 </section>
 <section id="optimization-with-multiple-criteria" class="slide level2">
 <h2>1.1 Optimization with Multiple Criteria</h2>
+<h3 id="discrete-problems">Discrete Problems</h3>
+<p>Discrete problems are decision problems characterized by a countable number of alternatives. The set of alternatives may be either explicitly known or implicitly described through constraints in the form of mathematical functions.</p>
+<h3 id="continuous-problems">Continuous Problems</h3>
+<p>In continuous problems, the set of alternatives allows for infinitely many different choices. The feasible set of alternatives is generally given through mathematical constraints, such as functions optimized over the nonnegative real line.</p>
+<p>The nonnegative real line is <span class="math inline">\(\mathbb{R}_+ = \{x \in \mathbb{R} : x \geq 0\}\)</span>.</p>
 </section>
 <section id="decision-space-and-objective-criterion-space" class="slide level2">
 <h2>1.2 Decision Space and Objective (Criterion) Space</h2>
+<p>This section introduces the fundamental notions of the decision (or variable) space and the criterion (or objective) space, which contain the alternatives and their images under the objective function mappings, respectively. In other words, the decision space is the space of the variable <span class="math inline">\(x\)</span>, and the criterion space is the space of <span class="math inline">\(y = f(x)\)</span>: the decision space is the one that varies, while the criterion (objective) space is the image obtained from it.</p>
+<p><strong>Feasible set:</strong> the set <span class="math inline">\(X\)</span>, of which every alternative is an element, is called the feasible set, and the space of which <span class="math inline">\(X\)</span> is a subset is called the <strong>decision space</strong>.</p>
+<p>The image of <span class="math inline">\(X\)</span> under <span class="math inline">\(f = (f_1, f_2)\)</span> is denoted:</p>
+<p><span class="math display">\[Y := f(X) := \{ y \in \mathbb{R}^2 : y = f(x) \text{ for some } x \in X \}.\]</span></p>
+<p>The image of <span class="math inline">\(X\)</span> depends on the number of objective functions under consideration, which determines the dimension of the criterion space in which it lies. <span class="math inline">\(Y\)</span> is referred to as the image of the feasible set, or the feasible set in criterion space. The space from which the criterion values are taken is called the <strong>criterion space</strong>.</p>
+<p>The aspect of decision making concerned with supporting decision makers in selecting a final solution from a set of mathematically “equally optimal” solutions is often referred to as <strong>multicriteria decision aid (MCDA)</strong>.</p>
+<h3 id="definitions">Definitions</h3>
+<ul>
+<li><strong>Decision space:</strong> the space that contains the feasible set <span class="math inline">\(X\)</span> of alternatives; also called the variable space.</li>
+<li><strong>Criterion space:</strong> the space that contains the image <span class="math inline">\(Y = f(X)\)</span> of the feasible set under the objective functions; also called the objective space.</li>
+<li><strong>Objective functions:</strong> the functions <span class="math inline">\(f_1, \dots, f_p\)</span> that map each alternative <span class="math inline">\(x \in X\)</span> to a vector of criterion values <span class="math inline">\(f(x) \in \mathbb{R}^p\)</span>.</li>
+<li><strong>Nondominated points:</strong> points <span class="math inline">\(y \in Y\)</span> for which no other <span class="math inline">\(y' \in Y\)</span> exists that is at least as good as <span class="math inline">\(y\)</span> in every component and strictly better in at least one.</li>
+<li><strong>Multicriteria decision aid (MCDA):</strong> the discipline concerned with supporting decision makers in choosing a final, most preferred solution among a set of mathematically equally optimal (efficient) alternatives.</li>
+</ul>
 </section>
-<section id="notions-of-optimatlity" class="slide level2">
-<h2>1.3 Notions of Optimatlity</h2>
+<section id="notions-of-optimality" class="slide level2">
+<h2>1.3 Notions of Optimality</h2>
+<p>We now introduce, informally, the concept of “minimization” in multicriteria optimization problems:</p>
+<p><span class="math display">\[\min_{x \in X} \big(f_1(x), \dots, f_p(x)\big)\]</span></p>
+<p>The fundamental importance of <strong>efficiency</strong> (Pareto optimality) is based on the observation that any <span class="math inline">\(x\)</span> which is not efficient cannot represent a most preferred alternative for a decision maker, because there exists at least one other feasible solution <span class="math inline">\(x' \in X\)</span> such that <span class="math inline">\(f_k(x') \leq f_k(x)\)</span> for all <span class="math inline">\(k = 1, \dots, p\)</span>, with strict inequality holding for at least one <span class="math inline">\(k\)</span>. In that case, <span class="math inline">\(x'\)</span> should clearly be preferred to <span class="math inline">\(x\)</span>.</p>
+<p>All the notions of optimality above are, for now, represented only informally; they will be made precise in the following sections.</p>
 </section>
 <section id="orders-and-cones" class="slide level2">
 <h2>1.4 Orders and Cones</h2>
+<h3 id="orders-and-preorders">Orders and Preorders</h3>
+<p>In order to define the meaning of “min”, we must specify how objective function vectors <span class="math inline">\((f_1(x), \dots, f_p(x))\)</span> are to be compared for different alternatives <span class="math inline">\(x \in X\)</span>. The different ways of doing this arise from the fact that, for <span class="math inline">\(p \geq 2\)</span>, there is no canonical order on <span class="math inline">\(\mathbb{R}^p\)</span> as there is on <span class="math inline">\(\mathbb{R}\)</span>. Therefore, weaker notions of order must be used.</p>
+<p>Let <span class="math inline">\(S\)</span> be any set. A <strong>binary relation</strong> on <span class="math inline">\(S\)</span> is a subset <span class="math inline">\(R\)</span> of <span class="math inline">\(S \times S\)</span>. We introduce some properties of binary relations below.</p>
+<p><strong>Definition.</strong> A binary relation <span class="math inline">\(R\)</span> on <span class="math inline">\(S\)</span> is called: * <strong>reflexive</strong> if <span class="math inline">\((s,s) \in R\)</span> for all <span class="math inline">\(s \in S\)</span> * <strong>irreflexive</strong> if <span class="math inline">\((s,s) \notin R\)</span> for all <span class="math inline">\(s \in S\)</span> * <strong>symmetric</strong> if <span class="math inline">\((s^1,s^2) \in R \implies (s^2,s^1) \in R\)</span> for all <span class="math inline">\(s^1, s^2 \in S\)</span> * <strong>asymmetric</strong> if <span class="math inline">\((s^1,s^2) \in R \implies (s^2,s^1) \notin R\)</span> for all <span class="math inline">\(s^1, s^2 \in S\)</span> * <strong>antisymmetric</strong> if <span class="math inline">\((s^1,s^2) \in R\)</span> and <span class="math inline">\((s^2,s^1) \in R \implies s^1 = s^2\)</span>, for all <span class="math inline">\(s^1, s^2 \in S\)</span> * <strong>transitive</strong> if <span class="math inline">\((s^1,s^2) \in R\)</span> and <span class="math inline">\((s^2,s^3) \in R \implies (s^1,s^3) \in R\)</span> for all <span class="math inline">\(s^1, s^2, s^3 \in S\)</span> * <strong>negatively transitive</strong> if <span class="math inline">\((s^1,s^2) \notin R\)</span> and <span class="math inline">\((s^2,s^3) \notin R \implies (s^1,s^3) \notin R\)</span> for all <span class="math inline">\(s^1, s^2, s^3 \in S\)</span> * <strong>connected</strong> if <span class="math inline">\((s^1,s^2) \in R\)</span> or <span class="math inline">\((s^2,s^1) \in R\)</span> for all <span class="math inline">\(s^1 \neq s^2\)</span> in <span class="math inline">\(S\)</span> * <strong>strongly connected (or total)</strong> if <span class="math inline">\((s^1,s^2) \in R\)</span> or <span class="math inline">\((s^2,s^1) \in R\)</span> for all <span class="math inline">\(s^1, s^2 \in S\)</span></p>
+<p><strong>Definition.</strong> A binary relation <span class="math inline">\(R\)</span> on a set <span class="math inline">\(S\)</span> is: * an <strong>equivalence relation</strong> if it is reflexive, symmetric, and transitive * a <strong>preorder (quasi-order)</strong> if it is reflexive and transitive</p>
+<p>If <span class="math inline">\(R\)</span> is a preorder, the pair <span class="math inline">\((S,R)\)</span> is called a <strong>preordered set</strong>. In the context of (pre)orders, a more convenient notation for the relation is often used: <span class="math inline">\(s^1 \preceq s^2\)</span> as shorthand for <span class="math inline">\((s^1,s^2) \in R\)</span>, and <span class="math inline">\(s^2 \not\preceq s^1\)</span> for <span class="math inline">\((s^2,s^1) \notin R\)</span>, referring indiscriminately to the relation <span class="math inline">\(R\)</span> or the relation <span class="math inline">\(\preceq\)</span>. This notation can be read as “preferred to.”</p>
+<p>Given any preorder <span class="math inline">\(\preceq\)</span>, two other relations are closely associated with <span class="math inline">\(\preceq\)</span>. We define them as follows: * <span class="math inline">\(s^1 \prec s^2 \iff s^1 \preceq s^2 \text{ and } s^2 \not\preceq s^1\)</span> * <span class="math inline">\(s^1 \sim s^2 \iff s^1 \preceq s^2 \text{ and } s^2 \preceq s^1\)</span></p>
+<p>Actually, <span class="math inline">\(\prec\)</span> and <span class="math inline">\(\sim\)</span> can be seen as the strict preference and equivalence (or indifference) relation, respectively, associated with the preference defining preorder <span class="math inline">\(\preceq\)</span>.</p>
+<p><strong>Proposition 1.6:</strong> Let <span class="math inline">\(\preceq\)</span> be a preorder on <span class="math inline">\(S\)</span>. Then relation <span class="math inline">\(\prec\)</span> defined above is irreflexive and transitive and relation <span class="math inline">\(\sim\)</span> defined above is an equivalence relation.</p>
+<p><strong>Proposition 1.7:</strong> An asymmetric binary relation is irreflexive. A transitive, irreflexive binary relation is asymmetric.</p>
+<p><strong>Proposition 1.8:</strong> A binary relation <span class="math inline">\(\preceq\)</span> on <span class="math inline">\(S\)</span> is: * a <strong>total preorder</strong> if it is reflexive, transitive and connected, * a <strong>total order</strong> if it is an antisymmetric total preorder, (so this means that it has to be antisymmetric and a total preorder) * a <strong>strict weak order</strong> if it is asymmetric and negatively transitive.</p>
+<p><strong>Proposition 1.9:</strong> If <span class="math inline">\(\preceq\)</span> is a total preorder on <span class="math inline">\(S\)</span>, then the associated relation <span class="math inline">\(\prec\)</span> is a strict weak order. If <span class="math inline">\(\prec\)</span> is a strict weak order on <span class="math inline">\(S\)</span>, then <span class="math inline">\(\preceq\)</span> defined by:</p>
+<p><span class="math display">\[s^1 \preceq s^2 \iff \text{either } s^1 \prec s^2 \text{ or } (s^1 \not\prec s^2 \text{ and } s^2 \not\prec s^1)\]</span></p>
+<p>is a total preorder.</p>
+<p><strong>Most important classes of relations in multicriteria optimization - partial orders and strict partial orders are introduced now.</strong></p>
+<p><strong>Definition 1.10:</strong> A binary relation <span class="math inline">\(\preceq\)</span> is called: * <strong>partial order</strong> if it is reflexive, transitive and antisymmetric, * <strong>strict partial order</strong> if it is asymmetric and transitive (or, equivalently if it is irreflexive and transitive)</p>
+<p>Let <span class="math inline">\(y^1, y^2 \in \mathbb{R}^p\)</span> and if <span class="math inline">\(y^1 \neq y^2\)</span> let <span class="math inline">\(k^* := \min\{k: y^1_k \neq y^2_k\}\)</span>.</p>
+<p>With the (weak, strict) componentwise orders, we define subsets of <span class="math inline">\(\mathbb{R}^p\)</span> as follows: * <span class="math inline">\(\mathbb{R}_{\geqq}^p := \{y \in \mathbb{R}^p: y \geqq 0\}\)</span>, the nonnegative orthant of <span class="math inline">\(\mathbb{R}^p\)</span>. * <span class="math inline">\(\mathbb{R}_{\geq}^p := \{y \in \mathbb{R}^p : y \geq 0\} = \mathbb{R}_{\geqq}^p \setminus \{0\}\)</span>. * <span class="math inline">\(\mathbb{R}_{&gt;}^p := \{y \in \mathbb{R}^p: y &gt; 0\} = \text{int } \mathbb{R}_{\geqq}^p\)</span>, the positive orthant of <span class="math inline">\(\mathbb{R}^p\)</span>.</p>
+<p><strong>Note that for <span class="math inline">\(p=1\)</span> we have <span class="math inline">\(\mathbb{R}_{\geq} = \mathbb{R}_{&gt;}\)</span></strong></p>
+<blockquote class="blockquote">
+<p>📝 <strong>Punto por atender (Duda):</strong> Why is important the notion of orders and preorders in the search of an efficent solution?</p>
+</blockquote>
+<h3 id="cones">Cones</h3>
+<p><strong>Definition 1.11:</strong> A subset <span class="math inline">\(C \subseteq \mathbb{R}^p\)</span> is called a cone if <span class="math inline">\(\alpha d \in C\)</span> for all <span class="math inline">\(d \in C\)</span> and for all <span class="math inline">\(\alpha \in \mathbb{R}\)</span> where <span class="math inline">\(\alpha &gt; 0\)</span>.</p>
+<p>In other words the cone represent a formula where the vector is multiplied by a constant which has to be greater than 0.</p>
+<p>Let <span class="math inline">\(S, S_1, S_2 \subseteq \mathbb{R}^p\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. We denote by:</p>
+<p><span class="math display">\[\alpha S := \{\alpha s : s \in S\}\]</span></p>
+<p>especially, <span class="math inline">\(-S := \{-s : s \in S\}\)</span>. The algebraic sum of <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span> is:</p>
+<p><span class="math display">\[S_1 + S_2 := \{s^1 + s^2 : s^1 \in S_1, s^2 \in S_2\}\]</span></p>
+<p>If <span class="math inline">\(S_1 = \{s\}\)</span> is a singleton, we also write <span class="math inline">\(s + S_2\)</span> instead of <span class="math inline">\(\{s\} + S_2\)</span>.</p>
+<p>More notation, for <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> or <span class="math inline">\(S \subseteq \mathbb{R}^p\)</span>:</p>
+<p><strong>Definition 1.12:</strong> * <span class="math inline">\(\text{int}(S)\)</span> is the interior of <span class="math inline">\(S\)</span>, * <span class="math inline">\(\text{ri}(S)\)</span> is the relative interior of <span class="math inline">\(S\)</span>, * <span class="math inline">\(\text{bd}(S)\)</span> is the boundary of <span class="math inline">\(S\)</span>, * <span class="math inline">\(\text{cl}(S) = \text{int}(S) \cup \text{bd}(S)\)</span> is the closure of <span class="math inline">\(S\)</span> * <span class="math inline">\(\text{conv}(S)\)</span> is the convex hull of <span class="math inline">\(S\)</span></p>
+<blockquote class="blockquote">
+<p>📝 <strong>Punto por atender (Duda):</strong> I didn’t understand the following definitions.</p>
+</blockquote>
+<p><strong>Definition 1.13:</strong> A cone <span class="math inline">\(C\)</span> in <span class="math inline">\(\mathbb{R}^p\)</span> is called: * <strong>nontrivial or proper</strong> if <span class="math inline">\(C \neq \emptyset\)</span> and <span class="math inline">\(C \neq \mathbb{R}^n\)</span>, * <strong>convex</strong> if <span class="math inline">\(\alpha d^1 + (1-\alpha)d^2 \in C\)</span> for all <span class="math inline">\(d^1, d^2 \in C\)</span> and for all <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>, * <strong>pointed</strong> if for <span class="math inline">\(d \in C\)</span> and <span class="math inline">\(-d \in C \implies d=0\)</span>, i.e., <span class="math inline">\(C \cap (-C) \subseteq \{0\}\)</span>.</p>
+<p>Due to the definition of a cone, <span class="math inline">\(C\)</span> is convex if for all <span class="math inline">\(d^1, d^2 \in C\)</span> we have <span class="math inline">\(d^1 + d^2 \in C\)</span>, too: <span class="math inline">\(\alpha d^1\)</span> and <span class="math inline">\((1-\alpha)d^2 \in C\)</span> because <span class="math inline">\(C\)</span> is a cone. Therefore closedness of a <span class="math inline">\(C\)</span> under addition is sufficient for convexity. Then, using the algebraic sum, we can say that <span class="math inline">\(C \subseteq \mathbb{R}^p\)</span> is a convex cone if <span class="math inline">\(\alpha C \subseteq C\)</span> for all <span class="math inline">\(\alpha &gt; 0\)</span> and <span class="math inline">\(C + C \subseteq C\)</span>.</p>
+<p>Given an order relation <span class="math inline">\(R\)</span> on <span class="math inline">\(\mathbb{R}^p\)</span>, we can define a set:</p>
+<p><span class="math display">\[C_R := \{y^2 - y^1 : y^1 \mathrel{R} y^2\}\]</span></p>
+<p><strong>Proposition 1.14:</strong> Let <span class="math inline">\(R\)</span> be compatible with scalar multiplication, i.e., for all <span class="math inline">\((y^1, y^2) \in R\)</span> and all <span class="math inline">\(\alpha \in \mathbb{R}_{&gt;}\)</span> it holds that <span class="math inline">\((\alpha y^1, \alpha y^2) \in R\)</span>. The <span class="math inline">\(C_R\)</span> defined is a cone.</p>
+<blockquote class="blockquote">
+<p>📝 <strong>Punto por atender (Duda):</strong> I didn’t understand this lemma and its relation.</p>
+</blockquote>
+<p><strong>Lemma 1.16:</strong> If <span class="math inline">\(R\)</span> is compatible with addition and <span class="math inline">\(d \in C_R\)</span> then <span class="math inline">\(0 \mathrel{R} d\)</span>.</p>
+<p><strong>Theorem 1.17:</strong> Let <span class="math inline">\(R\)</span> be a binary relation on <span class="math inline">\(\mathbb{R}^p\)</span> which is compatible with scalar multiplication and addition. Then the following statements hold:</p>
+<ol type="1">
+<li><span class="math inline">\(0 \in C_R \iff R \text{ is reflexive}\)</span></li>
+<li><span class="math inline">\(C_R \text{ is pointed} \iff R \text{ is antisymmetric}\)</span></li>
+<li><span class="math inline">\(C_R \text{ is convex} \iff R \text{ is transitive}\)</span></li>
+</ol>
+<p>We defined cone <span class="math inline">\(C_R\)</span> given relation <span class="math inline">\(R\)</span>. We can also use a cone to define an order relation. Let <span class="math inline">\(C\)</span> be a cone. Define <span class="math inline">\(R_C\)</span> by:</p>
+<p><span class="math display">\[y^1 \mathrel{R}_C y^2 \iff y^2 - y^1 \in C\]</span></p>
+<blockquote class="blockquote">
+<p>📝 <strong>Punto por atender (Duda):</strong> What is the difference between <span class="math inline">\(C_R\)</span> and <span class="math inline">\(R_C\)</span>?</p>
+</blockquote>
+<p><strong>Proposition 1.19:</strong> Let <span class="math inline">\(C\)</span> be a cone. Then <span class="math inline">\(R_C\)</span> defined above is compatible with scalar multiplication and addition in <span class="math inline">\(\mathbb{R}^p\)</span>.</p>
+<p><strong>Theorem 1.20:</strong> Let <span class="math inline">\(C\)</span> be a cone and let <span class="math inline">\(R_C\)</span> be as defined above. Then the following statements hold:</p>
+<ol type="1">
+<li><span class="math inline">\(R_C\)</span> is reflexive <span class="math inline">\(\iff 0 \in C\)</span>.</li>
+<li><span class="math inline">\(R_C\)</span> is antisymmetric <span class="math inline">\(\iff C\)</span> is pointed.</li>
+<li><span class="math inline">\(R_C\)</span> is transitive <span class="math inline">\(\iff C\)</span> is convex.</li>
+</ol>
+<blockquote class="blockquote">
+<p>📝 <strong>Punto por atender (Dudas de demostración y conceptos):</strong> * What is pointed? How can we prove point 2? * What is compared lexicographically? (page 19) * How can we prove that is a cone? * What is convexity? And how do we prove a cone is convex? * What is a canonical order? * What is a nonnegative orthant? * What is a positive orthant?</p>
+</blockquote>
 </section>
-<section id="classification-of-multicritreio-optimization-problems" class="slide level2">
-<h2>1.5 Classification of Multicritreio Optimization Problems</h2>
+<section id="classification-of-multicriteria-optimization-problems" class="slide level2">
+<h2>1.5 Classification of Multicriteria Optimization Problems</h2>
 </section>
 <section id="notes" class="slide level2">
 <h2>1.6 Notes</h2>
@@ -201,8 +310,8 @@ Emma Alicia Jimenez Sanchez
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
+'controlsAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -212,7 +321,7 @@ Emma Alicia Jimenez Sanchez
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -229,7 +338,7 @@ Emma Alicia Jimenez Sanchez
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -334,14 +443,14 @@ Emma Alicia Jimenez Sanchez
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -362,7 +471,7 @@ Emma Alicia Jimenez Sanchez
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
