@@ -72,11 +72,23 @@
     ]
   },
   {
-    "objectID": "capitulo-01/capitulo-01.html#introducción",
-    "href": "capitulo-01/capitulo-01.html#introducción",
+    "objectID": "capitulo-01/capitulo-01.html",
+    "href": "capitulo-01/capitulo-01.html",
     "title": "Chapter 1",
-    "section": "Introducción",
-    "text": "Introducción",
+    "section": "",
+    "text": "The solution of a decision problem consists in choosing a “good” or “best” alternative from a set of alternatives, assuming the existence of certain criteria according to which the quality of the alternatives is measured.\nDecision problems with a countable number of alternatives are called discrete; others are called continuous.\nDiscrete problems have finitely many alternatives that are explicitly known, and the goal is to select the most preferred one. Multicriteria decision aid deals with such problems.",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 1"
+    ]
+  },
+  {
+    "objectID": "capitulo-01/capitulo-01.html#introduction",
+    "href": "capitulo-01/capitulo-01.html#introduction",
+    "title": "Chapter 1",
+    "section": "",
+    "text": "The solution of a decision problem consists in choosing a “good” or “best” alternative from a set of alternatives, assuming the existence of certain criteria according to which the quality of the alternatives is measured.\nDecision problems with a countable number of alternatives are called discrete; others are called continuous.\nDiscrete problems have finitely many alternatives that are explicitly known, and the goal is to select the most preferred one. Multicriteria decision aid deals with such problems.",
     "crumbs": [
       "Inicio",
       "Capítulos",
@@ -88,7 +100,7 @@
     "href": "capitulo-01/capitulo-01.html#optimization-with-multiple-criteria",
     "title": "Chapter 1",
     "section": "1.1 Optimization with Multiple Criteria",
-    "text": "1.1 Optimization with Multiple Criteria",
+    "text": "1.1 Optimization with Multiple Criteria\n\nDiscrete Problems\nDiscrete problems are decision problems characterized by a countable number of alternatives. The set of alternatives may be either explicitly known or implicitly described through constraints in the form of mathematical functions.\n\n\nContinuous Problems\nIn continuous problems, the set of alternatives allows for infinitely many different choices. The feasible set of alternatives is generally given through mathematical constraints, such as functions optimized over the nonnegative real line.\nThe nonnegative real line is \\(\\mathbb{R}_+ = \\{x \\in \\mathbb{R} : x \\geq 0\\}\\).",
     "crumbs": [
       "Inicio",
       "Capítulos",
@@ -100,7 +112,7 @@
     "href": "capitulo-01/capitulo-01.html#decision-space-and-objective-criterion-space",
     "title": "Chapter 1",
     "section": "1.2 Decision Space and Objective (Criterion) Space",
-    "text": "1.2 Decision Space and Objective (Criterion) Space",
+    "text": "1.2 Decision Space and Objective (Criterion) Space\nThis section introduces the fundamental notions of the decision (or variable) space and the criterion (or objective) space, which contain the alternatives and their images under the objective function mappings, respectively. In other words, the decision space is the space of the variable \\(x\\), and the criterion space is the space of \\(y = f(x)\\): the decision space is the one that varies, while the criterion (objective) space is the image obtained from it.\nFeasible set: the set \\(X\\), of which every alternative is an element, is called the feasible set, and the space of which \\(X\\) is a subset is called the decision space.\nThe image of \\(X\\) under \\(f = (f_1, f_2)\\) is denoted:\n\\[Y := f(X) := \\{ y \\in \\mathbb{R}^2 : y = f(x) \\text{ for some } x \\in X \\}.\\]\nThe image of \\(X\\) depends on the number of objective functions under consideration, which determines the dimension of the criterion space in which it lies. \\(Y\\) is referred to as the image of the feasible set, or the feasible set in criterion space. The space from which the criterion values are taken is called the criterion space.\nThe aspect of decision making concerned with supporting decision makers in selecting a final solution from a set of mathematically “equally optimal” solutions is often referred to as multicriteria decision aid (MCDA).\n\nDefinitions\n\nDefinition (Decision Space, Criterion Space, Objective Functions, Nondominated Points, MCDA)\n\nDecision space: the space that contains the feasible set \\(X\\) of alternatives; also called the variable space.\nCriterion space: the space that contains the image \\(Y = f(X)\\) of the feasible set under the objective functions; also called the objective space.\nObjective functions: the functions \\(f_1, \\dots, f_p\\) that map each alternative \\(x \\in X\\) to a vector of criterion values \\(f(x) \\in \\mathbb{R}^p\\).\nNondominated points: points \\(y \\in Y\\) for which no other \\(y' \\in Y\\) exists that is at least as good as \\(y\\) in every component and strictly better in at least one.\nMulticriteria decision aid (MCDA): the discipline concerned with supporting decision makers in choosing a final, most preferred solution among a set of mathematically equally optimal (efficient) alternatives.",
     "crumbs": [
       "Inicio",
       "Capítulos",
@@ -108,11 +120,11 @@
     ]
   },
   {
-    "objectID": "capitulo-01/capitulo-01.html#notions-of-optimatlity",
-    "href": "capitulo-01/capitulo-01.html#notions-of-optimatlity",
+    "objectID": "capitulo-01/capitulo-01.html#notions-of-optimality",
+    "href": "capitulo-01/capitulo-01.html#notions-of-optimality",
     "title": "Chapter 1",
-    "section": "1.3 Notions of Optimatlity",
-    "text": "1.3 Notions of Optimatlity",
+    "section": "1.3 Notions of Optimality",
+    "text": "1.3 Notions of Optimality\nWe now introduce, informally, the concept of “minimization” in multicriteria optimization problems:\n\\[\\min_{x \\in X} \\big(f_1(x), \\dots, f_p(x)\\big)\\]\nThe fundamental importance of efficiency (Pareto optimality) is based on the observation that any \\(x\\) which is not efficient cannot represent a most preferred alternative for a decision maker, because there exists at least one other feasible solution \\(x' \\in X\\) such that \\(f_k(x') \\leq f_k(x)\\) for all \\(k = 1, \\dots, p\\), with strict inequality holding for at least one \\(k\\). In that case, \\(x'\\) should clearly be preferred to \\(x\\).\nAll the notions of optimality above are, for now, represented only informally; they will be made precise in the following sections.",
     "crumbs": [
       "Inicio",
       "Capítulos",
@@ -124,7 +136,7 @@
     "href": "capitulo-01/capitulo-01.html#orders-and-cones",
     "title": "Chapter 1",
     "section": "1.4 Orders and Cones",
-    "text": "1.4 Orders and Cones",
+    "text": "1.4 Orders and Cones\n\nOrders and Preorders\nIn order to define the meaning of “min”, we must specify how objective function vectors \\((f_1(x), \\dots, f_p(x))\\) are to be compared for different alternatives \\(x \\in X\\). The different ways of doing this arise from the fact that, for \\(p \\geq 2\\), there is no canonical order on \\(\\mathbb{R}^p\\) as there is on \\(\\mathbb{R}\\). Therefore, weaker notions of order must be used.\nLet \\(S\\) be any set. A binary relation on \\(S\\) is a subset \\(R\\) of \\(S \\times S\\). We introduce some properties of binary relations below.\n\nDefinition (Properties of a Binary Relation)\nA binary relation \\(R\\) on \\(S\\) is called:\n\nreflexive if \\((s,s) \\in R\\) for all \\(s \\in S\\)\nirreflexive if \\((s,s) \\notin R\\) for all \\(s \\in S\\)\nsymmetric if \\((s^1,s^2) \\in R \\implies (s^2,s^1) \\in R\\) for all \\(s^1, s^2 \\in S\\)\nasymmetric if \\((s^1,s^2) \\in R \\implies (s^2,s^1) \\notin R\\) for all \\(s^1, s^2 \\in S\\)\nantisymmetric if \\((s^1,s^2) \\in R\\) and \\((s^2,s^1) \\in R \\implies s^1 = s^2\\), for all \\(s^1, s^2 \\in S\\)\ntransitive if \\((s^1,s^2) \\in R\\) and \\((s^2,s^3) \\in R \\implies (s^1,s^3) \\in R\\) for all \\(s^1, s^2, s^3 \\in S\\)\nnegatively transitive if \\((s^1,s^2) \\notin R\\) and \\((s^2,s^3) \\notin R \\implies (s^1,s^3) \\notin R\\) for all \\(s^1, s^2, s^3 \\in S\\)\nconnected if \\((s^1,s^2) \\in R\\) or \\((s^2,s^1) \\in R\\) for all \\(s^1 \\neq s^2\\) in \\(S\\)\nstrongly connected (or total) if \\((s^1,s^2) \\in R\\) or \\((s^2,s^1) \\in R\\) for all \\(s^1, s^2 \\in S\\)\n\n\n\nDefinition (Equivalence Relation and Preorder)\nA binary relation \\(R\\) on a set \\(S\\) is:\n\nan equivalence relation if it is reflexive, symmetric, and transitive\na preorder (quasi-order) if it is reflexive and transitive\n\n\nIf \\(R\\) is a preorder, the pair \\((S,R)\\) is called a preordered set. In the context of (pre)orders, a more convenient notation for the relation is often used: \\(s^1 \\preceq s^2\\) as shorthand for \\((s^1,s^2) \\in R\\), and \\(s^2 \\not\\preceq s^1\\) for \\((s^2,s^1) \\notin R\\), referring indiscriminately to the relation \\(R\\) or the relation \\(\\preceq\\). This notation can be read as “preferred to.”\nGiven any preorder \\(\\preceq\\), two other relations are closely associated with \\(\\preceq\\). We define them as follows: * \\(s^1 \\prec s^2 \\iff s^1 \\preceq s^2 \\text{ and } s^2 \\not\\preceq s^1\\) * \\(s^1 \\sim s^2 \\iff s^1 \\preceq s^2 \\text{ and } s^2 \\preceq s^1\\)\nActually, \\(\\prec\\) and \\(\\sim\\) can be seen as the strict preference and equivalence (or indifference) relation, respectively, associated with the preference defining preorder \\(\\preceq\\).\n\nProposition 1.6\nLet \\(\\preceq\\) be a preorder on \\(S\\). Then relation \\(\\prec\\) defined above is irreflexive and transitive and relation \\(\\sim\\) defined above is an equivalence relation.\n\nProof.\n\n\n\nProposition 1.7\nAn asymmetric binary relation is irreflexive. A transitive, irreflexive binary relation is asymmetric.\n\nProof.\n\n\n\nProposition 1.8\nA binary relation \\(\\preceq\\) on \\(S\\) is:\n\na total preorder if it is reflexive, transitive and connected,\na total order if it is an antisymmetric total preorder, (so this means that it has to be antisymmetric and a total preorder)\na strict weak order if it is asymmetric and negatively transitive.\n\n\nProof.\n\n\n\nProposition 1.9\nIf \\(\\preceq\\) is a total preorder on \\(S\\), then the associated relation \\(\\prec\\) is a strict weak order. If \\(\\prec\\) is a strict weak order on \\(S\\), then \\(\\preceq\\) defined by:\n\\[s^1 \\preceq s^2 \\iff \\text{either } s^1 \\prec s^2 \\text{ or } (s^1 \\not\\prec s^2 \\text{ and } s^2 \\not\\prec s^1)\\]\nis a total preorder.\n\nProof.\n\n\nMost important classes of relations in multicriteria optimization - partial orders and strict partial orders are introduced now.\n\nDefinition 1.10\nA binary relation \\(\\preceq\\) is called:\n\npartial order if it is reflexive, transitive and antisymmetric,\nstrict partial order if it is asymmetric and transitive (or, equivalently if it is irreflexive and transitive)\n\n\nLet \\(y^1, y^2 \\in \\mathbb{R}^p\\) and if \\(y^1 \\neq y^2\\) let \\(k^* := \\min\\{k: y^1_k \\neq y^2_k\\}\\).\nWith the (weak, strict) componentwise orders, we define subsets of \\(\\mathbb{R}^p\\) as follows: * \\(\\mathbb{R}_{\\geqq}^p := \\{y \\in \\mathbb{R}^p: y \\geqq 0\\}\\), the nonnegative orthant of \\(\\mathbb{R}^p\\). * \\(\\mathbb{R}_{\\geq}^p := \\{y \\in \\mathbb{R}^p : y \\geq 0\\} = \\mathbb{R}_{\\geqq}^p \\setminus \\{0\\}\\). * \\(\\mathbb{R}_{&gt;}^p := \\{y \\in \\mathbb{R}^p: y &gt; 0\\} = \\text{int } \\mathbb{R}_{\\geqq}^p\\), the positive orthant of \\(\\mathbb{R}^p\\).\nNote that for \\(p=1\\) we have \\(\\mathbb{R}_{\\geq} = \\mathbb{R}_{&gt;}\\)\n\n❓ Why is important the notion of orders and preorders in the search of an efficient solution?\nAnswer:\n\n\n\nCones\n\nDefinition 1.11\nA subset \\(C \\subseteq \\mathbb{R}^p\\) is called a cone if \\(\\alpha d \\in C\\) for all \\(d \\in C\\) and for all \\(\\alpha \\in \\mathbb{R}\\) where \\(\\alpha &gt; 0\\).\n\nIn other words the cone represent a formula where the vector is multiplied by a constant which has to be greater than 0.\nLet \\(S, S_1, S_2 \\subseteq \\mathbb{R}^p\\) and \\(\\alpha \\in \\mathbb{R}\\). We denote by:\n\\[\\alpha S := \\{\\alpha s : s \\in S\\}\\]\nespecially, \\(-S := \\{-s : s \\in S\\}\\). The algebraic sum of \\(S_1\\) and \\(S_2\\) is:\n\\[S_1 + S_2 := \\{s^1 + s^2 : s^1 \\in S_1, s^2 \\in S_2\\}\\]\nIf \\(S_1 = \\{s\\}\\) is a singleton, we also write \\(s + S_2\\) instead of \\(\\{s\\} + S_2\\).\nMore notation, for \\(S \\subseteq \\mathbb{R}^n\\) or \\(S \\subseteq \\mathbb{R}^p\\):\n\nDefinition 1.12\n\n\\(\\text{int}(S)\\) is the interior of \\(S\\),\n\\(\\text{ri}(S)\\) is the relative interior of \\(S\\),\n\\(\\text{bd}(S)\\) is the boundary of \\(S\\),\n\\(\\text{cl}(S) = \\text{int}(S) \\cup \\text{bd}(S)\\) is the closure of \\(S\\)\n\\(\\text{conv}(S)\\) is the convex hull of \\(S\\)\n\n\n\n❓ I didn’t understand the following definitions.\nAnswer:\n\n\nDefinition 1.13\nA cone \\(C\\) in \\(\\mathbb{R}^p\\) is called:\n\nnontrivial or proper if \\(C \\neq \\emptyset\\) and \\(C \\neq \\mathbb{R}^n\\),\nconvex if \\(\\alpha d^1 + (1-\\alpha)d^2 \\in C\\) for all \\(d^1, d^2 \\in C\\) and for all \\(0 &lt; \\alpha &lt; 1\\),\npointed if for \\(d \\in C\\) and \\(-d \\in C \\implies d=0\\), i.e., \\(C \\cap (-C) \\subseteq \\{0\\}\\).\n\n\nDue to the definition of a cone, \\(C\\) is convex if for all \\(d^1, d^2 \\in C\\) we have \\(d^1 + d^2 \\in C\\), too: \\(\\alpha d^1\\) and \\((1-\\alpha)d^2 \\in C\\) because \\(C\\) is a cone. Therefore closedness of a \\(C\\) under addition is sufficient for convexity. Then, using the algebraic sum, we can say that \\(C \\subseteq \\mathbb{R}^p\\) is a convex cone if \\(\\alpha C \\subseteq C\\) for all \\(\\alpha &gt; 0\\) and \\(C + C \\subseteq C\\).\nGiven an order relation \\(R\\) on \\(\\mathbb{R}^p\\), we can define a set:\n\\[C_R := \\{y^2 - y^1 : y^1 \\mathrel{R} y^2\\}\\]\n\nProposition 1.14\nLet \\(R\\) be compatible with scalar multiplication, i.e., for all \\((y^1, y^2) \\in R\\) and all \\(\\alpha \\in \\mathbb{R}_{&gt;}\\) it holds that \\((\\alpha y^1, \\alpha y^2) \\in R\\). The \\(C_R\\) defined is a cone.\n\nProof.\n\n\n\n❓ I didn’t understand this lemma and its relation.\nAnswer:\n\n\nLemma 1.16\nIf \\(R\\) is compatible with addition and \\(d \\in C_R\\) then \\(0 \\mathrel{R} d\\).\n\nProof.\n\n\n\nTheorem 1.17\nLet \\(R\\) be a binary relation on \\(\\mathbb{R}^p\\) which is compatible with scalar multiplication and addition. Then the following statements hold:\n\n\\(0 \\in C_R \\iff R \\text{ is reflexive}\\)\n\\(C_R \\text{ is pointed} \\iff R \\text{ is antisymmetric}\\)\n\\(C_R \\text{ is convex} \\iff R \\text{ is transitive}\\)\n\n\nProof.\n\n\nWe defined cone \\(C_R\\) given relation \\(R\\). We can also use a cone to define an order relation. Let \\(C\\) be a cone. Define \\(R_C\\) by:\n\\[y^1 \\mathrel{R}_C y^2 \\iff y^2 - y^1 \\in C\\]\n\n❓ What is the difference between \\(C_R\\) and \\(R_C\\)?\nAnswer:\n\n\nProposition 1.19\nLet \\(C\\) be a cone. Then \\(R_C\\) defined above is compatible with scalar multiplication and addition in \\(\\mathbb{R}^p\\).\n\nProof.\n\n\n\nTheorem 1.20\nLet \\(C\\) be a cone and let \\(R_C\\) be as defined above. Then the following statements hold:\n\n\\(R_C\\) is reflexive \\(\\iff 0 \\in C\\).\n\\(R_C\\) is antisymmetric \\(\\iff C\\) is pointed.\n\\(R_C\\) is transitive \\(\\iff C\\) is convex.\n\n\nProof.\n\n\n\n❓ Questions on proofs and concepts\nWhat is “pointed”? How can we prove point 2?\nAnswer:\n\nWhat does “compared lexicographically” mean? (page 19)\nAnswer:\n\nHow can we prove that something is a cone?\nAnswer:\n\nWhat is convexity? And how do we prove a cone is convex?\nAnswer:\n\nWhat is a canonical order?\nAnswer:\n\nWhat is a nonnegative orthant?\nAnswer:\n\nWhat is a positive orthant?\nAnswer:",
     "crumbs": [
       "Inicio",
       "Capítulos",
@@ -132,11 +144,11 @@
     ]
   },
   {
-    "objectID": "capitulo-01/capitulo-01.html#classification-of-multicritreio-optimization-problems",
-    "href": "capitulo-01/capitulo-01.html#classification-of-multicritreio-optimization-problems",
+    "objectID": "capitulo-01/capitulo-01.html#classification-of-multicriteria-optimization-problems",
+    "href": "capitulo-01/capitulo-01.html#classification-of-multicriteria-optimization-problems",
     "title": "Chapter 1",
-    "section": "1.5 Classification of Multicritreio Optimization Problems",
-    "text": "1.5 Classification of Multicritreio Optimization Problems",
+    "section": "1.5 Classification of Multicriteria Optimization Problems",
+    "text": "1.5 Classification of Multicriteria Optimization Problems",
     "crumbs": [
       "Inicio",
       "Capítulos",
