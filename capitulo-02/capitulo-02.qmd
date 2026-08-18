@@ -3,7 +3,6 @@ title: "Chapter 2"
 subtitle: "Efficency and Nondominance"
 author: "Emma Alicia Jimenez Sanchez"
 date: today
-format: revealjs
 ---
 
 ## 2.1 Efficent Solutions and Nondominated Points
