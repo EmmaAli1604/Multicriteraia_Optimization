@@ -3,19 +3,9 @@
 # Evita repetir la configuración en cada archivo.
 
 format:
-  revealjs:
+  html:
     theme: simple
-    slide-number: true
-    progress: true
-    transition: slide
-    background-transition: fade
-    code-line-numbers: true
-    highlight-style: github
     css: ../styles.css
+    toc: true
     # --- Fórmulas matemáticas ---
     html-math-method: mathjax   # habilita LaTeX ($...$ y $$...$$) automáticamente
-    # --- Video ---
-    preview-links: auto
-    # --- Navegación ---
-    controls: true
-    hash: true
