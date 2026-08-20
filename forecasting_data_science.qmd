@@ -1,0 +1,9 @@
+---
+title: "Forecasting for Data Science"
+subtitle: "Internship Report — Literature Context"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+---
+
+## Introduction
+

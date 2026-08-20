@@ -1,0 +1,140 @@
+---
+title: "Predict + Optimize in Renewable Energy Scheduling"
+subtitle: "Internship Report — Literature Context"
+author: "Emma Alicia Jimenez Sanchez"
+date: today
+---
+
+## Introduction
+
+To further analyze the subject of Smart Predict+Optimize in the context of inventory management, we need to look at a replicable use case for our problem. Exploring the IEEE competition on Predict+Optimize will give us the correct context.
+
+Optimization problems that must be solved over an unknown future are at the core of many complex real-world operations — supply chaining, inventory management, and staffing rosters, among others. In other words, this applies to everything that involves predicting uncertainty while pursuing multiple objectives. In particular, for this use case, it is important to optimize the solution in light of the global transition to reduce CO₂ emissions.
+
+Renewable energy production is characterized by variability over time, which means it correlates closely with time-series optimization. Demand needs to be predicted and scheduled to make the best use of available supply, with energy storage systems (such as batteries) scheduled optimally to cover shortfalls — all based on unknown future production and demand.
+
+One way to address this uncertainty is through robust optimization or stochastic optimization, using probabilistic forecasts as inputs instead of point forecasts.
+
+Forecasting is often a precursor to optimization, which typically pursues objectives such as minimizing costs, maximizing renewable energy use, or ensuring energy system stability.
+
+Having accurate forecasting is crucial, because it provides the necessary inputs for the optimization model. Without it, the optimization process may rely on incorrect or incomplete information.
+
+## Predict + Optimize
+
+Now that we have some context on the importance of accurate forecasting and its optimization, it is time to introduce a new concept: **Predict+Optimize**, where forecasting and optimization are not treated as isolated tasks, but their interaction is taken into account.
+
+Using this approach, forecasts are chosen and evaluated based on their contribution to the actual downstream cost of the optimization problem, in preference to arbitrary forecast measures such as:
+
+::: {.vocab-card}
+#### Forecast Measures
+
+- **Mean Square Error (MAE):**
+
+- **Continuous Ranked Probability Score (CRPS):**
+:::
+
+Another approach is the direct optimization of the forecasting model using a decision-focused loss function.
+
+This is how the concept will be applied in the internship report: the problem is first framed as an inventory optimization problem, and the forecasting component is optimized based on that framing.
+
+::: {.qa-card}
+#### ❓ Will the model be optimized using a loss function, or using the objective functions — based on what is decided to be efficient?
+
+**Answer:**
+
+:::
+
+## Gradient-Based vs. Gradient-Free Methods
+
+Methods can be categorized as gradient-based or gradient-free. Gradient-based methods use differentiable optimization mappings to backpropagate through the optimization process, while gradient-free methods optimize directly for minimal regret.
+
+::: {.vocab-card}
+#### Vocabulary
+
+- **Backpropagate:**
+
+- **Minimal regret:**
+:::
+
+::: {.qa-card}
+#### ❓ How does backpropagating through optimization work?
+
+**Answer:**
+
+:::
+
+Another method that can be used is meta-optimization, in which an outer optimization loop is added to a Predict+Optimize pipeline.
+
+::: {.qa-card}
+#### ❓ Which models will be used?
+
+**Answer:**
+
+:::
+
+## The CityLearn Challenge
+
+All of the previous concepts were applied in the **CityLearn Challenge**, which aims to optimize building energy use by scheduling flexible loads and batteries. While the initial editions were designed specifically for reinforcement learning (RL), the newest editions also incorporate optimization methods, such as Model Predictive Control (MPC) configurations with Mixed Integer Programming (MIP) and Mixed Integer Linear Programming (MILP).
+
+::: {.vocab-card}
+#### Vocabulary
+
+- **RL (Reinforcement Learning):**
+
+- **MPC (Model Predictive Control):**
+
+- **MILP (Mixed Integer Linear Programming):**
+:::
+
+## The IEEE-CIS Technical Challenge
+
+All of these concepts inspired the competition we will discuss: the **IEEE-CIS Technical Challenge on Predict+Optimize for Renewable Energy Scheduling**. The goal of the challenge was to provide a relevant real-world dataset and optimization benchmark problem, along with strong baseline solutions, to establish a state of the art in the area for the research community.
+
+The main problem originates from the **Monash Net Zero Initiative**, which involves a campus-wide microgrid equipped with rooftop solar photovoltaic installations and battery storage. This system operates across the entire university campus, with the goal of achieving net-zero emissions by 2030. The university's objectives are to:
+
+1. Maximize self-consumption of electricity.
+2. Participate in energy demand response programs.
+3. Keep track of electricity price and yearly peak load tariffs to manage costs.
+
+### Initial Data
+
+1. Energy consumption data
+2. Solar production data
+3. Weather data (ERA5)
+4. Weather data (BOM)
+5. Electricity price data
+
+## Forecasting
+
+During phase 1 of the competition, participants were expected to predict the power demand of the 6 buildings and the power production of the 6 arrays of solar panels over 15-minute intervals for each day. The actual energy demand of each building and the power production of each array of solar panels were then released. In phase 2, participants were expected to provide the 15-minute energy demand and production forecasts for the same buildings and solar panels for the 30 days of November 2022.
+
+For this section, we are going to analyze the 1st place and 7th place solutions.
+
+### 1st Solution
+
+### 7th Solution
+
+### 1st Solution vs 7th Solution
+
+
+## Optimization
+
+The main problem was to create a timetable for a set of activities over the coming month, across the set of 6 buildings, with the objective of minimizing the total electricity cost.
+
+Each building was specified by a number of large and small rooms available. Solar production attributable to each building varied between scenarios by assigning one of the six solar time series to the building in each instance.
+
+Activities were specified by the number of rooms required, whether those rooms were large or small, the duration of the activity, the energy load of that activity, and whether it was recurrent or one-off. The battery specifications were matched to be close to the actual scale and performance of two batteries currently in the Monash microgrid. Each battery was characterized by its capacity, maximum charge/discharge power, and round-trip efficiency.
+
+The objective function vector consisted of:
+
+1. The wholesale energy cost of all energy imported.
+2. A peak load demand charge.
+3. The additional profit of scheduled once-off activities.
+
+For this section, we are going to analyze the 1st place and 7th place solutions.
+
+### 1st Solution
+
+### 7th Solution
+
+### 1st Solution vs 7th Solution
