@@ -365,6 +365,41 @@ Let $C$ be a cone and let $R_C$ be as defined above. Then the following statemen
 
 ## 1.5 Classification of Multicriteria Optimization Problems
 
+By the choice of an order /preceq on R^p, we can funally define the meaning of "min" in the problem formulation 
+
+$$
+"min"_{x \in X} f(x) = "min" _{x \in X} (f_{1}(x), \cots, f_p(x))
+$$
+
+The different interpretation of "min" pertaining to differente orders are the foundations of a classification of multicirteria optimization problems, 
+With the multiple objective functions we can evaluate objective value vectos (f_1(x), \dots, f_p(x)). However, we have seen thar these vectirs y=f(x), x\in X, are nor alwsys compared in the objective space R^p directly
+
+The objective function vectors are mapped from R^p to an ordered space, where the comparusions are made using the order relation /preceq. This mapping is called the **model map**.
+
+In other words, wheren we mapped the objective function vectors from R^p to an orderes space we are having comparasions being made by an order relation \preceq, where it is compose by:
+
+-the feasible set X
+- the objective function vector f=(f_1, \dots, f_p): X -> R^p
+- the objective space R^p
+-the ordered set (R^p,\preceq)
+- the model map 
+
+Feasible set, objective vector $f$, and objective space are the dara of the MOP- The model map provides the link between objective space ans ordered set, in which, the meaning of the minimization os defined. 
+With this three things we can now define and descirbe a multicriteria optimization problem. (X, f, R^)/\delta/(R^p,\preceq)
+
+Definition. 1.23 A feasioble solution x^* \in X is called an optimical solution of a multicriteria optimization(X, f, R^)/\delta/(R^p,\preceq), if there is no x \in X, s \not\eq such that \delta(f(x)) \preceq \delta(f(x^*))
+
+For an optimal solution x^*, \delta(f(x^*)) is called an **optimal value** of the MOP. The **set of optimal solutions** is denoted **Opt((X, f, R^)/\delta/(R^p,\preceq))** The **set optimal values** is **Val((X, f, R^)/\delta/(R^p,\preceq))**
+
+Definition 1.26 A multicriteria optimization class (MO class) is the set of all MOPs with the same model map and ordered set and is denoted by 
+
+$$
+\dot/\delta/(R^p, \preceq)
+$$
+
+For instance \dot/\delta/(R^p, \preceq), will denote the class of all MOPs, where optimality is understood inthe sense of efficiency.
+
+Definition 
 ## 1.6 Notes
 
 ## Exercises
