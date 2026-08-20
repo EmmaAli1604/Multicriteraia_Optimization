@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Emma Alicia Jimenez Sanchez">
+<meta name="dcterms.date" content="2026-08-20">
 
-<title>iee_competition_paper – Multicriteria Optimization</title>
+<title>Predict + Optimize in Renewable Energy Scheduling – Multicriteria Optimization</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d5382f61a7c05c0e60b360404eaa31c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Predict + Optimize in Renewable Energy Scheduling</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -202,17 +204,186 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#predict-optimize" id="toc-predict-optimize" class="nav-link" data-scroll-target="#predict-optimize">Predict + Optimize</a></li>
+  <li><a href="#gradient-based-vs.-gradient-free-methods" id="toc-gradient-based-vs.-gradient-free-methods" class="nav-link" data-scroll-target="#gradient-based-vs.-gradient-free-methods">Gradient-Based vs.&nbsp;Gradient-Free Methods</a></li>
+  <li><a href="#the-citylearn-challenge" id="toc-the-citylearn-challenge" class="nav-link" data-scroll-target="#the-citylearn-challenge">The CityLearn Challenge</a></li>
+  <li><a href="#the-ieee-cis-technical-challenge" id="toc-the-ieee-cis-technical-challenge" class="nav-link" data-scroll-target="#the-ieee-cis-technical-challenge">The IEEE-CIS Technical Challenge</a>
+  <ul class="collapse">
+  <li><a href="#initial-data" id="toc-initial-data" class="nav-link" data-scroll-target="#initial-data">Initial Data</a></li>
+  </ul></li>
+  <li><a href="#forecasting" id="toc-forecasting" class="nav-link" data-scroll-target="#forecasting">Forecasting</a>
+  <ul class="collapse">
+  <li><a href="#st-solution" id="toc-st-solution" class="nav-link" data-scroll-target="#st-solution">1st Solution</a></li>
+  <li><a href="#th-solution" id="toc-th-solution" class="nav-link" data-scroll-target="#th-solution">7th Solution</a></li>
+  <li><a href="#st-solution-vs-7th-solution" id="toc-st-solution-vs-7th-solution" class="nav-link" data-scroll-target="#st-solution-vs-7th-solution">1st Solution vs 7th Solution</a></li>
+  </ul></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a>
+  <ul class="collapse">
+  <li><a href="#st-solution-1" id="toc-st-solution-1" class="nav-link" data-scroll-target="#st-solution-1">1st Solution</a></li>
+  <li><a href="#th-solution-1" id="toc-th-solution-1" class="nav-link" data-scroll-target="#th-solution-1">7th Solution</a></li>
+  <li><a href="#st-solution-vs-7th-solution-1" id="toc-st-solution-vs-7th-solution-1" class="nav-link" data-scroll-target="#st-solution-vs-7th-solution-1">1st Solution vs 7th Solution</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Predict + Optimize in Renewable Energy Scheduling</h1>
+<p class="subtitle lead">Internship Report — Literature Context</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Emma Alicia Jimenez Sanchez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 20, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>To further analyze the subject of Smart Predict+Optimize in the context of inventory management, we need to look at a replicable use case for our problem. Exploring the IEEE competition on Predict+Optimize will give us the correct context.</p>
+<p>Optimization problems that must be solved over an unknown future are at the core of many complex real-world operations — supply chaining, inventory management, and staffing rosters, among others. In other words, this applies to everything that involves predicting uncertainty while pursuing multiple objectives. In particular, for this use case, it is important to optimize the solution in light of the global transition to reduce CO₂ emissions.</p>
+<p>Renewable energy production is characterized by variability over time, which means it correlates closely with time-series optimization. Demand needs to be predicted and scheduled to make the best use of available supply, with energy storage systems (such as batteries) scheduled optimally to cover shortfalls — all based on unknown future production and demand.</p>
+<p>One way to address this uncertainty is through robust optimization or stochastic optimization, using probabilistic forecasts as inputs instead of point forecasts.</p>
+<p>Forecasting is often a precursor to optimization, which typically pursues objectives such as minimizing costs, maximizing renewable energy use, or ensuring energy system stability.</p>
+<p>Having accurate forecasting is crucial, because it provides the necessary inputs for the optimization model. Without it, the optimization process may rely on incorrect or incomplete information.</p>
+</section>
+<section id="predict-optimize" class="level2">
+<h2 class="anchored" data-anchor-id="predict-optimize">Predict + Optimize</h2>
+<p>Now that we have some context on the importance of accurate forecasting and its optimization, it is time to introduce a new concept: <strong>Predict+Optimize</strong>, where forecasting and optimization are not treated as isolated tasks, but their interaction is taken into account.</p>
+<p>Using this approach, forecasts are chosen and evaluated based on their contribution to the actual downstream cost of the optimization problem, in preference to arbitrary forecast measures such as:</p>
+<section id="forecast-measures" class="level4 vocab-card">
+<h4 class="anchored" data-anchor-id="forecast-measures">Forecast Measures</h4>
+<ul>
+<li><p><strong>Mean Square Error (MAE):</strong></p></li>
+<li><p><strong>Continuous Ranked Probability Score (CRPS):</strong></p></li>
+</ul>
+</section>
+<p>Another approach is the direct optimization of the forecasting model using a decision-focused loss function.</p>
+<p>This is how the concept will be applied in the internship report: the problem is first framed as an inventory optimization problem, and the forecasting component is optimized based on that framing.</p>
+<section id="will-the-model-be-optimized-using-a-loss-function-or-using-the-objective-functions-based-on-what-is-decided-to-be-efficient" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="will-the-model-be-optimized-using-a-loss-function-or-using-the-objective-functions-based-on-what-is-decided-to-be-efficient">❓ Will the model be optimized using a loss function, or using the objective functions — based on what is decided to be efficient?</h4>
+<p><strong>Answer:</strong></p>
+</section>
+</section>
+<section id="gradient-based-vs.-gradient-free-methods" class="level2">
+<h2 class="anchored" data-anchor-id="gradient-based-vs.-gradient-free-methods">Gradient-Based vs.&nbsp;Gradient-Free Methods</h2>
+<p>Methods can be categorized as gradient-based or gradient-free. Gradient-based methods use differentiable optimization mappings to backpropagate through the optimization process, while gradient-free methods optimize directly for minimal regret.</p>
+<section id="vocabulary" class="level4 vocab-card">
+<h4 class="anchored" data-anchor-id="vocabulary">Vocabulary</h4>
+<ul>
+<li><p><strong>Backpropagate:</strong></p></li>
+<li><p><strong>Minimal regret:</strong></p></li>
+</ul>
+</section>
+<section id="how-does-backpropagating-through-optimization-work" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="how-does-backpropagating-through-optimization-work">❓ How does backpropagating through optimization work?</h4>
+<p><strong>Answer:</strong></p>
+</section>
+<p>Another method that can be used is meta-optimization, in which an outer optimization loop is added to a Predict+Optimize pipeline.</p>
+<section id="which-models-will-be-used" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="which-models-will-be-used">❓ Which models will be used?</h4>
+<p><strong>Answer:</strong></p>
+</section>
+</section>
+<section id="the-citylearn-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-citylearn-challenge">The CityLearn Challenge</h2>
+<p>All of the previous concepts were applied in the <strong>CityLearn Challenge</strong>, which aims to optimize building energy use by scheduling flexible loads and batteries. While the initial editions were designed specifically for reinforcement learning (RL), the newest editions also incorporate optimization methods, such as Model Predictive Control (MPC) configurations with Mixed Integer Programming (MIP) and Mixed Integer Linear Programming (MILP).</p>
+<section id="vocabulary-1" class="level4 vocab-card">
+<h4 class="anchored" data-anchor-id="vocabulary-1">Vocabulary</h4>
+<ul>
+<li><p><strong>RL (Reinforcement Learning):</strong></p></li>
+<li><p><strong>MPC (Model Predictive Control):</strong></p></li>
+<li><p><strong>MILP (Mixed Integer Linear Programming):</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="the-ieee-cis-technical-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="the-ieee-cis-technical-challenge">The IEEE-CIS Technical Challenge</h2>
+<p>All of these concepts inspired the competition we will discuss: the <strong>IEEE-CIS Technical Challenge on Predict+Optimize for Renewable Energy Scheduling</strong>. The goal of the challenge was to provide a relevant real-world dataset and optimization benchmark problem, along with strong baseline solutions, to establish a state of the art in the area for the research community.</p>
+<p>The main problem originates from the <strong>Monash Net Zero Initiative</strong>, which involves a campus-wide microgrid equipped with rooftop solar photovoltaic installations and battery storage. This system operates across the entire university campus, with the goal of achieving net-zero emissions by 2030. The university’s objectives are to:</p>
+<ol type="1">
+<li>Maximize self-consumption of electricity.</li>
+<li>Participate in energy demand response programs.</li>
+<li>Keep track of electricity price and yearly peak load tariffs to manage costs.</li>
+</ol>
+<section id="initial-data" class="level3">
+<h3 class="anchored" data-anchor-id="initial-data">Initial Data</h3>
+<ol type="1">
+<li>Energy consumption data</li>
+<li>Solar production data</li>
+<li>Weather data (ERA5)</li>
+<li>Weather data (BOM)</li>
+<li>Electricity price data</li>
+</ol>
+</section>
+</section>
+<section id="forecasting" class="level2">
+<h2 class="anchored" data-anchor-id="forecasting">Forecasting</h2>
+<p>During phase 1 of the competition, participants were expected to predict the power demand of the 6 buildings and the power production of the 6 arrays of solar panels over 15-minute intervals for each day. The actual energy demand of each building and the power production of each array of solar panels were then released. In phase 2, participants were expected to provide the 15-minute energy demand and production forecasts for the same buildings and solar panels for the 30 days of November 2022.</p>
+<p>For this section, we are going to analyze the 1st place and 7th place solutions.</p>
+<section id="st-solution" class="level3">
+<h3 class="anchored" data-anchor-id="st-solution">1st Solution</h3>
+</section>
+<section id="th-solution" class="level3">
+<h3 class="anchored" data-anchor-id="th-solution">7th Solution</h3>
+</section>
+<section id="st-solution-vs-7th-solution" class="level3">
+<h3 class="anchored" data-anchor-id="st-solution-vs-7th-solution">1st Solution vs 7th Solution</h3>
+</section>
+</section>
+<section id="optimization" class="level2">
+<h2 class="anchored" data-anchor-id="optimization">Optimization</h2>
+<p>The main problem was to create a timetable for a set of activities over the coming month, across the set of 6 buildings, with the objective of minimizing the total electricity cost.</p>
+<p>Each building was specified by a number of large and small rooms available. Solar production attributable to each building varied between scenarios by assigning one of the six solar time series to the building in each instance.</p>
+<p>Activities were specified by the number of rooms required, whether those rooms were large or small, the duration of the activity, the energy load of that activity, and whether it was recurrent or one-off. The battery specifications were matched to be close to the actual scale and performance of two batteries currently in the Monash microgrid. Each battery was characterized by its capacity, maximum charge/discharge power, and round-trip efficiency.</p>
+<p>The objective function vector consisted of:</p>
+<ol type="1">
+<li>The wholesale energy cost of all energy imported.</li>
+<li>A peak load demand charge.</li>
+<li>The additional profit of scheduled once-off activities.</li>
+</ol>
+<p>For this section, we are going to analyze the 1st place and 7th place solutions.</p>
+<section id="st-solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="st-solution-1">1st Solution</h3>
+</section>
+<section id="th-solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="th-solution-1">7th Solution</h3>
+</section>
+<section id="st-solution-vs-7th-solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="st-solution-vs-7th-solution-1">1st Solution vs 7th Solution</h3>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -288,7 +459,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/EmmaAli1604\.github\.io\/Multicriteraia_Optimization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

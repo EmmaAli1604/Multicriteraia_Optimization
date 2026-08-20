@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emma Alicia Jimenez Sanchez">
-<meta name="dcterms.date" content="2026-08-19">
+<meta name="dcterms.date" content="2026-08-20">
 
 <title>Chapter 1 – Multicriteria Optimization</title>
 <style>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b6bba03593350fbfa1d957a0afa7d96a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e1d00e4dfc48dbef53bffa4c834e136a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -285,7 +285,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 19, 2026</p>
+      <p class="date">August 20, 2026</p>
     </div>
   </div>
   
@@ -552,22 +552,36 @@ window.Quarto = {
 </section>
 <section id="classification-of-multicriteria-optimization-problems" class="level2">
 <h2 class="anchored" data-anchor-id="classification-of-multicriteria-optimization-problems">1.5 Classification of Multicriteria Optimization Problems</h2>
-<p>By the choice of an order /preceq on R^p, we can funally define the meaning of “min” in the problem formulation</p>
+<p>By the choice of an order <span class="math inline">\(\preceq\)</span> on <span class="math inline">\(\mathbb{R}^p\)</span>, we can finally define the meaning of “min” in the problem formulation:</p>
 <p><span class="math display">\[
-"min"_{x \in X} f(x) = "min" _{x \in X} (f_{1}(x), \cots, f_p(x))
+\text{"min"}_{x \in X} f(x) = \text{"min"}_{x \in X} \big(f_1(x), \dots, f_p(x)\big)
 \]</span></p>
-<p>The different interpretation of “min” pertaining to differente orders are the foundations of a classification of multicirteria optimization problems, With the multiple objective functions we can evaluate objective value vectos (f_1(x), , f_p(x)). However, we have seen thar these vectirs y=f(x), xX, are nor alwsys compared in the objective space R^p directly</p>
-<p>The objective function vectors are mapped from R^p to an ordered space, where the comparusions are made using the order relation /preceq. This mapping is called the <strong>model map</strong>.</p>
-<p>In other words, wheren we mapped the objective function vectors from R^p to an orderes space we are having comparasions being made by an order relation , where it is compose by:</p>
-<p>-the feasible set X - the objective function vector f=(f_1, , f_p): X -&gt; R^p - the objective space R^p -the ordered set (R^p,) - the model map</p>
-<p>Feasible set, objective vector <span class="math inline">\(f\)</span>, and objective space are the dara of the MOP- The model map provides the link between objective space ans ordered set, in which, the meaning of the minimization os defined. With this three things we can now define and descirbe a multicriteria optimization problem. (X, f, R<sup>)//(R</sup>p,)</p>
-<p>Definition. 1.23 A feasioble solution x^* X is called an optimical solution of a multicriteria optimization(X, f, R<sup>)//(R</sup>p,), if there is no x X, s such that (f(x)) (f(x^*))</p>
-<p>For an optimal solution x^<em>, (f(x^</em>)) is called an <strong>optimal value</strong> of the MOP. The <strong>set of optimal solutions</strong> is denoted <strong>Opt((X, f, R<sup>)//(R</sup>p,))</strong> The <strong>set optimal values</strong> is <strong>Val((X, f, R<sup>)//(R</sup>p,))</strong></p>
-<p>Definition 1.26 A multicriteria optimization class (MO class) is the set of all MOPs with the same model map and ordered set and is denoted by</p>
+<p>The different interpretations of “min,” pertaining to different orders, are the foundations of a classification of multicriteria optimization problems.</p>
+<p>With the multiple objective functions, we can evaluate objective value vectors <span class="math inline">\((f_1(x), \dots, f_p(x))\)</span>. However, we have seen that these vectors <span class="math inline">\(y = f(x)\)</span>, <span class="math inline">\(x \in X\)</span>, are not always compared in the objective space <span class="math inline">\(\mathbb{R}^p\)</span> directly.</p>
+<p>The objective function vectors are mapped from <span class="math inline">\(\mathbb{R}^p\)</span> to an ordered space, where comparisons are made using the order relation <span class="math inline">\(\preceq\)</span>. This mapping is called the <strong>model map</strong>.</p>
+<p>In other words, when we map the objective function vectors from <span class="math inline">\(\mathbb{R}^p\)</span> to an ordered space, comparisons are made through an order relation <span class="math inline">\(\preceq\)</span>, and the setup is composed of:</p>
+<ul>
+<li>the feasible set <span class="math inline">\(X\)</span></li>
+<li>the objective function vector <span class="math inline">\(f = (f_1, \dots, f_p): X \to \mathbb{R}^p\)</span></li>
+<li>the objective space <span class="math inline">\(\mathbb{R}^p\)</span></li>
+<li>the ordered set <span class="math inline">\((\mathbb{R}^p, \preceq)\)</span></li>
+<li>the model map <span class="math inline">\(\delta\)</span></li>
+</ul>
+<p>Feasible set, objective vector <span class="math inline">\(f\)</span>, and objective space are the data of the MOP. The model map provides the link between objective space and ordered set, in which the meaning of minimization is defined.</p>
+<p>With these elements we can now define and describe a multicriteria optimization problem:</p>
 <p><span class="math display">\[
-\dot/\delta/(R^p, \preceq)
+\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)
 \]</span></p>
-<p>For instance //(R^p, ), will denote the class of all MOPs, where optimality is understood inthe sense of efficiency.</p>
+<p><strong>Definition 1.23.</strong> A feasible solution <span class="math inline">\(x^* \in X\)</span> is called an <strong>optimal solution</strong> of a multicriteria optimization problem <span class="math inline">\(\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)\)</span> if there is no <span class="math inline">\(x \in X\)</span>, <span class="math inline">\(x \neq x^*\)</span>, such that:</p>
+<p><span class="math display">\[
+\delta(f(x)) \preceq \delta(f(x^*))
+\]</span></p>
+<p>For an optimal solution <span class="math inline">\(x^*\)</span>, <span class="math inline">\(\delta(f(x^*))\)</span> is called an <strong>optimal value</strong> of the MOP. The <strong>set of optimal solutions</strong> is denoted <span class="math inline">\(\text{Opt}\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)\)</span>. The <strong>set of optimal values</strong> is denoted <span class="math inline">\(\text{Val}\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)\)</span>.</p>
+<p><strong>Definition 1.26.</strong> A <strong>multicriteria optimization class (MO class)</strong> is the set of all MOPs with the same model map and ordered set, and is denoted by:</p>
+<p><span class="math display">\[
+\big[\delta, (\mathbb{R}^p, \preceq)\big]
+\]</span></p>
+<p>For instance, <span class="math inline">\(\big[\delta, (\mathbb{R}^p, \preceq)\big]\)</span> will denote the class of all MOPs where optimality is understood in the sense of efficiency.</p>
 <p>Definition ## 1.6 Notes</p>
 </section>
 <section id="exercises" class="level2">
@@ -650,7 +664,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/EmmaAli1604\.github\.io\/Multicriteraia_Optimization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
