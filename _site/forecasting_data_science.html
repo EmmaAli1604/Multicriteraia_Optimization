@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Emma Alicia Jimenez Sanchez">
-<meta name="dcterms.date" content="2026-08-19">
 
-<title>Chapter 2 – Multicriteria Optimization</title>
+<title>forecasting_data_science – Multicriteria Optimization</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,23 +29,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b6bba03593350fbfa1d957a0afa7d96a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -87,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Multicriteria Optimization</span>
     </a>
   </div>
@@ -98,15 +96,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../iee_competition_paper.html"> 
+    <a class="nav-link" href="./iee_competition_paper.html"> 
 <span class="menu-text">Paper IEEE</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../fprcasting_data_science.qmd"> 
+    <a class="nav-link" href="./fprcasting_data_science.qmd"> 
 <span class="menu-text">Forecasting Data Science</span></a>
   </li>  
 </ul>
@@ -120,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulo-01/capitulo-01.html">Capítulos</a></li><li class="breadcrumb-item"><a href="../capitulo-02/capitulo-02.html">Chapter 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Multicriteria Optimization</span></a>
   </div>
 </li>
@@ -157,43 +155,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-01/capitulo-01.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo-01/capitulo-01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-02/capitulo-02.html" class="sidebar-item-text sidebar-link active">
+  <a href="./capitulo-02/capitulo-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-03/capitulo-03.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo-03/capitulo-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-04/capitulo-04.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo-04/capitulo-04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-05/capitulo-05.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo-05/capitulo-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-06/capitulo-06.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo-06/capitulo-06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chapter 6</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../capitulo-07/capitulo-07.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo-07/capitulo-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Capítulo 1</span></a>
   </div>
 </li>
@@ -204,67 +202,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#efficent-solutions-and-nondominated-points" id="toc-efficent-solutions-and-nondominated-points" class="nav-link active" data-scroll-target="#efficent-solutions-and-nondominated-points">2.1 Efficent Solutions and Nondominated Points</a></li>
-  <li><a href="#bounds-on-the-nondominated-set" id="toc-bounds-on-the-nondominated-set" class="nav-link" data-scroll-target="#bounds-on-the-nondominated-set">2.2 Bounds on the Nondominated Set</a></li>
-  <li><a href="#weakly-and-strictly-efficent-solutions" id="toc-weakly-and-strictly-efficent-solutions" class="nav-link" data-scroll-target="#weakly-and-strictly-efficent-solutions">2.3 Weakly and Strictly Efficent Solutions</a></li>
-  <li><a href="#proper-efficency-and-proper-nondominance" id="toc-proper-efficency-and-proper-nondominance" class="nav-link" data-scroll-target="#proper-efficency-and-proper-nondominance">2.4 Proper Efficency and Proper Nondominance</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulo-01/capitulo-01.html">Capítulos</a></li><li class="breadcrumb-item"><a href="../capitulo-02/capitulo-02.html">Chapter 2</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Chapter 2</h1>
-<p class="subtitle lead">Efficency and Nondominance</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Emma Alicia Jimenez Sanchez </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 19, 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
 
-
-<section id="efficent-solutions-and-nondominated-points" class="level2">
-<h2 class="anchored" data-anchor-id="efficent-solutions-and-nondominated-points">2.1 Efficent Solutions and Nondominated Points</h2>
-</section>
-<section id="bounds-on-the-nondominated-set" class="level2">
-<h2 class="anchored" data-anchor-id="bounds-on-the-nondominated-set">2.2 Bounds on the Nondominated Set</h2>
-</section>
-<section id="weakly-and-strictly-efficent-solutions" class="level2">
-<h2 class="anchored" data-anchor-id="weakly-and-strictly-efficent-solutions">2.3 Weakly and Strictly Efficent Solutions</h2>
-</section>
-<section id="proper-efficency-and-proper-nondominance" class="level2">
-<h2 class="anchored" data-anchor-id="proper-efficency-and-proper-nondominance">2.4 Proper Efficency and Proper Nondominance</h2>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

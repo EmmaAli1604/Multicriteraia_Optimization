@@ -365,39 +365,49 @@ Let $C$ be a cone and let $R_C$ be as defined above. Then the following statemen
 
 ## 1.5 Classification of Multicriteria Optimization Problems
 
-By the choice of an order /preceq on R^p, we can funally define the meaning of "min" in the problem formulation 
+By the choice of an order $\preceq$ on $\mathbb{R}^p$, we can finally define the meaning of "min" in the problem formulation:
 
 $$
-"min"_{x \in X} f(x) = "min" _{x \in X} (f_{1}(x), \cots, f_p(x))
+\text{"min"}_{x \in X} f(x) = \text{"min"}_{x \in X} \big(f_1(x), \dots, f_p(x)\big)
 $$
 
-The different interpretation of "min" pertaining to differente orders are the foundations of a classification of multicirteria optimization problems, 
-With the multiple objective functions we can evaluate objective value vectos (f_1(x), \dots, f_p(x)). However, we have seen thar these vectirs y=f(x), x\in X, are nor alwsys compared in the objective space R^p directly
+The different interpretations of "min," pertaining to different orders, are the foundations of a classification of multicriteria optimization problems.
 
-The objective function vectors are mapped from R^p to an ordered space, where the comparusions are made using the order relation /preceq. This mapping is called the **model map**.
+With the multiple objective functions, we can evaluate objective value vectors $(f_1(x), \dots, f_p(x))$. However, we have seen that these vectors $y = f(x)$, $x \in X$, are not always compared in the objective space $\mathbb{R}^p$ directly.
 
-In other words, wheren we mapped the objective function vectors from R^p to an orderes space we are having comparasions being made by an order relation \preceq, where it is compose by:
+The objective function vectors are mapped from $\mathbb{R}^p$ to an ordered space, where comparisons are made using the order relation $\preceq$. This mapping is called the **model map**.
 
--the feasible set X
-- the objective function vector f=(f_1, \dots, f_p): X -> R^p
-- the objective space R^p
--the ordered set (R^p,\preceq)
-- the model map 
+In other words, when we map the objective function vectors from $\mathbb{R}^p$ to an ordered space, comparisons are made through an order relation $\preceq$, and the setup is composed of:
 
-Feasible set, objective vector $f$, and objective space are the dara of the MOP- The model map provides the link between objective space ans ordered set, in which, the meaning of the minimization os defined. 
-With this three things we can now define and descirbe a multicriteria optimization problem. (X, f, R^)/\delta/(R^p,\preceq)
+- the feasible set $X$
+- the objective function vector $f = (f_1, \dots, f_p): X \to \mathbb{R}^p$
+- the objective space $\mathbb{R}^p$
+- the ordered set $(\mathbb{R}^p, \preceq)$
+- the model map $\delta$
 
-Definition. 1.23 A feasioble solution x^* \in X is called an optimical solution of a multicriteria optimization(X, f, R^)/\delta/(R^p,\preceq), if there is no x \in X, s \not\eq such that \delta(f(x)) \preceq \delta(f(x^*))
+Feasible set, objective vector $f$, and objective space are the data of the MOP. The model map provides the link between objective space and ordered set, in which the meaning of minimization is defined.
 
-For an optimal solution x^*, \delta(f(x^*)) is called an **optimal value** of the MOP. The **set of optimal solutions** is denoted **Opt((X, f, R^)/\delta/(R^p,\preceq))** The **set optimal values** is **Val((X, f, R^)/\delta/(R^p,\preceq))**
-
-Definition 1.26 A multicriteria optimization class (MO class) is the set of all MOPs with the same model map and ordered set and is denoted by 
+With these elements we can now define and describe a multicriteria optimization problem:
 
 $$
-\dot/\delta/(R^p, \preceq)
+\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)
 $$
 
-For instance \dot/\delta/(R^p, \preceq), will denote the class of all MOPs, where optimality is understood inthe sense of efficiency.
+**Definition 1.23.** A feasible solution $x^* \in X$ is called an **optimal solution** of a multicriteria optimization problem $\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)$ if there is no $x \in X$, $x \neq x^*$, such that:
+
+$$
+\delta(f(x)) \preceq \delta(f(x^*))
+$$
+
+For an optimal solution $x^*$, $\delta(f(x^*))$ is called an **optimal value** of the MOP. The **set of optimal solutions** is denoted $\text{Opt}\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)$. The **set of optimal values** is denoted $\text{Val}\big(X, f, \mathbb{R}^p, \delta, (\mathbb{R}^p, \preceq)\big)$.
+
+**Definition 1.26.** A **multicriteria optimization class (MO class)** is the set of all MOPs with the same model map and ordered set, and is denoted by:
+
+$$
+\big[\delta, (\mathbb{R}^p, \preceq)\big]
+$$
+
+For instance, $\big[\delta, (\mathbb{R}^p, \preceq)\big]$ will denote the class of all MOPs where optimality is understood in the sense of efficiency.
 
 Definition 
 ## 1.6 Notes

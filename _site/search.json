@@ -130,18 +130,6 @@
     ]
   },
   {
-    "objectID": "capitulo-02/capitulo-02.html#efficent-solutions-and-nondominated-points",
-    "href": "capitulo-02/capitulo-02.html#efficent-solutions-and-nondominated-points",
-    "title": "Chapter 2",
-    "section": "2.1 Efficent Solutions and Nondominated Points",
-    "text": "2.1 Efficent Solutions and Nondominated Points",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
-    ]
-  },
-  {
     "objectID": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
     "href": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
     "title": "Chapter 2",
@@ -175,6 +163,18 @@
       "Inicio",
       "Capítulos",
       "Chapter 2"
+    ]
+  },
+  {
+    "objectID": "capitulo-01/capitulo-01.html",
+    "href": "capitulo-01/capitulo-01.html",
+    "title": "Chapter 1",
+    "section": "",
+    "text": "The solution of a decision problem consists in choosing a “good” or “best” alternative from a set of alternatives, assuming the existence of certain criteria according to which the quality of the alternatives is measured.\nDecision problems with a countable number of alternatives are called discrete; others are called continuous.\nDiscrete problems have finitely many alternatives that are explicitly known, and the goal is to select the most preferred one. Multicriteria decision aid deals with such problems.",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 1"
     ]
   },
   {
@@ -242,19 +242,7 @@
     "href": "capitulo-01/capitulo-01.html#classification-of-multicriteria-optimization-problems",
     "title": "Chapter 1",
     "section": "1.5 Classification of Multicriteria Optimization Problems",
-    "text": "1.5 Classification of Multicriteria Optimization Problems",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 1"
-    ]
-  },
-  {
-    "objectID": "capitulo-01/capitulo-01.html#notes",
-    "href": "capitulo-01/capitulo-01.html#notes",
-    "title": "Chapter 1",
-    "section": "1.6 Notes",
-    "text": "1.6 Notes",
+    "text": "1.5 Classification of Multicriteria Optimization Problems\nBy the choice of an order /preceq on R^p, we can funally define the meaning of “min” in the problem formulation\n\\[\n\"min\"_{x \\in X} f(x) = \"min\" _{x \\in X} (f_{1}(x), \\cots, f_p(x))\n\\]\nThe different interpretation of “min” pertaining to differente orders are the foundations of a classification of multicirteria optimization problems, With the multiple objective functions we can evaluate objective value vectos (f_1(x), , f_p(x)). However, we have seen thar these vectirs y=f(x), xX, are nor alwsys compared in the objective space R^p directly\nThe objective function vectors are mapped from R^p to an ordered space, where the comparusions are made using the order relation /preceq. This mapping is called the model map.\nIn other words, wheren we mapped the objective function vectors from R^p to an orderes space we are having comparasions being made by an order relation , where it is compose by:\n-the feasible set X - the objective function vector f=(f_1, , f_p): X -&gt; R^p - the objective space R^p -the ordered set (R^p,) - the model map\nFeasible set, objective vector \\(f\\), and objective space are the dara of the MOP- The model map provides the link between objective space ans ordered set, in which, the meaning of the minimization os defined. With this three things we can now define and descirbe a multicriteria optimization problem. (X, f, R)//(Rp,)\nDefinition. 1.23 A feasioble solution x^* X is called an optimical solution of a multicriteria optimization(X, f, R)//(Rp,), if there is no x X, s such that (f(x)) (f(x^*))\nFor an optimal solution x^, (f(x^)) is called an optimal value of the MOP. The set of optimal solutions is denoted Opt((X, f, R)//(Rp,)) The set optimal values is Val((X, f, R)//(Rp,))\nDefinition 1.26 A multicriteria optimization class (MO class) is the set of all MOPs with the same model map and ordered set and is denoted by\n\\[\n\\dot/\\delta/(R^p, \\preceq)\n\\]\nFor instance //(R^p, ), will denote the class of all MOPs, where optimality is understood inthe sense of efficiency.\nDefinition ## 1.6 Notes",
     "crumbs": [
       "Inicio",
       "Capítulos",
@@ -415,18 +403,6 @@
       "Inicio",
       "Capítulos",
       "Capítulo 1"
-    ]
-  },
-  {
-    "objectID": "capitulo-01/capitulo-01.html",
-    "href": "capitulo-01/capitulo-01.html",
-    "title": "Chapter 1",
-    "section": "",
-    "text": "The solution of a decision problem consists in choosing a “good” or “best” alternative from a set of alternatives, assuming the existence of certain criteria according to which the quality of the alternatives is measured.\nDecision problems with a countable number of alternatives are called discrete; others are called continuous.\nDiscrete problems have finitely many alternatives that are explicitly known, and the goal is to select the most preferred one. Multicriteria decision aid deals with such problems.",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 1"
     ]
   }
 ]
