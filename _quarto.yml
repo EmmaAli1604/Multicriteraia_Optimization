@@ -10,7 +10,7 @@ website:
         text: Inicio
       - href: iee_competition_paper.qmd
         text: Paper IEEE
-      - href: fprcasting_data_science.qmd
+      - href: forcasting_data_science.qmd
         text: Forecasting Data Science
   sidebar:
     style: docked
