@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emma Alicia Jimenez Sanchez">
-<meta name="dcterms.date" content="2026-08-18">
+<meta name="dcterms.date" content="2026-08-20">
 
 <title>Chapter 1 – Multicriteria Optimization</title>
 <style>
@@ -130,6 +130,14 @@ window.Quarto = {
     <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../iee_competition_paper.html"> 
+<span class="menu-text">Paper IEEE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../fprcasting_data_science.qmd"> 
+<span class="menu-text">Forecasting Data Science</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -250,7 +258,6 @@ window.Quarto = {
   <li><a href="#cones" id="toc-cones" class="nav-link" data-scroll-target="#cones">Cones</a></li>
   </ul></li>
   <li><a href="#classification-of-multicriteria-optimization-problems" id="toc-classification-of-multicriteria-optimization-problems" class="nav-link" data-scroll-target="#classification-of-multicriteria-optimization-problems">1.5 Classification of Multicriteria Optimization Problems</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">1.6 Notes</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </nav>
@@ -278,7 +285,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 18, 2026</p>
+      <p class="date">August 20, 2026</p>
     </div>
   </div>
   
@@ -545,9 +552,23 @@ window.Quarto = {
 </section>
 <section id="classification-of-multicriteria-optimization-problems" class="level2">
 <h2 class="anchored" data-anchor-id="classification-of-multicriteria-optimization-problems">1.5 Classification of Multicriteria Optimization Problems</h2>
-</section>
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">1.6 Notes</h2>
+<p>By the choice of an order /preceq on R^p, we can funally define the meaning of “min” in the problem formulation</p>
+<p><span class="math display">\[
+"min"_{x \in X} f(x) = "min" _{x \in X} (f_{1}(x), \cots, f_p(x))
+\]</span></p>
+<p>The different interpretation of “min” pertaining to differente orders are the foundations of a classification of multicirteria optimization problems, With the multiple objective functions we can evaluate objective value vectos (f_1(x), , f_p(x)). However, we have seen thar these vectirs y=f(x), xX, are nor alwsys compared in the objective space R^p directly</p>
+<p>The objective function vectors are mapped from R^p to an ordered space, where the comparusions are made using the order relation /preceq. This mapping is called the <strong>model map</strong>.</p>
+<p>In other words, wheren we mapped the objective function vectors from R^p to an orderes space we are having comparasions being made by an order relation , where it is compose by:</p>
+<p>-the feasible set X - the objective function vector f=(f_1, , f_p): X -&gt; R^p - the objective space R^p -the ordered set (R^p,) - the model map</p>
+<p>Feasible set, objective vector <span class="math inline">\(f\)</span>, and objective space are the dara of the MOP- The model map provides the link between objective space ans ordered set, in which, the meaning of the minimization os defined. With this three things we can now define and descirbe a multicriteria optimization problem. (X, f, R<sup>)//(R</sup>p,)</p>
+<p>Definition. 1.23 A feasioble solution x^* X is called an optimical solution of a multicriteria optimization(X, f, R<sup>)//(R</sup>p,), if there is no x X, s such that (f(x)) (f(x^*))</p>
+<p>For an optimal solution x^<em>, (f(x^</em>)) is called an <strong>optimal value</strong> of the MOP. The <strong>set of optimal solutions</strong> is denoted <strong>Opt((X, f, R<sup>)//(R</sup>p,))</strong> The <strong>set optimal values</strong> is <strong>Val((X, f, R<sup>)//(R</sup>p,))</strong></p>
+<p>Definition 1.26 A multicriteria optimization class (MO class) is the set of all MOPs with the same model map and ordered set and is denoted by</p>
+<p><span class="math display">\[
+\dot/\delta/(R^p, \preceq)
+\]</span></p>
+<p>For instance //(R^p, ), will denote the class of all MOPs, where optimality is understood inthe sense of efficiency.</p>
+<p>Definition ## 1.6 Notes</p>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
