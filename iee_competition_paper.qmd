@@ -108,14 +108,21 @@ The main problem originates from the **Monash Net Zero Initiative**, which invol
 
 During phase 1 of the competition, participants were expected to predict the power demand of the 6 buildings and the power production of the 6 arrays of solar panels over 15-minute intervals for each day. The actual energy demand of each building and the power production of each array of solar panels were then released. In phase 2, participants were expected to provide the 15-minute energy demand and production forecasts for the same buildings and solar panels for the 30 days of November 2022.
 
-For this section, we are going to analyze the 1st place and 7th place solutions.
+For this section, we are going to analyze the 1st place and 7th place forecasting solutions.
 
-### 1st Solution
+### 1st Place Solution
 
-### 7th Solution
+The best solution implemented an ensemble of LightGBM, a tree-based algorithm, using calendar features and dynamic features (lags, mean, standard deviation), combined with ensembling models that use daily and weekly weather features.
 
-### 1st Solution vs 7th Solution
+Their choice of training-set size per series, combined with the optimization approach, produced a methodology that is highly generalizable and robust. They explored several cases and searched for their impact — for example, the time series during COVID provided a great deal of data, making the forecasting horizon diverse across multiple scenarios. On the other hand, the correlation between solar power and buildings' demand power is highly dependent on weather conditions; the hourly weather data provided by the competition organizers was used for this purpose.
 
+Various statistical models — ARIMA, Random Forest (RF), LightGBM, and SVR — were developed and used for the building predictive models. Although RF and SVR were fairly accurate and competitive with LightGBM, LightGBM was ultimately chosen since it is significantly faster and returns reliable forecasts.
+
+The hyperparameters were also optimized, and the most significant features for each model were selected.
+
+::: {.callout-note}
+*(Falta la descripción de la 7ª solución de forecasting — el texto original menciona comparaciones con "la última solución" más adelante, pero no incluye su contenido aquí. Agrégalo cuando lo tengas.)*
+:::
 
 ## Optimization
 
@@ -131,10 +138,118 @@ The objective function vector consisted of:
 2. A peak load demand charge.
 3. The additional profit of scheduled once-off activities.
 
-For this section, we are going to analyze the 1st place and 7th place solutions.
+More generally, the constraints imposed by the problem include:
 
-### 1st Solution
+- Room availability
+- Precedence constraints
+- Battery constraints
+- Activity timing
+- Energy balance
 
-### 7th Solution
+Conceptually, the activity scheduling problem thus defined is an instance of the **Resource-Constrained Project Scheduling Problem (RCPSP)**.
 
-### 1st Solution vs 7th Solution
+### What is the RCPSP?
+
+It is a well-known problem in operations research, where the goal is to schedule a set of project activities within given resource constraints and time windows. Because recurring activities with precedence must be scheduled on different days, the problem also exhibits **minimum time lags** — the shortest allowable time between the start of one activity and the start of another — as well as **maximum time lags**.
+
+For this section, we are going to analyze the 1st place and 7th place optimization solutions.
+
+### 1st Place Solution
+
+In the optimization component, the team reviewed multiple scenarios using **sample average approximation**, which minimizes the average cost across multiple scenarios. This approach appears reproducible and solid, giving it strong points in terms of robustness.
+
+The objective function for minimizing the total energy cost includes the square of the maximum load. They used a linearization technique to linearize the objective function and developed a mixed-integer linear program that captures all the constraints of the problem.
+
+::: {.qa-card}
+#### ❓ What is a constraint problem?
+
+**Answer:**
+
+:::
+
+One of the input parameters of the optimization model is the **net base load**, which is the difference between the total predicted base load of the buildings and the generation of their solar panels, per time slot.
+
+Their optimization proposal does not rely on a single forecast. Decision-making under uncertainty plays a crucial role in managing energy systems and must be addressed properly. Their proposal was to treat the **net base loads** at each time step as a random variable within the optimization model, using the so-called **Sample Average Approximation Method (SAAM)** — an optimization approach that minimizes the average cost of a solution across multiple scenarios (predictive outcomes), rather than relying on just one.
+
+::: {.qa-card}
+#### ❓ Questions on this section
+
+**How many forecast models do we need in the project?**
+
+**Answer:**
+
+---
+
+**Can SAAM be applied to my project?**
+
+**Answer:**
+
+:::
+
+However, the 1st place solution focuses only on "local" models for forecasting, meaning models that work on each series separately. The choice of algorithm is not clearly motivated, and some manual, unclear steps remain in the forecasting methodology. As with the 7th place solution, a shared disadvantage is that forecasting does not appear to have received as much attention as in other solutions, which may influence the results. The optimization search is somewhat greedy, showing a degradation in the solver's solution when using "fix and optimize" compared to a more exhaustive approach.
+
+## How to Evaluate the Forecast?
+
+The metric used in this case was **MASE** (Mean Absolute Scaled Error), a commonly used error measure for forecast evaluation, defined as follows:
+
+$$
+\text{MASE} = \frac{1}{h} \sum_{k=1}^{h} \frac{|Y_k - F_k|}{\dfrac{1}{M-S} \displaystyle\sum_{t=S+1}^{M} |Y_t - Y_{t-S}|}
+$$
+
+where $M$ is the number of instances in the training series, $S$ is the length of the seasonal cycle of the dataset, $h$ is the forecast horizon, $F_k$ are the forecasts, and $Y_k$ are the actual values. MASE was calculated individually for each time series and averaged for the final error used to rank the submissions.
+
+## How to Evaluate the Optimization?
+
+For the optimization evaluation, two components must be taken into account:
+
+### Feasibility
+
+The schedules were required to assign a time period to every recurring activity while adhering to the following constraints, for every activity $a_i$:
+
+- The starting period must fall within the week containing the first Monday of the month.
+- Start time $\geq 9$.
+- Finish time (start time + activity duration) $\leq 17$.
+- Activity precedence must be observed.
+- Every battery schedule must respect the battery's capacity.
+
+### Objective
+
+For a feasible schedule, the objective value is computed in terms of the cost of the schedule. The main objective is to minimize the scheduling cost using an objective function $O$.
+
+## Conclusions
+
+By establishing a well-defined, reproducible problem with a realistic setting, the challenge organizers hoped to encourage further methodological developments and comparative evaluations in this domain. For a decision-making project, the main goals are therefore that it must be **reproducible** and based on a **realistic setting**.
+
+This competition demonstrated that forecasting and optimization cannot be treated as two isolated components; however, the nuanced interplay between probabilistic forecasting and optimization-based decision-making still requires deeper exploration.
+
+The winning team used stochastic optimization to minimize the expected cost across a number of forecast scenarios.
+
+In the end, learning how to correctly implement Predict+Optimize algorithms helps us understand how to make better decisions based on forecasting results. Generally, for predicting time series, the most common models are tree-based algorithms such as Random Forest, LightGBM, or XGBoost. Based on the probabilistic results from these models, stochastic algorithms are then used for the multicriteria optimization and the objective function vectors — helping us learn how to select the most efficient solution from the solution set, based on the different objectives being pursued.
+Developing multi-objective optimization frameworks to balance cost minimization with other objectives, could provide more holistic and sustainable solutions.
+::: {.qa-card}
+#### ❓ What is stochastic optimization?
+
+**Answer:**
+
+:::
+
+::: {.qa-card}
+#### ❓ Forecasting accuracy vs. optimization costs — what is the trade-off?
+
+**Answer:**
+
+:::
+
+::: {.qa-card}
+#### ❓ Gradient-based
+
+**Answer:**
+
+:::
+
+::: {.qa-card}
+#### ❓ Gradient-free
+
+**Answer:**
+
+:::
