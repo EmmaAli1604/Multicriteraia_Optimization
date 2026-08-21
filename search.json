@@ -1,74 +1,168 @@
 [
   {
-    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
-    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
-    "title": "Chapter 3",
-    "section": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
-    "text": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Multicriteria Optimization",
+    "section": "",
+    "text": "Decision makers in many areas, from industry to engineering and the social sector, face an increasing need to consider multiple, conflicting objectives in their decision processes. In many cases these real world decision problems can be formulated as multicriteria mathematical optimization models. The solution of such models requires appropriate techniques to compute so called efficient, or Pareto optimal, or compromise solutions that - unlike traditional mathematical programming methods - take the contradictory nature of the criteria into account. This book provides the necessary mathematical foundation of multicriteria optimization to solve nonlinear, linear and combinatorial problems with multiple criteria. Motivational examples illustrate the use of multicriteria optimization in practice. Numerous illustrations and exercises as well as an extensive bibliography are provided.\nTo help others undestand better the content of the book and summarized it so it can help to develop differente projects making approchable the knowledge of decision making.",
     "crumbs": [
       "Inicio",
-      "Capítulos",
-      "Chapter 3"
+      "Multicriteria Optimization"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
-    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
-    "title": "Chapter 3",
-    "section": "3.2 Weighted Sum Scalarization and Proper Efficency",
-    "text": "3.2 Weighted Sum Scalarization and Proper Efficency",
+    "objectID": "index.html#chapters",
+    "href": "index.html#chapters",
+    "title": "Multicriteria Optimization",
+    "section": "Chapters",
+    "text": "Chapters\n\n\n01\nChapter 1\nIntroduction\nSee presentation →\n\n\n02\nChapter 2\nEfficency and Nondominance\nSee presentation →\n\n\n03\nChapter 3\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n04\nChapter 4\nScalarization Techniques\nSee presentation →\n\n\n05\nChapter 5\nThe Other Definitions of Optimatlity - Nonscalarizing Methos\nSee presentation →\n\n\n06\nChapter 6\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n07\nChapter 7\nA Multiobjective Simple Method\nSee presentation →",
     "crumbs": [
       "Inicio",
-      "Capítulos",
-      "Chapter 3"
+      "Multicriteria Optimization"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#optimality-conditions",
-    "href": "capitulo-03/capitulo-03.html#optimality-conditions",
-    "title": "Chapter 3",
-    "section": "3.3 Optimality Conditions",
-    "text": "3.3 Optimality Conditions",
+    "objectID": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
+    "href": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
+    "title": "Chapter 6",
+    "section": "6.1 Reference Point and Achievement Scalarizing Methods",
+    "text": "6.1 Reference Point and Achievement Scalarizing Methods",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
-    "href": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
-    "title": "Chapter 3",
-    "section": "3.4 Connectedness of Efficent and Nondominated Set",
-    "text": "3.4 Connectedness of Efficent and Nondominated Set",
+    "objectID": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
+    "href": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
+    "title": "Chapter 6",
+    "section": "6.2 Interactive and Adaptive Weighted Sum Variants",
+    "text": "6.2 Interactive and Adaptive Weighted Sum Variants",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#notes",
-    "href": "capitulo-03/capitulo-03.html#notes",
-    "title": "Chapter 3",
-    "section": "3.5 Notes",
-    "text": "3.5 Notes",
+    "objectID": "capitulo-06/capitulo-06.html#numerical-considerations",
+    "href": "capitulo-06/capitulo-06.html#numerical-considerations",
+    "title": "Chapter 6",
+    "section": "6.3 Numerical Considerations",
+    "text": "6.3 Numerical Considerations",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#exercises",
-    "href": "capitulo-03/capitulo-03.html#exercises",
-    "title": "Chapter 3",
+    "objectID": "capitulo-06/capitulo-06.html#notes",
+    "href": "capitulo-06/capitulo-06.html#notes",
+    "title": "Chapter 6",
+    "section": "6.4 Notes",
+    "text": "6.4 Notes",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 6"
+    ]
+  },
+  {
+    "objectID": "capitulo-06/capitulo-06.html#exercises",
+    "href": "capitulo-06/capitulo-06.html#exercises",
+    "title": "Chapter 6",
     "section": "Exercises",
     "text": "Exercises",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#scalarization-functionals",
+    "href": "capitulo-04/capitulo-04.html#scalarization-functionals",
+    "title": "Chapter 4",
+    "section": "4.1 Scalarization Functionals",
+    "text": "4.1 Scalarization Functionals",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
+    "href": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
+    "title": "Chapter 4",
+    "section": "4.2 Geometrical Properties of Scalarization Functionals",
+    "text": "4.2 Geometrical Properties of Scalarization Functionals",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
+    "href": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
+    "title": "Chapter 4",
+    "section": "4.3 Gerstewitz Functional in Multicriteria Optimization",
+    "text": "4.3 Gerstewitz Functional in Multicriteria Optimization",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
+    "href": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
+    "title": "Chapter 4",
+    "section": "4.4 Scalarization in Terms of Set-Valued Objectives",
+    "text": "4.4 Scalarization in Terms of Set-Valued Objectives",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
+    "href": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
+    "title": "Chapter 2",
+    "section": "2.2 Bounds on the Nondominated Set",
+    "text": "2.2 Bounds on the Nondominated Set",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 2"
+    ]
+  },
+  {
+    "objectID": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
+    "href": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
+    "title": "Chapter 2",
+    "section": "2.3 Weakly and Strictly Efficent Solutions",
+    "text": "2.3 Weakly and Strictly Efficent Solutions",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 2"
+    ]
+  },
+  {
+    "objectID": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
+    "href": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
+    "title": "Chapter 2",
+    "section": "2.4 Proper Efficency and Proper Nondominance",
+    "text": "2.4 Proper Efficency and Proper Nondominance",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 2"
     ]
   },
   {
@@ -168,123 +262,75 @@
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
-    "href": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
-    "title": "Chapter 6",
-    "section": "6.1 Reference Point and Achievement Scalarizing Methods",
-    "text": "6.1 Reference Point and Achievement Scalarizing Methods",
+    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
+    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
+    "title": "Chapter 3",
+    "section": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
+    "text": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
-    "href": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
-    "title": "Chapter 6",
-    "section": "6.2 Interactive and Adaptive Weighted Sum Variants",
-    "text": "6.2 Interactive and Adaptive Weighted Sum Variants",
+    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
+    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
+    "title": "Chapter 3",
+    "section": "3.2 Weighted Sum Scalarization and Proper Efficency",
+    "text": "3.2 Weighted Sum Scalarization and Proper Efficency",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#numerical-considerations",
-    "href": "capitulo-06/capitulo-06.html#numerical-considerations",
-    "title": "Chapter 6",
-    "section": "6.3 Numerical Considerations",
-    "text": "6.3 Numerical Considerations",
+    "objectID": "capitulo-03/capitulo-03.html#optimality-conditions",
+    "href": "capitulo-03/capitulo-03.html#optimality-conditions",
+    "title": "Chapter 3",
+    "section": "3.3 Optimality Conditions",
+    "text": "3.3 Optimality Conditions",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#notes",
-    "href": "capitulo-06/capitulo-06.html#notes",
-    "title": "Chapter 6",
-    "section": "6.4 Notes",
-    "text": "6.4 Notes",
+    "objectID": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
+    "href": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
+    "title": "Chapter 3",
+    "section": "3.4 Connectedness of Efficent and Nondominated Set",
+    "text": "3.4 Connectedness of Efficent and Nondominated Set",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#exercises",
-    "href": "capitulo-06/capitulo-06.html#exercises",
-    "title": "Chapter 6",
+    "objectID": "capitulo-03/capitulo-03.html#notes",
+    "href": "capitulo-03/capitulo-03.html#notes",
+    "title": "Chapter 3",
+    "section": "3.5 Notes",
+    "text": "3.5 Notes",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 3"
+    ]
+  },
+  {
+    "objectID": "capitulo-03/capitulo-03.html#exercises",
+    "href": "capitulo-03/capitulo-03.html#exercises",
+    "title": "Chapter 3",
     "section": "Exercises",
     "text": "Exercises",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
-    ]
-  },
-  {
-    "objectID": "capitulo-07/capitulo-07.html#introducción",
-    "href": "capitulo-07/capitulo-07.html#introducción",
-    "title": "Capítulo 1",
-    "section": "Introducción",
-    "text": "Introducción\nResumen breve de qué trata este capítulo del libro.",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Capítulo 1"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#scalarization-functionals",
-    "href": "capitulo-04/capitulo-04.html#scalarization-functionals",
-    "title": "Chapter 4",
-    "section": "4.1 Scalarization Functionals",
-    "text": "4.1 Scalarization Functionals",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
-    "href": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
-    "title": "Chapter 4",
-    "section": "4.2 Geometrical Properties of Scalarization Functionals",
-    "text": "4.2 Geometrical Properties of Scalarization Functionals",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
-    "href": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
-    "title": "Chapter 4",
-    "section": "4.3 Gerstewitz Functional in Multicriteria Optimization",
-    "text": "4.3 Gerstewitz Functional in Multicriteria Optimization",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
-    "href": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
-    "title": "Chapter 4",
-    "section": "4.4 Scalarization in Terms of Set-Valued Objectives",
-    "text": "4.4 Scalarization in Terms of Set-Valued Objectives",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
+      "Chapter 3"
     ]
   },
   {
@@ -345,6 +391,18 @@
       "Inicio",
       "Capítulos",
       "Chapter 5"
+    ]
+  },
+  {
+    "objectID": "capitulo-07/capitulo-07.html#introducción",
+    "href": "capitulo-07/capitulo-07.html#introducción",
+    "title": "Capítulo 1",
+    "section": "Introducción",
+    "text": "Introducción\nResumen breve de qué trata este capítulo del libro.",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Capítulo 1"
     ]
   },
   {
@@ -423,63 +481,5 @@
     "title": "Predict + Optimize in Renewable Energy Scheduling",
     "section": "Conclusions",
     "text": "Conclusions\nBy establishing a well-defined, reproducible problem with a realistic setting, the challenge organizers hoped to encourage further methodological developments and comparative evaluations in this domain. For a decision-making project, the main goals are therefore that it must be reproducible and based on a realistic setting.\nThis competition demonstrated that forecasting and optimization cannot be treated as two isolated components; however, the nuanced interplay between probabilistic forecasting and optimization-based decision-making still requires deeper exploration.\nThe winning team used stochastic optimization to minimize the expected cost across a number of forecast scenarios.\nIn the end, learning how to correctly implement Predict+Optimize algorithms helps us understand how to make better decisions based on forecasting results. Generally, for predicting time series, the most common models are tree-based algorithms such as Random Forest, LightGBM, or XGBoost. Based on the probabilistic results from these models, stochastic algorithms are then used for the multicriteria optimization and the objective function vectors — helping us learn how to select the most efficient solution from the solution set, based on the different objectives being pursued. Developing multi-objective optimization frameworks to balance cost minimization with other objectives, could provide more holistic and sustainable solutions. ::: {.qa-card} #### ❓ What is stochastic optimization?\nAnswer:\n:::\n\n❓ Forecasting accuracy vs. optimization costs — what is the trade-off?\nAnswer:\n\n\n❓ Gradient-based\nAnswer:\n\n\n❓ Gradient-free\nAnswer:"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Multicriteria Optimization",
-    "section": "",
-    "text": "Decision makers in many areas, from industry to engineering and the social sector, face an increasing need to consider multiple, conflicting objectives in their decision processes. In many cases these real world decision problems can be formulated as multicriteria mathematical optimization models. The solution of such models requires appropriate techniques to compute so called efficient, or Pareto optimal, or compromise solutions that - unlike traditional mathematical programming methods - take the contradictory nature of the criteria into account. This book provides the necessary mathematical foundation of multicriteria optimization to solve nonlinear, linear and combinatorial problems with multiple criteria. Motivational examples illustrate the use of multicriteria optimization in practice. Numerous illustrations and exercises as well as an extensive bibliography are provided.\nTo help others undestand better the content of the book and summarized it so it can help to develop differente projects making approchable the knowledge of decision making.",
-    "crumbs": [
-      "Inicio",
-      "Multicriteria Optimization"
-    ]
-  },
-  {
-    "objectID": "index.html#chapters",
-    "href": "index.html#chapters",
-    "title": "Multicriteria Optimization",
-    "section": "Chapters",
-    "text": "Chapters\n\n\n01\nChapter 1\nIntroduction\nSee presentation →\n\n\n02\nChapter 2\nEfficency and Nondominance\nSee presentation →\n\n\n03\nChapter 3\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n04\nChapter 4\nScalarization Techniques\nSee presentation →\n\n\n05\nChapter 5\nThe Other Definitions of Optimatlity - Nonscalarizing Methos\nSee presentation →\n\n\n06\nChapter 6\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n07\nChapter 7\nA Multiobjective Simple Method\nSee presentation →",
-    "crumbs": [
-      "Inicio",
-      "Multicriteria Optimization"
-    ]
-  },
-  {
-    "objectID": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
-    "href": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
-    "title": "Chapter 2",
-    "section": "2.2 Bounds on the Nondominated Set",
-    "text": "2.2 Bounds on the Nondominated Set",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
-    ]
-  },
-  {
-    "objectID": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
-    "href": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
-    "title": "Chapter 2",
-    "section": "2.3 Weakly and Strictly Efficent Solutions",
-    "text": "2.3 Weakly and Strictly Efficent Solutions",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
-    ]
-  },
-  {
-    "objectID": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
-    "href": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
-    "title": "Chapter 2",
-    "section": "2.4 Proper Efficency and Proper Nondominance",
-    "text": "2.4 Proper Efficency and Proper Nondominance",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
-    ]
   }
 ]
