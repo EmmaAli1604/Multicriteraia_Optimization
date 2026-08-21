@@ -120,10 +120,6 @@ Various statistical models — ARIMA, Random Forest (RF), LightGBM, and SVR — 
 
 The hyperparameters were also optimized, and the most significant features for each model were selected.
 
-::: {.callout-note}
-*(Falta la descripción de la 7ª solución de forecasting — el texto original menciona comparaciones con "la última solución" más adelante, pero no incluye su contenido aquí. Agrégalo cuando lo tengas.)*
-:::
-
 ## Optimization
 
 The main problem was to create a timetable for a set of activities over the coming month, across the set of 6 buildings, with the objective of minimizing the total electricity cost.

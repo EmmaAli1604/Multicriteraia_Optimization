@@ -5,7 +5,18 @@ author: "Emma Alicia Jimenez Sanchez"
 date: today
 ---
 
+Here in this chapter covers the fundamentals of efficency adn nondominance. It explains the following concepts:
+- Nondominanted points
+- Efficent Solutions
+- Several Existence results for Nondominated Points
+- Weakly and Strictly Efficient Solutions
+- Geometric Characterization
+
 ## 2.1 Efficent Solutions and Nondominated Points
+Definition 2.1 A feasible x^{^} \in X is called efficient or **Pareto Optimizal** if there is no other x \in X such that f(x) f(x) <= f(x^{^}). If x^{^} is effient, f(x^{^}) is called **nondominated points**. 
+If x^1,x^2 \in X and f(x^1)<= f(x^2) we say x^{1} dominates x^2 and f(x^1) dominated f(x^2). The **set of all efficient solutions** x^{^} \in X is denoted  X_E and called **efficient set**. The set of all **nondominated points ** y^{^}=f(x^{^}) \in Y, where x^{^} \in X_E , is denoted Y_N and called the **nondominated set**
+
+
 
 ## 2.2 Bounds on the Nondominated Set
 
