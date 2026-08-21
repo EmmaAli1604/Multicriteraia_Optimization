@@ -1,168 +1,74 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Multicriteria Optimization",
-    "section": "",
-    "text": "Decision makers in many areas, from industry to engineering and the social sector, face an increasing need to consider multiple, conflicting objectives in their decision processes. In many cases these real world decision problems can be formulated as multicriteria mathematical optimization models. The solution of such models requires appropriate techniques to compute so called efficient, or Pareto optimal, or compromise solutions that - unlike traditional mathematical programming methods - take the contradictory nature of the criteria into account. This book provides the necessary mathematical foundation of multicriteria optimization to solve nonlinear, linear and combinatorial problems with multiple criteria. Motivational examples illustrate the use of multicriteria optimization in practice. Numerous illustrations and exercises as well as an extensive bibliography are provided.\nTo help others undestand better the content of the book and summarized it so it can help to develop differente projects making approchable the knowledge of decision making.",
-    "crumbs": [
-      "Inicio",
-      "Multicriteria Optimization"
-    ]
-  },
-  {
-    "objectID": "index.html#chapters",
-    "href": "index.html#chapters",
-    "title": "Multicriteria Optimization",
-    "section": "Chapters",
-    "text": "Chapters\n\n\n01\nChapter 1\nIntroduction\nSee presentation →\n\n\n02\nChapter 2\nEfficency and Nondominance\nSee presentation →\n\n\n03\nChapter 3\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n04\nChapter 4\nScalarization Techniques\nSee presentation →\n\n\n05\nChapter 5\nThe Other Definitions of Optimatlity - Nonscalarizing Methos\nSee presentation →\n\n\n06\nChapter 6\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n07\nChapter 7\nA Multiobjective Simple Method\nSee presentation →",
-    "crumbs": [
-      "Inicio",
-      "Multicriteria Optimization"
-    ]
-  },
-  {
-    "objectID": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
-    "href": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
-    "title": "Chapter 6",
-    "section": "6.1 Reference Point and Achievement Scalarizing Methods",
-    "text": "6.1 Reference Point and Achievement Scalarizing Methods",
+    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
+    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
+    "title": "Chapter 3",
+    "section": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
+    "text": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
-    "href": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
-    "title": "Chapter 6",
-    "section": "6.2 Interactive and Adaptive Weighted Sum Variants",
-    "text": "6.2 Interactive and Adaptive Weighted Sum Variants",
+    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
+    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
+    "title": "Chapter 3",
+    "section": "3.2 Weighted Sum Scalarization and Proper Efficency",
+    "text": "3.2 Weighted Sum Scalarization and Proper Efficency",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#numerical-considerations",
-    "href": "capitulo-06/capitulo-06.html#numerical-considerations",
-    "title": "Chapter 6",
-    "section": "6.3 Numerical Considerations",
-    "text": "6.3 Numerical Considerations",
+    "objectID": "capitulo-03/capitulo-03.html#optimality-conditions",
+    "href": "capitulo-03/capitulo-03.html#optimality-conditions",
+    "title": "Chapter 3",
+    "section": "3.3 Optimality Conditions",
+    "text": "3.3 Optimality Conditions",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#notes",
-    "href": "capitulo-06/capitulo-06.html#notes",
-    "title": "Chapter 6",
-    "section": "6.4 Notes",
-    "text": "6.4 Notes",
+    "objectID": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
+    "href": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
+    "title": "Chapter 3",
+    "section": "3.4 Connectedness of Efficent and Nondominated Set",
+    "text": "3.4 Connectedness of Efficent and Nondominated Set",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
+      "Chapter 3"
     ]
   },
   {
-    "objectID": "capitulo-06/capitulo-06.html#exercises",
-    "href": "capitulo-06/capitulo-06.html#exercises",
-    "title": "Chapter 6",
+    "objectID": "capitulo-03/capitulo-03.html#notes",
+    "href": "capitulo-03/capitulo-03.html#notes",
+    "title": "Chapter 3",
+    "section": "3.5 Notes",
+    "text": "3.5 Notes",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 3"
+    ]
+  },
+  {
+    "objectID": "capitulo-03/capitulo-03.html#exercises",
+    "href": "capitulo-03/capitulo-03.html#exercises",
+    "title": "Chapter 3",
     "section": "Exercises",
     "text": "Exercises",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 6"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#scalarization-functionals",
-    "href": "capitulo-04/capitulo-04.html#scalarization-functionals",
-    "title": "Chapter 4",
-    "section": "4.1 Scalarization Functionals",
-    "text": "4.1 Scalarization Functionals",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
-    "href": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
-    "title": "Chapter 4",
-    "section": "4.2 Geometrical Properties of Scalarization Functionals",
-    "text": "4.2 Geometrical Properties of Scalarization Functionals",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
-    "href": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
-    "title": "Chapter 4",
-    "section": "4.3 Gerstewitz Functional in Multicriteria Optimization",
-    "text": "4.3 Gerstewitz Functional in Multicriteria Optimization",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
-    "href": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
-    "title": "Chapter 4",
-    "section": "4.4 Scalarization in Terms of Set-Valued Objectives",
-    "text": "4.4 Scalarization in Terms of Set-Valued Objectives",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 4"
-    ]
-  },
-  {
-    "objectID": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
-    "href": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
-    "title": "Chapter 2",
-    "section": "2.2 Bounds on the Nondominated Set",
-    "text": "2.2 Bounds on the Nondominated Set",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
-    ]
-  },
-  {
-    "objectID": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
-    "href": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
-    "title": "Chapter 2",
-    "section": "2.3 Weakly and Strictly Efficent Solutions",
-    "text": "2.3 Weakly and Strictly Efficent Solutions",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
-    ]
-  },
-  {
-    "objectID": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
-    "href": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
-    "title": "Chapter 2",
-    "section": "2.4 Proper Efficency and Proper Nondominance",
-    "text": "2.4 Proper Efficency and Proper Nondominance",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 2"
+      "Chapter 3"
     ]
   },
   {
@@ -262,75 +168,123 @@
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
-    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-weak-efficency",
-    "title": "Chapter 3",
-    "section": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
-    "text": "3.1 Weighted Sum Scalarization and (Weak) Efficency",
+    "objectID": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
+    "href": "capitulo-06/capitulo-06.html#reference-point-and-achievement-scalarizing-methods",
+    "title": "Chapter 6",
+    "section": "6.1 Reference Point and Achievement Scalarizing Methods",
+    "text": "6.1 Reference Point and Achievement Scalarizing Methods",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
-    "href": "capitulo-03/capitulo-03.html#weighted-sum-scalarization-and-proper-efficency",
-    "title": "Chapter 3",
-    "section": "3.2 Weighted Sum Scalarization and Proper Efficency",
-    "text": "3.2 Weighted Sum Scalarization and Proper Efficency",
+    "objectID": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
+    "href": "capitulo-06/capitulo-06.html#interactive-and-adaptive-weighted-sum-variants",
+    "title": "Chapter 6",
+    "section": "6.2 Interactive and Adaptive Weighted Sum Variants",
+    "text": "6.2 Interactive and Adaptive Weighted Sum Variants",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#optimality-conditions",
-    "href": "capitulo-03/capitulo-03.html#optimality-conditions",
-    "title": "Chapter 3",
-    "section": "3.3 Optimality Conditions",
-    "text": "3.3 Optimality Conditions",
+    "objectID": "capitulo-06/capitulo-06.html#numerical-considerations",
+    "href": "capitulo-06/capitulo-06.html#numerical-considerations",
+    "title": "Chapter 6",
+    "section": "6.3 Numerical Considerations",
+    "text": "6.3 Numerical Considerations",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
-    "href": "capitulo-03/capitulo-03.html#connectedness-of-efficent-and-nondominated-set",
-    "title": "Chapter 3",
-    "section": "3.4 Connectedness of Efficent and Nondominated Set",
-    "text": "3.4 Connectedness of Efficent and Nondominated Set",
+    "objectID": "capitulo-06/capitulo-06.html#notes",
+    "href": "capitulo-06/capitulo-06.html#notes",
+    "title": "Chapter 6",
+    "section": "6.4 Notes",
+    "text": "6.4 Notes",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
     ]
   },
   {
-    "objectID": "capitulo-03/capitulo-03.html#notes",
-    "href": "capitulo-03/capitulo-03.html#notes",
-    "title": "Chapter 3",
-    "section": "3.5 Notes",
-    "text": "3.5 Notes",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Chapter 3"
-    ]
-  },
-  {
-    "objectID": "capitulo-03/capitulo-03.html#exercises",
-    "href": "capitulo-03/capitulo-03.html#exercises",
-    "title": "Chapter 3",
+    "objectID": "capitulo-06/capitulo-06.html#exercises",
+    "href": "capitulo-06/capitulo-06.html#exercises",
+    "title": "Chapter 6",
     "section": "Exercises",
     "text": "Exercises",
     "crumbs": [
       "Inicio",
       "Capítulos",
-      "Chapter 3"
+      "Chapter 6"
+    ]
+  },
+  {
+    "objectID": "capitulo-07/capitulo-07.html#introducción",
+    "href": "capitulo-07/capitulo-07.html#introducción",
+    "title": "Capítulo 1",
+    "section": "Introducción",
+    "text": "Introducción\nResumen breve de qué trata este capítulo del libro.",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Capítulo 1"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#scalarization-functionals",
+    "href": "capitulo-04/capitulo-04.html#scalarization-functionals",
+    "title": "Chapter 4",
+    "section": "4.1 Scalarization Functionals",
+    "text": "4.1 Scalarization Functionals",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
+    "href": "capitulo-04/capitulo-04.html#geometrical-properties-of-scalarization-functionals",
+    "title": "Chapter 4",
+    "section": "4.2 Geometrical Properties of Scalarization Functionals",
+    "text": "4.2 Geometrical Properties of Scalarization Functionals",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
+    "href": "capitulo-04/capitulo-04.html#gerstewitz-functional-in-multicriteria-optimization",
+    "title": "Chapter 4",
+    "section": "4.3 Gerstewitz Functional in Multicriteria Optimization",
+    "text": "4.3 Gerstewitz Functional in Multicriteria Optimization",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
+    ]
+  },
+  {
+    "objectID": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
+    "href": "capitulo-04/capitulo-04.html#scalarization-in-terms-of-set-valued-objectives",
+    "title": "Chapter 4",
+    "section": "4.4 Scalarization in Terms of Set-Valued Objectives",
+    "text": "4.4 Scalarization in Terms of Set-Valued Objectives",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 4"
     ]
   },
   {
@@ -394,18 +348,6 @@
     ]
   },
   {
-    "objectID": "capitulo-07/capitulo-07.html#introducción",
-    "href": "capitulo-07/capitulo-07.html#introducción",
-    "title": "Capítulo 1",
-    "section": "Introducción",
-    "text": "Introducción\nResumen breve de qué trata este capítulo del libro.",
-    "crumbs": [
-      "Inicio",
-      "Capítulos",
-      "Capítulo 1"
-    ]
-  },
-  {
     "objectID": "iee_competition_paper.html",
     "href": "iee_competition_paper.html",
     "title": "Predict + Optimize in Renewable Energy Scheduling",
@@ -452,13 +394,92 @@
     "href": "iee_competition_paper.html#forecasting",
     "title": "Predict + Optimize in Renewable Energy Scheduling",
     "section": "Forecasting",
-    "text": "Forecasting\nDuring phase 1 of the competition, participants were expected to predict the power demand of the 6 buildings and the power production of the 6 arrays of solar panels over 15-minute intervals for each day. The actual energy demand of each building and the power production of each array of solar panels were then released. In phase 2, participants were expected to provide the 15-minute energy demand and production forecasts for the same buildings and solar panels for the 30 days of November 2022.\nFor this section, we are going to analyze the 1st place and 7th place solutions.\n\n1st Solution\n\n\n7th Solution\n\n\n1st Solution vs 7th Solution"
+    "text": "Forecasting\nDuring phase 1 of the competition, participants were expected to predict the power demand of the 6 buildings and the power production of the 6 arrays of solar panels over 15-minute intervals for each day. The actual energy demand of each building and the power production of each array of solar panels were then released. In phase 2, participants were expected to provide the 15-minute energy demand and production forecasts for the same buildings and solar panels for the 30 days of November 2022.\nFor this section, we are going to analyze the 1st place and 7th place forecasting solutions.\n\n1st Place Solution\nThe best solution implemented an ensemble of LightGBM, a tree-based algorithm, using calendar features and dynamic features (lags, mean, standard deviation), combined with ensembling models that use daily and weekly weather features.\nTheir choice of training-set size per series, combined with the optimization approach, produced a methodology that is highly generalizable and robust. They explored several cases and searched for their impact — for example, the time series during COVID provided a great deal of data, making the forecasting horizon diverse across multiple scenarios. On the other hand, the correlation between solar power and buildings’ demand power is highly dependent on weather conditions; the hourly weather data provided by the competition organizers was used for this purpose.\nVarious statistical models — ARIMA, Random Forest (RF), LightGBM, and SVR — were developed and used for the building predictive models. Although RF and SVR were fairly accurate and competitive with LightGBM, LightGBM was ultimately chosen since it is significantly faster and returns reliable forecasts.\nThe hyperparameters were also optimized, and the most significant features for each model were selected.\n\n\n\n\n\n\nNote\n\n\n\n(Falta la descripción de la 7ª solución de forecasting — el texto original menciona comparaciones con “la última solución” más adelante, pero no incluye su contenido aquí. Agrégalo cuando lo tengas.)"
   },
   {
     "objectID": "iee_competition_paper.html#optimization",
     "href": "iee_competition_paper.html#optimization",
     "title": "Predict + Optimize in Renewable Energy Scheduling",
     "section": "Optimization",
-    "text": "Optimization\nThe main problem was to create a timetable for a set of activities over the coming month, across the set of 6 buildings, with the objective of minimizing the total electricity cost.\nEach building was specified by a number of large and small rooms available. Solar production attributable to each building varied between scenarios by assigning one of the six solar time series to the building in each instance.\nActivities were specified by the number of rooms required, whether those rooms were large or small, the duration of the activity, the energy load of that activity, and whether it was recurrent or one-off. The battery specifications were matched to be close to the actual scale and performance of two batteries currently in the Monash microgrid. Each battery was characterized by its capacity, maximum charge/discharge power, and round-trip efficiency.\nThe objective function vector consisted of:\n\nThe wholesale energy cost of all energy imported.\nA peak load demand charge.\nThe additional profit of scheduled once-off activities.\n\nFor this section, we are going to analyze the 1st place and 7th place solutions.\n\n1st Solution\n\n\n7th Solution\n\n\n1st Solution vs 7th Solution"
+    "text": "Optimization\nThe main problem was to create a timetable for a set of activities over the coming month, across the set of 6 buildings, with the objective of minimizing the total electricity cost.\nEach building was specified by a number of large and small rooms available. Solar production attributable to each building varied between scenarios by assigning one of the six solar time series to the building in each instance.\nActivities were specified by the number of rooms required, whether those rooms were large or small, the duration of the activity, the energy load of that activity, and whether it was recurrent or one-off. The battery specifications were matched to be close to the actual scale and performance of two batteries currently in the Monash microgrid. Each battery was characterized by its capacity, maximum charge/discharge power, and round-trip efficiency.\nThe objective function vector consisted of:\n\nThe wholesale energy cost of all energy imported.\nA peak load demand charge.\nThe additional profit of scheduled once-off activities.\n\nMore generally, the constraints imposed by the problem include:\n\nRoom availability\nPrecedence constraints\nBattery constraints\nActivity timing\nEnergy balance\n\nConceptually, the activity scheduling problem thus defined is an instance of the Resource-Constrained Project Scheduling Problem (RCPSP).\n\nWhat is the RCPSP?\nIt is a well-known problem in operations research, where the goal is to schedule a set of project activities within given resource constraints and time windows. Because recurring activities with precedence must be scheduled on different days, the problem also exhibits minimum time lags — the shortest allowable time between the start of one activity and the start of another — as well as maximum time lags.\nFor this section, we are going to analyze the 1st place and 7th place optimization solutions.\n\n\n1st Place Solution\nIn the optimization component, the team reviewed multiple scenarios using sample average approximation, which minimizes the average cost across multiple scenarios. This approach appears reproducible and solid, giving it strong points in terms of robustness.\nThe objective function for minimizing the total energy cost includes the square of the maximum load. They used a linearization technique to linearize the objective function and developed a mixed-integer linear program that captures all the constraints of the problem.\n\n❓ What is a constraint problem?\nAnswer:\n\nOne of the input parameters of the optimization model is the net base load, which is the difference between the total predicted base load of the buildings and the generation of their solar panels, per time slot.\nTheir optimization proposal does not rely on a single forecast. Decision-making under uncertainty plays a crucial role in managing energy systems and must be addressed properly. Their proposal was to treat the net base loads at each time step as a random variable within the optimization model, using the so-called Sample Average Approximation Method (SAAM) — an optimization approach that minimizes the average cost of a solution across multiple scenarios (predictive outcomes), rather than relying on just one.\n\n❓ Questions on this section\nHow many forecast models do we need in the project?\nAnswer:\n\nCan SAAM be applied to my project?\nAnswer:\n\nHowever, the 1st place solution focuses only on “local” models for forecasting, meaning models that work on each series separately. The choice of algorithm is not clearly motivated, and some manual, unclear steps remain in the forecasting methodology. As with the 7th place solution, a shared disadvantage is that forecasting does not appear to have received as much attention as in other solutions, which may influence the results. The optimization search is somewhat greedy, showing a degradation in the solver’s solution when using “fix and optimize” compared to a more exhaustive approach."
+  },
+  {
+    "objectID": "iee_competition_paper.html#how-to-evaluate-the-forecast",
+    "href": "iee_competition_paper.html#how-to-evaluate-the-forecast",
+    "title": "Predict + Optimize in Renewable Energy Scheduling",
+    "section": "How to Evaluate the Forecast?",
+    "text": "How to Evaluate the Forecast?\nThe metric used in this case was MASE (Mean Absolute Scaled Error), a commonly used error measure for forecast evaluation, defined as follows:\n\\[\n\\text{MASE} = \\frac{1}{h} \\sum_{k=1}^{h} \\frac{|Y_k - F_k|}{\\dfrac{1}{M-S} \\displaystyle\\sum_{t=S+1}^{M} |Y_t - Y_{t-S}|}\n\\]\nwhere \\(M\\) is the number of instances in the training series, \\(S\\) is the length of the seasonal cycle of the dataset, \\(h\\) is the forecast horizon, \\(F_k\\) are the forecasts, and \\(Y_k\\) are the actual values. MASE was calculated individually for each time series and averaged for the final error used to rank the submissions."
+  },
+  {
+    "objectID": "iee_competition_paper.html#how-to-evaluate-the-optimization",
+    "href": "iee_competition_paper.html#how-to-evaluate-the-optimization",
+    "title": "Predict + Optimize in Renewable Energy Scheduling",
+    "section": "How to Evaluate the Optimization?",
+    "text": "How to Evaluate the Optimization?\nFor the optimization evaluation, two components must be taken into account:\n\nFeasibility\nThe schedules were required to assign a time period to every recurring activity while adhering to the following constraints, for every activity \\(a_i\\):\n\nThe starting period must fall within the week containing the first Monday of the month.\nStart time \\(\\geq 9\\).\nFinish time (start time + activity duration) \\(\\leq 17\\).\nActivity precedence must be observed.\nEvery battery schedule must respect the battery’s capacity.\n\n\n\nObjective\nFor a feasible schedule, the objective value is computed in terms of the cost of the schedule. The main objective is to minimize the scheduling cost using an objective function \\(O\\)."
+  },
+  {
+    "objectID": "iee_competition_paper.html#conclusions",
+    "href": "iee_competition_paper.html#conclusions",
+    "title": "Predict + Optimize in Renewable Energy Scheduling",
+    "section": "Conclusions",
+    "text": "Conclusions\nBy establishing a well-defined, reproducible problem with a realistic setting, the challenge organizers hoped to encourage further methodological developments and comparative evaluations in this domain. For a decision-making project, the main goals are therefore that it must be reproducible and based on a realistic setting.\nThis competition demonstrated that forecasting and optimization cannot be treated as two isolated components; however, the nuanced interplay between probabilistic forecasting and optimization-based decision-making still requires deeper exploration.\nThe winning team used stochastic optimization to minimize the expected cost across a number of forecast scenarios.\nIn the end, learning how to correctly implement Predict+Optimize algorithms helps us understand how to make better decisions based on forecasting results. Generally, for predicting time series, the most common models are tree-based algorithms such as Random Forest, LightGBM, or XGBoost. Based on the probabilistic results from these models, stochastic algorithms are then used for the multicriteria optimization and the objective function vectors — helping us learn how to select the most efficient solution from the solution set, based on the different objectives being pursued. Developing multi-objective optimization frameworks to balance cost minimization with other objectives, could provide more holistic and sustainable solutions. ::: {.qa-card} #### ❓ What is stochastic optimization?\nAnswer:\n:::\n\n❓ Forecasting accuracy vs. optimization costs — what is the trade-off?\nAnswer:\n\n\n❓ Gradient-based\nAnswer:\n\n\n❓ Gradient-free\nAnswer:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Multicriteria Optimization",
+    "section": "",
+    "text": "Decision makers in many areas, from industry to engineering and the social sector, face an increasing need to consider multiple, conflicting objectives in their decision processes. In many cases these real world decision problems can be formulated as multicriteria mathematical optimization models. The solution of such models requires appropriate techniques to compute so called efficient, or Pareto optimal, or compromise solutions that - unlike traditional mathematical programming methods - take the contradictory nature of the criteria into account. This book provides the necessary mathematical foundation of multicriteria optimization to solve nonlinear, linear and combinatorial problems with multiple criteria. Motivational examples illustrate the use of multicriteria optimization in practice. Numerous illustrations and exercises as well as an extensive bibliography are provided.\nTo help others undestand better the content of the book and summarized it so it can help to develop differente projects making approchable the knowledge of decision making.",
+    "crumbs": [
+      "Inicio",
+      "Multicriteria Optimization"
+    ]
+  },
+  {
+    "objectID": "index.html#chapters",
+    "href": "index.html#chapters",
+    "title": "Multicriteria Optimization",
+    "section": "Chapters",
+    "text": "Chapters\n\n\n01\nChapter 1\nIntroduction\nSee presentation →\n\n\n02\nChapter 2\nEfficency and Nondominance\nSee presentation →\n\n\n03\nChapter 3\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n04\nChapter 4\nScalarization Techniques\nSee presentation →\n\n\n05\nChapter 5\nThe Other Definitions of Optimatlity - Nonscalarizing Methos\nSee presentation →\n\n\n06\nChapter 6\nThe Weighted Sum Method and Related Topics\nSee presentation →\n\n\n07\nChapter 7\nA Multiobjective Simple Method\nSee presentation →",
+    "crumbs": [
+      "Inicio",
+      "Multicriteria Optimization"
+    ]
+  },
+  {
+    "objectID": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
+    "href": "capitulo-02/capitulo-02.html#bounds-on-the-nondominated-set",
+    "title": "Chapter 2",
+    "section": "2.2 Bounds on the Nondominated Set",
+    "text": "2.2 Bounds on the Nondominated Set",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 2"
+    ]
+  },
+  {
+    "objectID": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
+    "href": "capitulo-02/capitulo-02.html#weakly-and-strictly-efficent-solutions",
+    "title": "Chapter 2",
+    "section": "2.3 Weakly and Strictly Efficent Solutions",
+    "text": "2.3 Weakly and Strictly Efficent Solutions",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 2"
+    ]
+  },
+  {
+    "objectID": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
+    "href": "capitulo-02/capitulo-02.html#proper-efficency-and-proper-nondominance",
+    "title": "Chapter 2",
+    "section": "2.4 Proper Efficency and Proper Nondominance",
+    "text": "2.4 Proper Efficency and Proper Nondominance",
+    "crumbs": [
+      "Inicio",
+      "Capítulos",
+      "Chapter 2"
+    ]
   }
 ]

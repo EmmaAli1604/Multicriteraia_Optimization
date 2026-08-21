@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emma Alicia Jimenez Sanchez">
-<meta name="dcterms.date" content="2026-08-20">
+<meta name="dcterms.date" content="2026-08-21">
 
 <title>Predict + Optimize in Renewable Energy Scheduling – Multicriteria Optimization</title>
 <style>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4e663f3a4ff1a491e18bd6a28adf0390.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d5382f61a7c05c0e60b360404eaa31c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,6 +76,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -219,16 +248,20 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#forecasting" id="toc-forecasting" class="nav-link" data-scroll-target="#forecasting">Forecasting</a>
   <ul class="collapse">
-  <li><a href="#st-solution" id="toc-st-solution" class="nav-link" data-scroll-target="#st-solution">1st Solution</a></li>
-  <li><a href="#th-solution" id="toc-th-solution" class="nav-link" data-scroll-target="#th-solution">7th Solution</a></li>
-  <li><a href="#st-solution-vs-7th-solution" id="toc-st-solution-vs-7th-solution" class="nav-link" data-scroll-target="#st-solution-vs-7th-solution">1st Solution vs 7th Solution</a></li>
+  <li><a href="#st-place-solution" id="toc-st-place-solution" class="nav-link" data-scroll-target="#st-place-solution">1st Place Solution</a></li>
   </ul></li>
   <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a>
   <ul class="collapse">
-  <li><a href="#st-solution-1" id="toc-st-solution-1" class="nav-link" data-scroll-target="#st-solution-1">1st Solution</a></li>
-  <li><a href="#th-solution-1" id="toc-th-solution-1" class="nav-link" data-scroll-target="#th-solution-1">7th Solution</a></li>
-  <li><a href="#st-solution-vs-7th-solution-1" id="toc-st-solution-vs-7th-solution-1" class="nav-link" data-scroll-target="#st-solution-vs-7th-solution-1">1st Solution vs 7th Solution</a></li>
+  <li><a href="#what-is-the-rcpsp" id="toc-what-is-the-rcpsp" class="nav-link" data-scroll-target="#what-is-the-rcpsp">What is the RCPSP?</a></li>
+  <li><a href="#st-place-solution-1" id="toc-st-place-solution-1" class="nav-link" data-scroll-target="#st-place-solution-1">1st Place Solution</a></li>
   </ul></li>
+  <li><a href="#how-to-evaluate-the-forecast" id="toc-how-to-evaluate-the-forecast" class="nav-link" data-scroll-target="#how-to-evaluate-the-forecast">How to Evaluate the Forecast?</a></li>
+  <li><a href="#how-to-evaluate-the-optimization" id="toc-how-to-evaluate-the-optimization" class="nav-link" data-scroll-target="#how-to-evaluate-the-optimization">How to Evaluate the Optimization?</a>
+  <ul class="collapse">
+  <li><a href="#feasibility" id="toc-feasibility" class="nav-link" data-scroll-target="#feasibility">Feasibility</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  </ul></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
     </div>
@@ -255,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 20, 2026</p>
+      <p class="date">August 21, 2026</p>
     </div>
   </div>
   
@@ -349,15 +382,26 @@ ul.task-list li input[type="checkbox"] {
 <section id="forecasting" class="level2">
 <h2 class="anchored" data-anchor-id="forecasting">Forecasting</h2>
 <p>During phase 1 of the competition, participants were expected to predict the power demand of the 6 buildings and the power production of the 6 arrays of solar panels over 15-minute intervals for each day. The actual energy demand of each building and the power production of each array of solar panels were then released. In phase 2, participants were expected to provide the 15-minute energy demand and production forecasts for the same buildings and solar panels for the 30 days of November 2022.</p>
-<p>For this section, we are going to analyze the 1st place and 7th place solutions.</p>
-<section id="st-solution" class="level3">
-<h3 class="anchored" data-anchor-id="st-solution">1st Solution</h3>
-</section>
-<section id="th-solution" class="level3">
-<h3 class="anchored" data-anchor-id="th-solution">7th Solution</h3>
-</section>
-<section id="st-solution-vs-7th-solution" class="level3">
-<h3 class="anchored" data-anchor-id="st-solution-vs-7th-solution">1st Solution vs 7th Solution</h3>
+<p>For this section, we are going to analyze the 1st place and 7th place forecasting solutions.</p>
+<section id="st-place-solution" class="level3">
+<h3 class="anchored" data-anchor-id="st-place-solution">1st Place Solution</h3>
+<p>The best solution implemented an ensemble of LightGBM, a tree-based algorithm, using calendar features and dynamic features (lags, mean, standard deviation), combined with ensembling models that use daily and weekly weather features.</p>
+<p>Their choice of training-set size per series, combined with the optimization approach, produced a methodology that is highly generalizable and robust. They explored several cases and searched for their impact — for example, the time series during COVID provided a great deal of data, making the forecasting horizon diverse across multiple scenarios. On the other hand, the correlation between solar power and buildings’ demand power is highly dependent on weather conditions; the hourly weather data provided by the competition organizers was used for this purpose.</p>
+<p>Various statistical models — ARIMA, Random Forest (RF), LightGBM, and SVR — were developed and used for the building predictive models. Although RF and SVR were fairly accurate and competitive with LightGBM, LightGBM was ultimately chosen since it is significantly faster and returns reliable forecasts.</p>
+<p>The hyperparameters were also optimized, and the most significant features for each model were selected.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>(Falta la descripción de la 7ª solución de forecasting — el texto original menciona comparaciones con “la última solución” más adelante, pero no incluye su contenido aquí. Agrégalo cuando lo tengas.)</em></p>
+</div>
+</div>
 </section>
 </section>
 <section id="optimization" class="level2">
@@ -371,18 +415,90 @@ ul.task-list li input[type="checkbox"] {
 <li>A peak load demand charge.</li>
 <li>The additional profit of scheduled once-off activities.</li>
 </ol>
-<p>For this section, we are going to analyze the 1st place and 7th place solutions.</p>
-<section id="st-solution-1" class="level3">
-<h3 class="anchored" data-anchor-id="st-solution-1">1st Solution</h3>
+<p>More generally, the constraints imposed by the problem include:</p>
+<ul>
+<li>Room availability</li>
+<li>Precedence constraints</li>
+<li>Battery constraints</li>
+<li>Activity timing</li>
+<li>Energy balance</li>
+</ul>
+<p>Conceptually, the activity scheduling problem thus defined is an instance of the <strong>Resource-Constrained Project Scheduling Problem (RCPSP)</strong>.</p>
+<section id="what-is-the-rcpsp" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-the-rcpsp">What is the RCPSP?</h3>
+<p>It is a well-known problem in operations research, where the goal is to schedule a set of project activities within given resource constraints and time windows. Because recurring activities with precedence must be scheduled on different days, the problem also exhibits <strong>minimum time lags</strong> — the shortest allowable time between the start of one activity and the start of another — as well as <strong>maximum time lags</strong>.</p>
+<p>For this section, we are going to analyze the 1st place and 7th place optimization solutions.</p>
 </section>
-<section id="th-solution-1" class="level3">
-<h3 class="anchored" data-anchor-id="th-solution-1">7th Solution</h3>
+<section id="st-place-solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="st-place-solution-1">1st Place Solution</h3>
+<p>In the optimization component, the team reviewed multiple scenarios using <strong>sample average approximation</strong>, which minimizes the average cost across multiple scenarios. This approach appears reproducible and solid, giving it strong points in terms of robustness.</p>
+<p>The objective function for minimizing the total energy cost includes the square of the maximum load. They used a linearization technique to linearize the objective function and developed a mixed-integer linear program that captures all the constraints of the problem.</p>
+<section id="what-is-a-constraint-problem" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="what-is-a-constraint-problem">❓ What is a constraint problem?</h4>
+<p><strong>Answer:</strong></p>
 </section>
-<section id="st-solution-vs-7th-solution-1" class="level3">
-<h3 class="anchored" data-anchor-id="st-solution-vs-7th-solution-1">1st Solution vs 7th Solution</h3>
+<p>One of the input parameters of the optimization model is the <strong>net base load</strong>, which is the difference between the total predicted base load of the buildings and the generation of their solar panels, per time slot.</p>
+<p>Their optimization proposal does not rely on a single forecast. Decision-making under uncertainty plays a crucial role in managing energy systems and must be addressed properly. Their proposal was to treat the <strong>net base loads</strong> at each time step as a random variable within the optimization model, using the so-called <strong>Sample Average Approximation Method (SAAM)</strong> — an optimization approach that minimizes the average cost of a solution across multiple scenarios (predictive outcomes), rather than relying on just one.</p>
+<section id="questions-on-this-section" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="questions-on-this-section">❓ Questions on this section</h4>
+<p><strong>How many forecast models do we need in the project?</strong></p>
+<p><strong>Answer:</strong></p>
+<hr>
+<p><strong>Can SAAM be applied to my project?</strong></p>
+<p><strong>Answer:</strong></p>
+</section>
+<p>However, the 1st place solution focuses only on “local” models for forecasting, meaning models that work on each series separately. The choice of algorithm is not clearly motivated, and some manual, unclear steps remain in the forecasting methodology. As with the 7th place solution, a shared disadvantage is that forecasting does not appear to have received as much attention as in other solutions, which may influence the results. The optimization search is somewhat greedy, showing a degradation in the solver’s solution when using “fix and optimize” compared to a more exhaustive approach.</p>
+</section>
+</section>
+<section id="how-to-evaluate-the-forecast" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-evaluate-the-forecast">How to Evaluate the Forecast?</h2>
+<p>The metric used in this case was <strong>MASE</strong> (Mean Absolute Scaled Error), a commonly used error measure for forecast evaluation, defined as follows:</p>
+<p><span class="math display">\[
+\text{MASE} = \frac{1}{h} \sum_{k=1}^{h} \frac{|Y_k - F_k|}{\dfrac{1}{M-S} \displaystyle\sum_{t=S+1}^{M} |Y_t - Y_{t-S}|}
+\]</span></p>
+<p>where <span class="math inline">\(M\)</span> is the number of instances in the training series, <span class="math inline">\(S\)</span> is the length of the seasonal cycle of the dataset, <span class="math inline">\(h\)</span> is the forecast horizon, <span class="math inline">\(F_k\)</span> are the forecasts, and <span class="math inline">\(Y_k\)</span> are the actual values. MASE was calculated individually for each time series and averaged for the final error used to rank the submissions.</p>
+</section>
+<section id="how-to-evaluate-the-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-evaluate-the-optimization">How to Evaluate the Optimization?</h2>
+<p>For the optimization evaluation, two components must be taken into account:</p>
+<section id="feasibility" class="level3">
+<h3 class="anchored" data-anchor-id="feasibility">Feasibility</h3>
+<p>The schedules were required to assign a time period to every recurring activity while adhering to the following constraints, for every activity <span class="math inline">\(a_i\)</span>:</p>
+<ul>
+<li>The starting period must fall within the week containing the first Monday of the month.</li>
+<li>Start time <span class="math inline">\(\geq 9\)</span>.</li>
+<li>Finish time (start time + activity duration) <span class="math inline">\(\leq 17\)</span>.</li>
+<li>Activity precedence must be observed.</li>
+<li>Every battery schedule must respect the battery’s capacity.</li>
+</ul>
+</section>
+<section id="objective" class="level3">
+<h3 class="anchored" data-anchor-id="objective">Objective</h3>
+<p>For a feasible schedule, the objective value is computed in terms of the cost of the schedule. The main objective is to minimize the scheduling cost using an objective function <span class="math inline">\(O\)</span>.</p>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>By establishing a well-defined, reproducible problem with a realistic setting, the challenge organizers hoped to encourage further methodological developments and comparative evaluations in this domain. For a decision-making project, the main goals are therefore that it must be <strong>reproducible</strong> and based on a <strong>realistic setting</strong>.</p>
+<p>This competition demonstrated that forecasting and optimization cannot be treated as two isolated components; however, the nuanced interplay between probabilistic forecasting and optimization-based decision-making still requires deeper exploration.</p>
+<p>The winning team used stochastic optimization to minimize the expected cost across a number of forecast scenarios.</p>
+<p>In the end, learning how to correctly implement Predict+Optimize algorithms helps us understand how to make better decisions based on forecasting results. Generally, for predicting time series, the most common models are tree-based algorithms such as Random Forest, LightGBM, or XGBoost. Based on the probabilistic results from these models, stochastic algorithms are then used for the multicriteria optimization and the objective function vectors — helping us learn how to select the most efficient solution from the solution set, based on the different objectives being pursued. Developing multi-objective optimization frameworks to balance cost minimization with other objectives, could provide more holistic and sustainable solutions. ::: {.qa-card} #### ❓ What is stochastic optimization?</p>
+<p><strong>Answer:</strong></p>
+<p>:::</p>
+<section id="forecasting-accuracy-vs.-optimization-costs-what-is-the-trade-off" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="forecasting-accuracy-vs.-optimization-costs-what-is-the-trade-off">❓ Forecasting accuracy vs.&nbsp;optimization costs — what is the trade-off?</h4>
+<p><strong>Answer:</strong></p>
+</section>
+<section id="gradient-based" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="gradient-based">❓ Gradient-based</h4>
+<p><strong>Answer:</strong></p>
+</section>
+<section id="gradient-free" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="gradient-free">❓ Gradient-free</h4>
+<p><strong>Answer:</strong></p>
+</section>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -459,7 +575,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/EmmaAli1604\.github\.io\/Multicriteraia_Optimization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
