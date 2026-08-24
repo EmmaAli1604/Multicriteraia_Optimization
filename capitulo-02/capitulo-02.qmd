@@ -1,25 +1,481 @@
 ---
 title: "Chapter 2"
-subtitle: "Efficency and Nondominance"
+subtitle: "Efficiency and Nondominance"
 author: "Emma Alicia Jimenez Sanchez"
 date: today
 ---
 
-Here in this chapter covers the fundamentals of efficency adn nondominance. It explains the following concepts:
-- Nondominanted points
-- Efficent Solutions
-- Several Existence results for Nondominated Points
-- Weakly and Strictly Efficient Solutions
-- Geometric Characterization
+## Introduction
 
-## 2.1 Efficent Solutions and Nondominated Points
-Definition 2.1 A feasible x^{^} \in X is called efficient or **Pareto Optimizal** if there is no other x \in X such that f(x) f(x) <= f(x^{^}). If x^{^} is effient, f(x^{^}) is called **nondominated points**. 
-If x^1,x^2 \in X and f(x^1)<= f(x^2) we say x^{1} dominates x^2 and f(x^1) dominated f(x^2). The **set of all efficient solutions** x^{^} \in X is denoted  X_E and called **efficient set**. The set of all **nondominated points ** y^{^}=f(x^{^}) \in Y, where x^{^} \in X_E , is denoted Y_N and called the **nondominated set**
+This chapter covers the fundamentals of efficiency and nondominance. It explains the following concepts:
 
+- Nondominated points
+- Efficient solutions
+- Several existence results for nondominated points
+- Weakly and strictly efficient solutions
+- Geometric characterization
 
+## 2.1 Efficient Solutions and Nondominated Points
+
+::: {.def-card}
+#### Definition 2.1 (Efficient Solutions and Nondominated Points)
+
+A feasible $\hat{x} \in X$ is called **efficient** or **Pareto optimal** if there is no other $x \in X$ such that $f(x) \leq f(\hat{x})$. If $\hat{x}$ is efficient, $f(\hat{x})$ is called a **nondominated point**.
+
+If $x^1, x^2 \in X$ and $f(x^1) \leq f(x^2)$, we say $x^1$ **dominates** $x^2$ and $f(x^1)$ dominates $f(x^2)$.
+
+The **set of all efficient solutions** $\hat{x} \in X$ is denoted $X_E$ and called the **efficient set**. The set of all **nondominated points** $\hat{y} = f(\hat{x}) \in Y$, where $\hat{x} \in X_E$, is denoted $Y_N$ and called the **nondominated set**.
+:::
+
+::: {.theorem-card}
+#### Theorem 2.2 (Equivalent Characterizations of Efficiency)
+
+$\hat{x} \in X$ is efficient if and only if any of the following equivalent statements hold:
+
+1. There is no $x \in X$ such that $f_k(x) \leq f_k(\hat{x})$ for $k = 1, \dots, p$ and $f_i(x) < f_i(\hat{x})$ for some $i \in \{1, \dots, p\}$.
+2. There is no $x \in X$ such that $f(x) - f(\hat{x}) \in \mathbb{R}_{\geqq}^p \setminus \{0\}$.
+3. $f(x) - f(\hat{x}) \notin -\mathbb{R}_{\geqq}^p \setminus \{0\}$ for all $x \in X$.
+4. $f(X) \cap \big(f(\hat{x}) - \mathbb{R}_{\geqq}^p\big) = \{f(\hat{x})\}$.
+5. There is no $f(x) \in f(X) \setminus \{f(\hat{x})\}$ with $f(x) \in f(\hat{x}) - \mathbb{R}_{\geqq}^p$.
+6. $f(x) \leqq f(\hat{x})$ for some $x \in X$ implies $f(x) = f(\hat{x})$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+Conditions for the existence of efficient solutions and nondominated points must be our first concern in the study of multicriteria optimization.
+
+It is convenient to consider $Y_N$ first, and then use properties of $f$ to derive results on $X_E$. So let $Y \subseteq \mathbb{R}^p$ be a set. Then $\hat{y} \in Y$ is **nondominated** if there is no $y \in Y$ such that $y \leq \hat{y}$.
+
+::: {.qa-card}
+#### ❓ What is the bicriterion problem?
+
+**Answer:**
+
+:::
+
+So let $Y \subseteq \mathbb{R}^p$. Let
+
+$$
+Y_N := \{ y \in Y : \text{there is no } y' \in Y \text{ such that } y' \leq y \}.
+$$
+
+In particular, $Y_N \subseteq Y$.
+
+::: {.lemma-card}
+#### Proposition 2.3
+
+$$
+Y_N = (Y + \mathbb{R}_{\geqq}^p)_N
+$$
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 2.4
+
+$$
+Y_N \subseteq \text{bd}(Y)
+$$
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Corollary 2.5
+
+If $Y$ is open, or if $Y + \mathbb{R}_{\geqq}^p$ is open, then $Y_N = \emptyset$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 2.6
+
+$$
+(Y_1 + Y_2)_N \subseteq (Y_1)_N + (Y_2)_N
+$$
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 2.7
+
+$$
+(\alpha Y)_N = \alpha (Y_N), \quad \text{for } \alpha \in \mathbb{R},\ \alpha > 0
+$$
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.def-card}
+#### Definition 2.8
+
+Let $(S, \preceq)$ be a preordered set, i.e., $\preceq$ is reflexive and transitive. $(S, \preceq)$ is **inductively ordered** if every totally ordered subset of $(S, \preceq)$ has a lower bound. A totally ordered subset of $(S, \preceq)$ is also called a **chain**.
+:::
+
+::: {.theorem-card}
+#### Theorem 2.9 (Zorn's Lemma)
+
+Let the preordered set $(S, \preceq)$ be inductively ordered. Then $S$ contains a minimal element, i.e., there is $\hat{s} \in S$ such that $s \preceq \hat{s}$ implies $\hat{s} \preceq s$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.theorem-card}
+#### Theorem 2.10 (Borwein, 1983)
+
+Let $Y$ be a nonempty set and suppose there is some $y^0 \in Y$ such that the section
+
+$$
+Y^0 = \{ y \in Y : y \leqq y^0 \} = (y^0 - \mathbb{R}_{\geqq}^p) \cap Y
+$$
+
+is compact (we say "$Y$ contains a compact section"). Then $Y_N$ is nonempty.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.def-card}
+#### Definition 2.11
+
+A set $Y \subseteq \mathbb{R}^p$ is called $\mathbb{R}_{\geqq}^p$-**semicompact** if every open cover of $Y$ of the form
+
+$$
+\{ (y^i - \mathbb{R}_{\geqq}^p)^c : y^i \in Y,\ i \in I \}
+$$
+
+has a finite subcover. This means that whenever $Y \subseteq \bigcup_{i \in I} (y^i - \mathbb{R}_{\geqq}^p)^c$, there exist $m \in \mathbb{N}$ and $\{i_1, \dots, i_m\} \subseteq I$ such that
+
+$$
+Y \subseteq \bigcup_{k=1}^{m} (y^{i_k} - \mathbb{R}_{\geqq}^p)^c
+$$
+
+Here $(y^i - \mathbb{R}_{\geqq}^p)^c$ denotes the complement $\mathbb{R}^p \setminus (y^i - \mathbb{R}_{\geqq}^p)$ of $y^i - \mathbb{R}_{\geqq}^p$. Note that these sets are always open.
+:::
+
+::: {.theorem-card}
+#### Theorem 2.12 (Corley, 1980)
+
+If $Y \neq \emptyset$ is $\mathbb{R}_{\geqq}^p$-semicompact, then $Y_N \neq \emptyset$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.def-card}
+#### Definition 2.13
+
+A set $Y \subseteq \mathbb{R}^p$ is called $\mathbb{R}_{\geqq}^p$-**compact** if, for all $y \in Y$, the section $(y - \mathbb{R}_{\geqq}^p) \cap Y$ is compact.
+:::
+
+::: {.lemma-card}
+#### Proposition 2.14
+
+If $Y$ is $\mathbb{R}_{\geqq}^p$-compact, then $Y$ is $\mathbb{R}_{\geqq}^p$-semicompact.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Corollary 2.15 (Hartley, 1978)
+
+If $Y \subseteq \mathbb{R}^p$ is nonempty and $\mathbb{R}_{\geqq}^p$-compact, then $Y_N \neq \emptyset$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+We have been focusing on the existence of nondominated points. Now let us consider the existence of efficient solutions, i.e., conditions that guarantee $X_E \neq \emptyset$, which is an important issue when practical problems are considered.
+
+We can use Theorem 2.12 and properties of $f$ to get an existence result for $X_E$. Theorem 2.19 below is a multicriteria analogue to the well-known result that a lower semicontinuous function attains its minimum over a compact set.
+
+::: {.def-card}
+#### Definition 2.16
+
+A function $f: \mathbb{R}^n \to \mathbb{R}^p$ is $\mathbb{R}_{\geqq}^p$-**semicontinuous** if
+
+$$
+f^{-1}(y - \mathbb{R}_{\geqq}^p) = \{ x \in \mathbb{R}^n : y - f(x) \in \mathbb{R}_{\geqq}^p \}
+$$
+
+is closed for all $y \in \mathbb{R}^p$, i.e., the preimage of the translated negative orthant is always closed.
+:::
+
+::: {.lemma-card}
+#### Lemma 2.17
+
+A function $f: \mathbb{R}^n \to \mathbb{R}^p$ is $\mathbb{R}_{\geqq}^p$-semicontinuous if and only if the component functions $f_k: \mathbb{R}^n \to \mathbb{R}$ are lower semicontinuous for all $k = 1, \dots, p$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.lemma-card}
+#### Proposition 2.18
+
+Let $X \subseteq \mathbb{R}^n$ be nonempty and compact, and let $f: \mathbb{R}^n \to \mathbb{R}^p$ be $\mathbb{R}_{\geqq}^p$-semicontinuous. Then $Y = f(X)$ is $\mathbb{R}_{\geqq}^p$-semicompact.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.theorem-card}
+#### Theorem 2.19
+
+Let $X \subseteq \mathbb{R}^n$ be a nonempty and compact set, and let $f$ be $\mathbb{R}_{\geqq}^p$-semicontinuous. Then $X_E \neq \emptyset$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+::: {.def-card}
+#### Definition 2.20
+
+The nondominated set $Y_N$ is said to be **externally stable** if, for each $y \in Y \setminus Y_N$, there is $\hat{y} \in Y_N$ such that $y \in \hat{y} + \mathbb{R}_{\geqq}^p$.
+:::
+
+::: {.theorem-card}
+#### Theorem 2.21
+
+Let $Y \subseteq \mathbb{R}^p$ be nonempty and $\mathbb{R}_{\geqq}^p$-compact. Then $Y_N$ is externally stable, i.e.,
+
+$$
+Y \subseteq Y_N + \mathbb{R}_{\geqq}^p
+$$
+
+::: {.proof-space}
+**Proof.**
+
+:::
+:::
+
+## Summary and Insights
+
+::: {.callout-note}
+
+:::
 
 ## 2.2 Bounds on the Nondominated Set
 
-## 2.3 Weakly and Strictly Efficent Solutions
+The ideal and nadir points serve as lower and upper bounds on nondominated points, giving an indication of the range of values that nondominated points can attain. They are often used in compromise programming or interactive methods, the aim of which is to find a most preferred solution for a decision maker.
 
-## 2.4 Proper Efficency and Proper Nondominance
+We assume that $X_E$ and $Y_N$ are nonempty, and want to find real numbers $\underline{y}_k, \overline{y}_k$, where $k = 1, \dots, p$, with $\underline{y}_k \leq y_k \leq \overline{y}_k$ for all $y \in Y_N$.
+
+An obvious possibility is to choose:
+
+$$
+\underline{y}_k := \min_{y \in Y} y_k
+$$
+
+$$
+\overline{y}_k := \max_{y \in Y} y_k
+$$
+
+While the **lower bound is tight** (there is always an efficient point $y \in Y_N$ with $y_k = \underline{y}_k$), the upper bound $\overline{y}_k$ computed over all of $Y$ tends to be far from actual nondominated points. A tighter upper bound, called the **nadir point**, is defined as the maximum taken over nondominated points only.
+
+::: {.def-card}
+#### Definition 2.22 (Ideal Point and Nadir Point)
+
+1. The point $y^I = (y_1^I, \dots, y_p^I)$ given by
+
+$$
+y_k^I := \min_{x \in X} f_k(x) = \min_{y \in Y} y_k
+$$
+
+is called the **ideal point** of the multicriteria optimization problem $\min_{x \in X} \big(f_1(x), \dots, f_p(x)\big)$.
+
+2. The point $y^N = (y_1^N, \dots, y_p^N)$ given by
+
+$$
+y_k^N := \max_{x \in X_E} f_k(x) = \max_{y \in Y_N} y_k
+$$
+
+is called the **nadir point** of the multicriteria optimization problem.
+:::
+
+We have $y_k^I \leq y_k \leq y_k^N$ for any $y \in Y_N$. Furthermore, $y^I$ and $y^N$ are tight lower and upper bounds on the nondominated set.
+
+The ideal point is found by solving $p$ single-objective optimization problems, so its computation can be easy. On the other hand, computation of $y^N$ involves optimization over the efficient set, a very difficult problem. No efficient method to determine $y^N$ for a general MOP is known.
+
+Due to the difficulty of computing $y^N$, heuristics are often used. A basic estimation of the nadir point uses **pay-off tables**.
+
+::: {.qa-card}
+#### ❓ Questions on Ideal and Nadir Points
+
+**What are pay-off tables?**
+
+**Answer:**
+
+---
+
+**Are we going to have to implement a heuristic to find the nadir point?**
+
+**Answer:**
+
+---
+
+**Why are weakly efficient solutions such a problem for the search of multiple optimal solutions?**
+
+**Answer:**
+
+---
+
+**Can there only exist one ideal point?**
+
+**Answer:**
+
+:::
+
+However, the problem with pay-off tables is that the estimate $\tilde{y}^N$ may over- or under-estimate $y^N$ when more than two objectives are present, and when there are multiple optimal solutions of the single-objective problems $\min_{x \in X} f_k(x)$.
+
+::: {.callout-note}
+It is missing the example's explanation
+:::
+
+The presence of weakly efficient solutions is caused by the multiple optimal solutions of $\min_{x \in X} f_3(x)$. In general, it is difficult to be sure that the single-objective optimizers are efficient.
+
+The only case where $y^N$ can be determined exactly is for $p = 2$. Here, the worst value for $y_2$ is attained when $y_1$ is minimal, and vice versa; through a two-step optimization process, we can eliminate weakly efficient choices from the pay-off table.
+
+### Algorithm: Nadir Point for $p = 2$
+
+**Input:** Feasible set $X$ and objective $f$ of an MOP.
+
+1. Solve the single-objective problems:
+   $$
+   \min_{x \in X} f_1(x) = y_1^I, \qquad \min_{x \in X} f_2(x) = y_2^I
+   $$
+   Denote the optimal objective values by $y_1^I$, $y_2^I$.
+
+2. Solve $\max_{x \in X} f_2(x)$ subject to the additional constraint $f_1(x) \leq y_1^I$.
+
+3. Solve $\max_{x \in X} f_1(x)$ subject to the additional constraint $f_2(x) \leq y_2^I$.
+
+4. Denote the optimal objective values found in steps 2 and 3 by $y_2^N$ and $y_1^N$, respectively.
+
+**Output:** $y^N = (y_1^N, y_2^N)$ is the nadir point; $y^I = (y_1^I, y_2^I)$ is the ideal point.
+
+The optimal solutions of the constrained problems in the second step are efficient. Unfortunately, this approach cannot be generalized to more than two objectives, because if $p > 2$ we do not know which objectives to fix in the second step.
+
+::: {.qa-card}
+#### ❓ How many objectives are we going to have in the simulation and optimization?
+
+**Answer:**
+
+:::
+
+### Summary and Insights
+
+::: {.callout-note}
+
+:::
+
+## 2.3 Weakly and Strictly Efficient Solutions
+
+Nondominated points are defined using the componentwise order on $\mathbb{R}^p$. When we use the weak and strict componentwise orders instead, we obtain the definitions of weakly and strictly nondominated points, respectively.
+
+::: {.def-card}
+#### Definition 2.24 (Weakly and Strictly Efficient Solutions)
+
+A feasible solution $\hat{x} \in X$ is called **weakly efficient (weakly Pareto optimal)** if there is no $x \in X$ such that $f(x) < f(\hat{x})$, i.e., $f_k(x) < f_k(\hat{x})$ for all $k = 1, \dots, p$. The point $\hat{y} = f(\hat{x})$ is then called **weakly nondominated**.
+
+A feasible solution $\hat{x} \in X$ is called **strictly efficient (strictly Pareto optimal)** if there is no $x \in X$, $x \neq \hat{x}$, such that $f(x) \leqq f(\hat{x})$.
+
+The weakly (strictly) efficient and nondominated sets are denoted $X_{wE}$ ($X_{sE}$) and $Y_{wN}$ ($Y_{sN}$), respectively.
+:::
+
+From the definition it is obvious that
+
+$$
+Y_N \subset Y_{wN}
+$$
+
+and
+
+$$
+Y_{sE} \subset X_E \subset X_{wE}
+$$
+
+As in the case of efficiency, weak efficiency has several equivalent definitions.
+A feasible solution $\hat{x} \in X$ is **weakly efficient** if and only if:
+
+1. There is no $x \in X$ such that $f(\hat{x}) - f(x) \in \text{int}\, \mathbb{R}_{\geqq}^p = \mathbb{R}_{>}^p$.
+2. $\big(f(\hat{x}) - \mathbb{R}_{>}^p\big) \cap f(X) = \emptyset$.
+
+
+::: {.callout-note}
+**⚠️ There is no such concept as strict nondominance for sets $Y \subset \mathbb{R}^p$.**
+:::
+
+By definition, strict efficiency prohibits solutions $x^1, x^2$ with $f(x^1) = f(x^2)$, i.e., strict efficiency is the multicriteria analogue of unique optimal solutions in scalar optimization:
+
+$$
+\hat{x} \in X_{sE} \iff \hat{x} \in X_E \text{ and } \big|\{x : f(x) = f(\hat{x})\}\big| = 1
+$$
+
+It is obvious that all existence results for $Y_N$ imply existence of $Y_{wN}$ as well. However, we shall see that $Y_{wN}$ can be nonempty, even if $Y_N$ is empty.
+
+::: {.qa-card}
+#### ❓ Questions on Weak and Strict Nondominance
+
+**Why can $Y_{wN}$ be nonempty when $Y_N$ is empty?**
+
+**Answer:**
+
+---
+
+**Why isn't there a concept of strict nondominance?**
+
+**Answer:**
+
+:::
+
+::: {.theorem-card}
+#### Theorem 2.25
+
+Let $Y \subseteq \mathbb{R}^p$ be nonempty and compact. Then $Y_{wN} \neq \emptyset$.
+
+::: {.proof-space}
+**Proof.**
+
+:::
+
+## 2.4 Proper Efficiency and Proper Nondominance

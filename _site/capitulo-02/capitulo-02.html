@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Emma Alicia Jimenez Sanchez">
-<meta name="dcterms.date" content="2026-08-20">
+<meta name="dcterms.date" content="2026-08-23">
 
 <title>Chapter 2 – Multicriteria Optimization</title>
 <style>
@@ -76,6 +76,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -209,10 +238,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#efficent-solutions-and-nondominated-points" id="toc-efficent-solutions-and-nondominated-points" class="nav-link active" data-scroll-target="#efficent-solutions-and-nondominated-points">2.1 Efficent Solutions and Nondominated Points</a></li>
-  <li><a href="#bounds-on-the-nondominated-set" id="toc-bounds-on-the-nondominated-set" class="nav-link" data-scroll-target="#bounds-on-the-nondominated-set">2.2 Bounds on the Nondominated Set</a></li>
-  <li><a href="#weakly-and-strictly-efficent-solutions" id="toc-weakly-and-strictly-efficent-solutions" class="nav-link" data-scroll-target="#weakly-and-strictly-efficent-solutions">2.3 Weakly and Strictly Efficent Solutions</a></li>
-  <li><a href="#proper-efficency-and-proper-nondominance" id="toc-proper-efficency-and-proper-nondominance" class="nav-link" data-scroll-target="#proper-efficency-and-proper-nondominance">2.4 Proper Efficency and Proper Nondominance</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#efficient-solutions-and-nondominated-points" id="toc-efficient-solutions-and-nondominated-points" class="nav-link" data-scroll-target="#efficient-solutions-and-nondominated-points">2.1 Efficient Solutions and Nondominated Points</a></li>
+  <li><a href="#summary-and-insights" id="toc-summary-and-insights" class="nav-link" data-scroll-target="#summary-and-insights">Summary and Insights</a></li>
+  <li><a href="#bounds-on-the-nondominated-set" id="toc-bounds-on-the-nondominated-set" class="nav-link" data-scroll-target="#bounds-on-the-nondominated-set">2.2 Bounds on the Nondominated Set</a>
+  <ul class="collapse">
+  <li><a href="#algorithm-nadir-point-for-p-2" id="toc-algorithm-nadir-point-for-p-2" class="nav-link" data-scroll-target="#algorithm-nadir-point-for-p-2">Algorithm: Nadir Point for <span class="math inline">\(p = 2\)</span></a></li>
+  <li><a href="#summary-and-insights-1" id="toc-summary-and-insights-1" class="nav-link" data-scroll-target="#summary-and-insights-1">Summary and Insights</a></li>
+  </ul></li>
+  <li><a href="#weakly-and-strictly-efficient-solutions" id="toc-weakly-and-strictly-efficient-solutions" class="nav-link" data-scroll-target="#weakly-and-strictly-efficient-solutions">2.3 Weakly and Strictly Efficient Solutions</a></li>
   </ul>
 </nav>
     </div>
@@ -222,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capitulo-01/capitulo-01.html">Capítulos</a></li><li class="breadcrumb-item"><a href="../capitulo-02/capitulo-02.html">Chapter 2</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Chapter 2</h1>
-<p class="subtitle lead">Efficency and Nondominance</p>
+<p class="subtitle lead">Efficiency and Nondominance</p>
 </div>
 
 
@@ -239,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 20, 2026</p>
+      <p class="date">August 23, 2026</p>
     </div>
   </div>
   
@@ -251,19 +285,374 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="efficent-solutions-and-nondominated-points" class="level2">
-<h2 class="anchored" data-anchor-id="efficent-solutions-and-nondominated-points">2.1 Efficent Solutions and Nondominated Points</h2>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This chapter covers the fundamentals of efficiency and nondominance. It explains the following concepts:</p>
+<ul>
+<li>Nondominated points</li>
+<li>Efficient solutions</li>
+<li>Several existence results for nondominated points</li>
+<li>Weakly and strictly efficient solutions</li>
+<li>Geometric characterization</li>
+</ul>
+</section>
+<section id="efficient-solutions-and-nondominated-points" class="level2">
+<h2 class="anchored" data-anchor-id="efficient-solutions-and-nondominated-points">2.1 Efficient Solutions and Nondominated Points</h2>
+<section id="definition-2.1-efficient-solutions-and-nondominated-points" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.1-efficient-solutions-and-nondominated-points">Definition 2.1 (Efficient Solutions and Nondominated Points)</h4>
+<p>A feasible <span class="math inline">\(\hat{x} \in X\)</span> is called <strong>efficient</strong> or <strong>Pareto optimal</strong> if there is no other <span class="math inline">\(x \in X\)</span> such that <span class="math inline">\(f(x) \leq f(\hat{x})\)</span>. If <span class="math inline">\(\hat{x}\)</span> is efficient, <span class="math inline">\(f(\hat{x})\)</span> is called a <strong>nondominated point</strong>.</p>
+<p>If <span class="math inline">\(x^1, x^2 \in X\)</span> and <span class="math inline">\(f(x^1) \leq f(x^2)\)</span>, we say <span class="math inline">\(x^1\)</span> <strong>dominates</strong> <span class="math inline">\(x^2\)</span> and <span class="math inline">\(f(x^1)\)</span> dominates <span class="math inline">\(f(x^2)\)</span>.</p>
+<p>The <strong>set of all efficient solutions</strong> <span class="math inline">\(\hat{x} \in X\)</span> is denoted <span class="math inline">\(X_E\)</span> and called the <strong>efficient set</strong>. The set of all <strong>nondominated points</strong> <span class="math inline">\(\hat{y} = f(\hat{x}) \in Y\)</span>, where <span class="math inline">\(\hat{x} \in X_E\)</span>, is denoted <span class="math inline">\(Y_N\)</span> and called the <strong>nondominated set</strong>.</p>
+</section>
+<section id="theorem-2.2-equivalent-characterizations-of-efficiency" class="level4 theorem-card">
+<h4 class="anchored" data-anchor-id="theorem-2.2-equivalent-characterizations-of-efficiency">Theorem 2.2 (Equivalent Characterizations of Efficiency)</h4>
+<p><span class="math inline">\(\hat{x} \in X\)</span> is efficient if and only if any of the following equivalent statements hold:</p>
+<ol type="1">
+<li>There is no <span class="math inline">\(x \in X\)</span> such that <span class="math inline">\(f_k(x) \leq f_k(\hat{x})\)</span> for <span class="math inline">\(k = 1, \dots, p\)</span> and <span class="math inline">\(f_i(x) &lt; f_i(\hat{x})\)</span> for some <span class="math inline">\(i \in \{1, \dots, p\}\)</span>.</li>
+<li>There is no <span class="math inline">\(x \in X\)</span> such that <span class="math inline">\(f(x) - f(\hat{x}) \in \mathbb{R}_{\geqq}^p \setminus \{0\}\)</span>.</li>
+<li><span class="math inline">\(f(x) - f(\hat{x}) \notin -\mathbb{R}_{\geqq}^p \setminus \{0\}\)</span> for all <span class="math inline">\(x \in X\)</span>.</li>
+<li><span class="math inline">\(f(X) \cap \big(f(\hat{x}) - \mathbb{R}_{\geqq}^p\big) = \{f(\hat{x})\}\)</span>.</li>
+<li>There is no <span class="math inline">\(f(x) \in f(X) \setminus \{f(\hat{x})\}\)</span> with <span class="math inline">\(f(x) \in f(\hat{x}) - \mathbb{R}_{\geqq}^p\)</span>.</li>
+<li><span class="math inline">\(f(x) \leqq f(\hat{x})\)</span> for some <span class="math inline">\(x \in X\)</span> implies <span class="math inline">\(f(x) = f(\hat{x})\)</span>.</li>
+</ol>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<p>Conditions for the existence of efficient solutions and nondominated points must be our first concern in the study of multicriteria optimization.</p>
+<p>It is convenient to consider <span class="math inline">\(Y_N\)</span> first, and then use properties of <span class="math inline">\(f\)</span> to derive results on <span class="math inline">\(X_E\)</span>. So let <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span> be a set. Then <span class="math inline">\(\hat{y} \in Y\)</span> is <strong>nondominated</strong> if there is no <span class="math inline">\(y \in Y\)</span> such that <span class="math inline">\(y \leq \hat{y}\)</span>.</p>
+<section id="what-is-the-bicriterion-problem" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="what-is-the-bicriterion-problem">❓ What is the bicriterion problem?</h4>
+<p><strong>Answer:</strong></p>
+</section>
+<p>So let <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span>. Let</p>
+<p><span class="math display">\[
+Y_N := \{ y \in Y : \text{there is no } y' \in Y \text{ such that } y' \leq y \}.
+\]</span></p>
+<p>In particular, <span class="math inline">\(Y_N \subseteq Y\)</span>.</p>
+<section id="proposition-2.3" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="proposition-2.3">Proposition 2.3</h4>
+<p><span class="math display">\[
+Y_N = (Y + \mathbb{R}_{\geqq}^p)_N
+\]</span></p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="proposition-2.4" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="proposition-2.4">Proposition 2.4</h4>
+<p><span class="math display">\[
+Y_N \subseteq \text{bd}(Y)
+\]</span></p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="corollary-2.5" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="corollary-2.5">Corollary 2.5</h4>
+<p>If <span class="math inline">\(Y\)</span> is open, or if <span class="math inline">\(Y + \mathbb{R}_{\geqq}^p\)</span> is open, then <span class="math inline">\(Y_N = \emptyset\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="proposition-2.6" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="proposition-2.6">Proposition 2.6</h4>
+<p><span class="math display">\[
+(Y_1 + Y_2)_N \subseteq (Y_1)_N + (Y_2)_N
+\]</span></p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="proposition-2.7" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="proposition-2.7">Proposition 2.7</h4>
+<p><span class="math display">\[
+(\alpha Y)_N = \alpha (Y_N), \quad \text{for } \alpha \in \mathbb{R},\ \alpha &gt; 0
+\]</span></p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="definition-2.8" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.8">Definition 2.8</h4>
+<p>Let <span class="math inline">\((S, \preceq)\)</span> be a preordered set, i.e., <span class="math inline">\(\preceq\)</span> is reflexive and transitive. <span class="math inline">\((S, \preceq)\)</span> is <strong>inductively ordered</strong> if every totally ordered subset of <span class="math inline">\((S, \preceq)\)</span> has a lower bound. A totally ordered subset of <span class="math inline">\((S, \preceq)\)</span> is also called a <strong>chain</strong>.</p>
+</section>
+<section id="theorem-2.9-zorns-lemma" class="level4 theorem-card">
+<h4 class="anchored" data-anchor-id="theorem-2.9-zorns-lemma">Theorem 2.9 (Zorn’s Lemma)</h4>
+<p>Let the preordered set <span class="math inline">\((S, \preceq)\)</span> be inductively ordered. Then <span class="math inline">\(S\)</span> contains a minimal element, i.e., there is <span class="math inline">\(\hat{s} \in S\)</span> such that <span class="math inline">\(s \preceq \hat{s}\)</span> implies <span class="math inline">\(\hat{s} \preceq s\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="theorem-2.10-borwein-1983" class="level4 theorem-card">
+<h4 class="anchored" data-anchor-id="theorem-2.10-borwein-1983">Theorem 2.10 (Borwein, 1983)</h4>
+<p>Let <span class="math inline">\(Y\)</span> be a nonempty set and suppose there is some <span class="math inline">\(y^0 \in Y\)</span> such that the section</p>
+<p><span class="math display">\[
+Y^0 = \{ y \in Y : y \leqq y^0 \} = (y^0 - \mathbb{R}_{\geqq}^p) \cap Y
+\]</span></p>
+<p>is compact (we say “<span class="math inline">\(Y\)</span> contains a compact section”). Then <span class="math inline">\(Y_N\)</span> is nonempty.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="definition-2.11" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.11">Definition 2.11</h4>
+<p>A set <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span> is called <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-<strong>semicompact</strong> if every open cover of <span class="math inline">\(Y\)</span> of the form</p>
+<p><span class="math display">\[
+\{ (y^i - \mathbb{R}_{\geqq}^p)^c : y^i \in Y,\ i \in I \}
+\]</span></p>
+<p>has a finite subcover. This means that whenever <span class="math inline">\(Y \subseteq \bigcup_{i \in I} (y^i - \mathbb{R}_{\geqq}^p)^c\)</span>, there exist <span class="math inline">\(m \in \mathbb{N}\)</span> and <span class="math inline">\(\{i_1, \dots, i_m\} \subseteq I\)</span> such that</p>
+<p><span class="math display">\[
+Y \subseteq \bigcup_{k=1}^{m} (y^{i_k} - \mathbb{R}_{\geqq}^p)^c
+\]</span></p>
+<p>Here <span class="math inline">\((y^i - \mathbb{R}_{\geqq}^p)^c\)</span> denotes the complement <span class="math inline">\(\mathbb{R}^p \setminus (y^i - \mathbb{R}_{\geqq}^p)\)</span> of <span class="math inline">\(y^i - \mathbb{R}_{\geqq}^p\)</span>. Note that these sets are always open.</p>
+</section>
+<section id="theorem-2.12-corley-1980" class="level4 theorem-card">
+<h4 class="anchored" data-anchor-id="theorem-2.12-corley-1980">Theorem 2.12 (Corley, 1980)</h4>
+<p>If <span class="math inline">\(Y \neq \emptyset\)</span> is <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-semicompact, then <span class="math inline">\(Y_N \neq \emptyset\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="definition-2.13" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.13">Definition 2.13</h4>
+<p>A set <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span> is called <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-<strong>compact</strong> if, for all <span class="math inline">\(y \in Y\)</span>, the section <span class="math inline">\((y - \mathbb{R}_{\geqq}^p) \cap Y\)</span> is compact.</p>
+</section>
+<section id="proposition-2.14" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="proposition-2.14">Proposition 2.14</h4>
+<p>If <span class="math inline">\(Y\)</span> is <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-compact, then <span class="math inline">\(Y\)</span> is <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-semicompact.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="corollary-2.15-hartley-1978" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="corollary-2.15-hartley-1978">Corollary 2.15 (Hartley, 1978)</h4>
+<p>If <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span> is nonempty and <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-compact, then <span class="math inline">\(Y_N \neq \emptyset\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<p>We have been focusing on the existence of nondominated points. Now let us consider the existence of efficient solutions, i.e., conditions that guarantee <span class="math inline">\(X_E \neq \emptyset\)</span>, which is an important issue when practical problems are considered.</p>
+<p>We can use Theorem 2.12 and properties of <span class="math inline">\(f\)</span> to get an existence result for <span class="math inline">\(X_E\)</span>. Theorem 2.19 below is a multicriteria analogue to the well-known result that a lower semicontinuous function attains its minimum over a compact set.</p>
+<section id="definition-2.16" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.16">Definition 2.16</h4>
+<p>A function <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^p\)</span> is <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-<strong>semicontinuous</strong> if</p>
+<p><span class="math display">\[
+f^{-1}(y - \mathbb{R}_{\geqq}^p) = \{ x \in \mathbb{R}^n : y - f(x) \in \mathbb{R}_{\geqq}^p \}
+\]</span></p>
+<p>is closed for all <span class="math inline">\(y \in \mathbb{R}^p\)</span>, i.e., the preimage of the translated negative orthant is always closed.</p>
+</section>
+<section id="lemma-2.17" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="lemma-2.17">Lemma 2.17</h4>
+<p>A function <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^p\)</span> is <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-semicontinuous if and only if the component functions <span class="math inline">\(f_k: \mathbb{R}^n \to \mathbb{R}\)</span> are lower semicontinuous for all <span class="math inline">\(k = 1, \dots, p\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="proposition-2.18" class="level4 lemma-card">
+<h4 class="anchored" data-anchor-id="proposition-2.18">Proposition 2.18</h4>
+<p>Let <span class="math inline">\(X \subseteq \mathbb{R}^n\)</span> be nonempty and compact, and let <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}^p\)</span> be <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-semicontinuous. Then <span class="math inline">\(Y = f(X)\)</span> is <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-semicompact.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="theorem-2.19" class="level4 theorem-card">
+<h4 class="anchored" data-anchor-id="theorem-2.19">Theorem 2.19</h4>
+<p>Let <span class="math inline">\(X \subseteq \mathbb{R}^n\)</span> be a nonempty and compact set, and let <span class="math inline">\(f\)</span> be <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-semicontinuous. Then <span class="math inline">\(X_E \neq \emptyset\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="definition-2.20" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.20">Definition 2.20</h4>
+<p>The nondominated set <span class="math inline">\(Y_N\)</span> is said to be <strong>externally stable</strong> if, for each <span class="math inline">\(y \in Y \setminus Y_N\)</span>, there is <span class="math inline">\(\hat{y} \in Y_N\)</span> such that <span class="math inline">\(y \in \hat{y} + \mathbb{R}_{\geqq}^p\)</span>.</p>
+</section>
+<section id="theorem-2.21" class="level4 theorem-card">
+<h4 class="anchored" data-anchor-id="theorem-2.21">Theorem 2.21</h4>
+<p>Let <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span> be nonempty and <span class="math inline">\(\mathbb{R}_{\geqq}^p\)</span>-compact. Then <span class="math inline">\(Y_N\)</span> is externally stable, i.e.,</p>
+<p><span class="math display">\[
+Y \subseteq Y_N + \mathbb{R}_{\geqq}^p
+\]</span></p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+</section>
+<section id="summary-and-insights" class="level2">
+<h2 class="anchored" data-anchor-id="summary-and-insights">Summary and Insights</h2>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
 <section id="bounds-on-the-nondominated-set" class="level2">
 <h2 class="anchored" data-anchor-id="bounds-on-the-nondominated-set">2.2 Bounds on the Nondominated Set</h2>
+<p>The ideal and nadir points serve as lower and upper bounds on nondominated points, giving an indication of the range of values that nondominated points can attain. They are often used in compromise programming or interactive methods, the aim of which is to find a most preferred solution for a decision maker.</p>
+<p>We assume that <span class="math inline">\(X_E\)</span> and <span class="math inline">\(Y_N\)</span> are nonempty, and want to find real numbers <span class="math inline">\(\underline{y}_k, \overline{y}_k\)</span>, where <span class="math inline">\(k = 1, \dots, p\)</span>, with <span class="math inline">\(\underline{y}_k \leq y_k \leq \overline{y}_k\)</span> for all <span class="math inline">\(y \in Y_N\)</span>.</p>
+<p>An obvious possibility is to choose:</p>
+<p><span class="math display">\[
+\underline{y}_k := \min_{y \in Y} y_k
+\]</span></p>
+<p><span class="math display">\[
+\overline{y}_k := \max_{y \in Y} y_k
+\]</span></p>
+<p>While the <strong>lower bound is tight</strong> (there is always an efficient point <span class="math inline">\(y \in Y_N\)</span> with <span class="math inline">\(y_k = \underline{y}_k\)</span>), the upper bound <span class="math inline">\(\overline{y}_k\)</span> computed over all of <span class="math inline">\(Y\)</span> tends to be far from actual nondominated points. A tighter upper bound, called the <strong>nadir point</strong>, is defined as the maximum taken over nondominated points only.</p>
+<section id="definition-2.22-ideal-point-and-nadir-point" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.22-ideal-point-and-nadir-point">Definition 2.22 (Ideal Point and Nadir Point)</h4>
+<ol type="1">
+<li>The point <span class="math inline">\(y^I = (y_1^I, \dots, y_p^I)\)</span> given by</li>
+</ol>
+<p><span class="math display">\[
+y_k^I := \min_{x \in X} f_k(x) = \min_{y \in Y} y_k
+\]</span></p>
+<p>is called the <strong>ideal point</strong> of the multicriteria optimization problem <span class="math inline">\(\min_{x \in X} \big(f_1(x), \dots, f_p(x)\big)\)</span>.</p>
+<ol start="2" type="1">
+<li>The point <span class="math inline">\(y^N = (y_1^N, \dots, y_p^N)\)</span> given by</li>
+</ol>
+<p><span class="math display">\[
+y_k^N := \max_{x \in X_E} f_k(x) = \max_{y \in Y_N} y_k
+\]</span></p>
+<p>is called the <strong>nadir point</strong> of the multicriteria optimization problem.</p>
 </section>
-<section id="weakly-and-strictly-efficent-solutions" class="level2">
-<h2 class="anchored" data-anchor-id="weakly-and-strictly-efficent-solutions">2.3 Weakly and Strictly Efficent Solutions</h2>
+<p>We have <span class="math inline">\(y_k^I \leq y_k \leq y_k^N\)</span> for any <span class="math inline">\(y \in Y_N\)</span>. Furthermore, <span class="math inline">\(y^I\)</span> and <span class="math inline">\(y^N\)</span> are tight lower and upper bounds on the nondominated set.</p>
+<p>The ideal point is found by solving <span class="math inline">\(p\)</span> single-objective optimization problems, so its computation can be easy. On the other hand, computation of <span class="math inline">\(y^N\)</span> involves optimization over the efficient set, a very difficult problem. No efficient method to determine <span class="math inline">\(y^N\)</span> for a general MOP is known.</p>
+<p>Due to the difficulty of computing <span class="math inline">\(y^N\)</span>, heuristics are often used. A basic estimation of the nadir point uses <strong>pay-off tables</strong>.</p>
+<section id="questions-on-ideal-and-nadir-points" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="questions-on-ideal-and-nadir-points">❓ Questions on Ideal and Nadir Points</h4>
+<p><strong>What are pay-off tables?</strong></p>
+<p><strong>Answer:</strong></p>
+<hr>
+<p><strong>Are we going to have to implement a heuristic to find the nadir point?</strong></p>
+<p><strong>Answer:</strong></p>
+<hr>
+<p><strong>Why are weakly efficient solutions such a problem for the search of multiple optimal solutions?</strong></p>
+<p><strong>Answer:</strong></p>
+<hr>
+<p><strong>Can there only exist one ideal point?</strong></p>
+<p><strong>Answer:</strong></p>
 </section>
-<section id="proper-efficency-and-proper-nondominance" class="level2">
-<h2 class="anchored" data-anchor-id="proper-efficency-and-proper-nondominance">2.4 Proper Efficency and Proper Nondominance</h2>
+<p>However, the problem with pay-off tables is that the estimate <span class="math inline">\(\tilde{y}^N\)</span> may over- or under-estimate <span class="math inline">\(y^N\)</span> when more than two objectives are present, and when there are multiple optimal solutions of the single-objective problems <span class="math inline">\(\min_{x \in X} f_k(x)\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is missing the example’s explanation</p>
+</div>
+</div>
+<p>The presence of weakly efficient solutions is caused by the multiple optimal solutions of <span class="math inline">\(\min_{x \in X} f_3(x)\)</span>. In general, it is difficult to be sure that the single-objective optimizers are efficient.</p>
+<p>The only case where <span class="math inline">\(y^N\)</span> can be determined exactly is for <span class="math inline">\(p = 2\)</span>. Here, the worst value for <span class="math inline">\(y_2\)</span> is attained when <span class="math inline">\(y_1\)</span> is minimal, and vice versa; through a two-step optimization process, we can eliminate weakly efficient choices from the pay-off table.</p>
+<section id="algorithm-nadir-point-for-p-2" class="level3">
+<h3 class="anchored" data-anchor-id="algorithm-nadir-point-for-p-2">Algorithm: Nadir Point for <span class="math inline">\(p = 2\)</span></h3>
+<p><strong>Input:</strong> Feasible set <span class="math inline">\(X\)</span> and objective <span class="math inline">\(f\)</span> of an MOP.</p>
+<ol type="1">
+<li><p>Solve the single-objective problems: <span class="math display">\[
+\min_{x \in X} f_1(x) = y_1^I, \qquad \min_{x \in X} f_2(x) = y_2^I
+\]</span> Denote the optimal objective values by <span class="math inline">\(y_1^I\)</span>, <span class="math inline">\(y_2^I\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\max_{x \in X} f_2(x)\)</span> subject to the additional constraint <span class="math inline">\(f_1(x) \leq y_1^I\)</span>.</p></li>
+<li><p>Solve <span class="math inline">\(\max_{x \in X} f_1(x)\)</span> subject to the additional constraint <span class="math inline">\(f_2(x) \leq y_2^I\)</span>.</p></li>
+<li><p>Denote the optimal objective values found in steps 2 and 3 by <span class="math inline">\(y_2^N\)</span> and <span class="math inline">\(y_1^N\)</span>, respectively.</p></li>
+</ol>
+<p><strong>Output:</strong> <span class="math inline">\(y^N = (y_1^N, y_2^N)\)</span> is the nadir point; <span class="math inline">\(y^I = (y_1^I, y_2^I)\)</span> is the ideal point.</p>
+<p>The optimal solutions of the constrained problems in the second step are efficient. Unfortunately, this approach cannot be generalized to more than two objectives, because if <span class="math inline">\(p &gt; 2\)</span> we do not know which objectives to fix in the second step.</p>
+<section id="how-many-objectives-are-we-going-to-have-in-the-simulation-and-optimization" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="how-many-objectives-are-we-going-to-have-in-the-simulation-and-optimization">❓ How many objectives are we going to have in the simulation and optimization?</h4>
+<p><strong>Answer:</strong></p>
+</section>
+</section>
+<section id="summary-and-insights-1" class="level3">
+<h3 class="anchored" data-anchor-id="summary-and-insights-1">Summary and Insights</h3>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+</section>
+<section id="weakly-and-strictly-efficient-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="weakly-and-strictly-efficient-solutions">2.3 Weakly and Strictly Efficient Solutions</h2>
+<p>Nondominated points are defined using the componentwise order on <span class="math inline">\(\mathbb{R}^p\)</span>. When we use the weak and strict componentwise orders instead, we obtain the definitions of weakly and strictly nondominated points, respectively.</p>
+<section id="definition-2.24-weakly-and-strictly-efficient-solutions" class="level4 def-card">
+<h4 class="anchored" data-anchor-id="definition-2.24-weakly-and-strictly-efficient-solutions">Definition 2.24 (Weakly and Strictly Efficient Solutions)</h4>
+<p>A feasible solution <span class="math inline">\(\hat{x} \in X\)</span> is called <strong>weakly efficient (weakly Pareto optimal)</strong> if there is no <span class="math inline">\(x \in X\)</span> such that <span class="math inline">\(f(x) &lt; f(\hat{x})\)</span>, i.e., <span class="math inline">\(f_k(x) &lt; f_k(\hat{x})\)</span> for all <span class="math inline">\(k = 1, \dots, p\)</span>. The point <span class="math inline">\(\hat{y} = f(\hat{x})\)</span> is then called <strong>weakly nondominated</strong>.</p>
+<p>A feasible solution <span class="math inline">\(\hat{x} \in X\)</span> is called <strong>strictly efficient (strictly Pareto optimal)</strong> if there is no <span class="math inline">\(x \in X\)</span>, <span class="math inline">\(x \neq \hat{x}\)</span>, such that <span class="math inline">\(f(x) \leqq f(\hat{x})\)</span>.</p>
+<p>The weakly (strictly) efficient and nondominated sets are denoted <span class="math inline">\(X_{wE}\)</span> (<span class="math inline">\(X_{sE}\)</span>) and <span class="math inline">\(Y_{wN}\)</span> (<span class="math inline">\(Y_{sN}\)</span>), respectively.</p>
+</section>
+<p>From the definition it is obvious that</p>
+<p><span class="math display">\[
+Y_N \subset Y_{wN}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+Y_{sE} \subset X_E \subset X_{wE}
+\]</span></p>
+<p>As in the case of efficiency, weak efficiency has several equivalent definitions. A feasible solution <span class="math inline">\(\hat{x} \in X\)</span> is <strong>weakly efficient</strong> if and only if:</p>
+<ol type="1">
+<li>There is no <span class="math inline">\(x \in X\)</span> such that <span class="math inline">\(f(\hat{x}) - f(x) \in \text{int}\, \mathbb{R}_{\geqq}^p = \mathbb{R}_{&gt;}^p\)</span>.</li>
+<li><span class="math inline">\(\big(f(\hat{x}) - \mathbb{R}_{&gt;}^p\big) \cap f(X) = \emptyset\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>⚠️ There is no such concept as strict nondominance for sets <span class="math inline">\(Y \subset \mathbb{R}^p\)</span>.</strong></p>
+</div>
+</div>
+<p>By definition, strict efficiency prohibits solutions <span class="math inline">\(x^1, x^2\)</span> with <span class="math inline">\(f(x^1) = f(x^2)\)</span>, i.e., strict efficiency is the multicriteria analogue of unique optimal solutions in scalar optimization:</p>
+<p><span class="math display">\[
+\hat{x} \in X_{sE} \iff \hat{x} \in X_E \text{ and } \big|\{x : f(x) = f(\hat{x})\}\big| = 1
+\]</span></p>
+<p>It is obvious that all existence results for <span class="math inline">\(Y_N\)</span> imply existence of <span class="math inline">\(Y_{wN}\)</span> as well. However, we shall see that <span class="math inline">\(Y_{wN}\)</span> can be nonempty, even if <span class="math inline">\(Y_N\)</span> is empty.</p>
+<section id="questions-on-weak-and-strict-nondominance" class="level4 qa-card">
+<h4 class="anchored" data-anchor-id="questions-on-weak-and-strict-nondominance">❓ Questions on Weak and Strict Nondominance</h4>
+<p><strong>Why can <span class="math inline">\(Y_{wN}\)</span> be nonempty when <span class="math inline">\(Y_N\)</span> is empty?</strong></p>
+<p><strong>Answer:</strong></p>
+<hr>
+<p><strong>Why isn’t there a concept of strict nondominance?</strong></p>
+<p><strong>Answer:</strong></p>
+</section>
+<div class="theorem-card">
+<section id="theorem-2.25" class="level4">
+<h4 class="anchored" data-anchor-id="theorem-2.25">Theorem 2.25</h4>
+<p>Let <span class="math inline">\(Y \subseteq \mathbb{R}^p\)</span> be nonempty and compact. Then <span class="math inline">\(Y_{wN} \neq \emptyset\)</span>.</p>
+<div class="proof-space">
+<p><strong>Proof.</strong></p>
+</div>
+</section>
+<section id="proper-efficiency-and-proper-nondominance" class="level2">
+<h2 class="anchored" data-anchor-id="proper-efficiency-and-proper-nondominance">2.4 Proper Efficiency and Proper Nondominance</h2>
 
 
+</section>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -340,7 +729,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/EmmaAli1604\.github\.io\/Multicriteraia_Optimization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
